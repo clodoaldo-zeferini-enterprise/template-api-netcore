@@ -1,0 +1,13 @@
+D:\GitHub\clodoaldozeferini\TestesGit\ASPNet\.NetCore\src\Exemplo\ServerSide\Template\Service.Template.API\obj\Release\net6.0\win-x86\PubTmp\Out\appsettings.json
+D:\GitHub\clodoaldozeferini\TestesGit\ASPNet\.NetCore\src\Exemplo\ServerSide\Template\Service.Template.API\obj\Release\net6.0\win-x86\PubTmp\Out\Config\appsettings_DES.json
+D:\GitHub\clodoaldozeferini\TestesGit\ASPNet\.NetCore\src\Exemplo\ServerSide\Template\Service.Template.API\obj\Release\net6.0\win-x86\PubTmp\Out\Config\appsettings_HOM.json
+D:\GitHub\clodoaldozeferini\TestesGit\ASPNet\.NetCore\src\Exemplo\ServerSide\Template\Service.Template.API\obj\Release\net6.0\win-x86\PubTmp\Out\Config\appsettings_HOM_LOCAL.json
+D:\GitHub\clodoaldozeferini\TestesGit\ASPNet\.NetCore\src\Exemplo\ServerSide\Template\Service.Template.API\obj\Release\net6.0\win-x86\PubTmp\Out\Config\appsettings_PRO.json
+D:\GitHub\clodoaldozeferini\TestesGit\ASPNet\.NetCore\src\Exemplo\ServerSide\Template\Service.Template.API\obj\Release\net6.0\win-x86\PubTmp\Out\Config\appsettings_PRO_LOCAL.json
+D:\GitHub\clodoaldozeferini\TestesGit\ASPNet\.NetCore\src\Exemplo\ServerSide\Template\Service.Template.API\obj\Release\net6.0\win-x86\PubTmp\Out\Service.Template.API.pdb
+D:\GitHub\clodoaldozeferini\TestesGit\ASPNet\.NetCore\src\Exemplo\ServerSide\Template\Service.Template.API\obj\Release\net6.0\win-x86\PubTmp\Out\sni.dll
+D:\GitHub\clodoaldozeferini\TestesGit\ASPNet\.NetCore\src\Exemplo\ServerSide\Template\Service.Template.API\obj\Release\net6.0\win-x86\PubTmp\Out\Service.Template.Infrastructure.pdb
+D:\GitHub\clodoaldozeferini\TestesGit\ASPNet\.NetCore\src\Exemplo\ServerSide\Template\Service.Template.API\obj\Release\net6.0\win-x86\PubTmp\Out\Service.Template.Application.pdb
+D:\GitHub\clodoaldozeferini\TestesGit\ASPNet\.NetCore\src\Exemplo\ServerSide\Template\Service.Template.API\obj\Release\net6.0\win-x86\PubTmp\Out\ServiceService.Template.Domain.pdb
+D:\GitHub\clodoaldozeferini\TestesGit\ASPNet\.NetCore\src\Exemplo\ServerSide\Template\Service.Template.API\obj\Release\net6.0\win-x86\PubTmp\Out\ServiceService.Template.Repository.pdb
+D:\GitHub\clodoaldozeferini\TestesGit\ASPNet\.NetCore\src\Exemplo\ServerSide\Template\Service.Template.API\obj\Release\net6.0\win-x86\PubTmp\Out\Service.Template.API.exe

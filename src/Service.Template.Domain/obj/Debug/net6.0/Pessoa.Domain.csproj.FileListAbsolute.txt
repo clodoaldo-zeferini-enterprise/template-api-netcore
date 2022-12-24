@@ -1,0 +1,12 @@
+D:\GitHub\clodoaldozeferini\TestesGit\ASPNet\.NetCore\src\Exemplo\ServerSide\Template\Template.Domain\bin\Debug\net6.0\ServiceTemplate.Domain.deps.json
+D:\GitHub\clodoaldozeferini\TestesGit\ASPNet\.NetCore\src\Exemplo\ServerSide\Template\Template.Domain\bin\Debug\net6.0\ServiceTemplate.Domain.dll
+D:\GitHub\clodoaldozeferini\TestesGit\ASPNet\.NetCore\src\Exemplo\ServerSide\Template\Template.Domain\bin\Debug\net6.0\ServiceTemplate.Domain.pdb
+D:\GitHub\clodoaldozeferini\TestesGit\ASPNet\.NetCore\src\Exemplo\ServerSide\Template\Template.Domain\obj\Debug\net6.0\Template.Domain.csproj.AssemblyReference.cache
+D:\GitHub\clodoaldozeferini\TestesGit\ASPNet\.NetCore\src\Exemplo\ServerSide\Template\Template.Domain\obj\Debug\net6.0\Template.Domain.GeneratedMSBuildEditorConfig.editorconfig
+D:\GitHub\clodoaldozeferini\TestesGit\ASPNet\.NetCore\src\Exemplo\ServerSide\Template\Template.Domain\obj\Debug\net6.0\Template.Domain.AssemblyInfoInputs.cache
+D:\GitHub\clodoaldozeferini\TestesGit\ASPNet\.NetCore\src\Exemplo\ServerSide\Template\Template.Domain\obj\Debug\net6.0\Template.Domain.AssemblyInfo.cs
+D:\GitHub\clodoaldozeferini\TestesGit\ASPNet\.NetCore\src\Exemplo\ServerSide\Template\Template.Domain\obj\Debug\net6.0\Template.Domain.csproj.CoreCompileInputs.cache
+D:\GitHub\clodoaldozeferini\TestesGit\ASPNet\.NetCore\src\Exemplo\ServerSide\Template\Template.Domain\obj\Debug\net6.0\ServiceTemplate.Domain.dll
+D:\GitHub\clodoaldozeferini\TestesGit\ASPNet\.NetCore\src\Exemplo\ServerSide\Template\Template.Domain\obj\Debug\net6.0\refint\ServiceTemplate.Domain.dll
+D:\GitHub\clodoaldozeferini\TestesGit\ASPNet\.NetCore\src\Exemplo\ServerSide\Template\Template.Domain\obj\Debug\net6.0\ServiceTemplate.Domain.pdb
+D:\GitHub\clodoaldozeferini\TestesGit\ASPNet\.NetCore\src\Exemplo\ServerSide\Template\Template.Domain\obj\Debug\net6.0\ref\ServiceTemplate.Domain.dll

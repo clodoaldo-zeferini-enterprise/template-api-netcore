@@ -1,0 +1,296 @@
+{
+  "$schema": "http://json.schemastore.org/sarif-1.0.0",
+  "version": "1.0.0",
+  "runs": [
+    {
+      "tool": {
+        "name": "Compilador do Microsoft (R) Visual C#",
+        "version": "4.1.0.0",
+        "fileVersion": "4.1.0-3.22075.3 (592501cb)",
+        "semanticVersion": "4.1.0",
+        "language": "pt-BR"
+      },
+      "results": [
+        {
+          "ruleId": "S3376",
+          "level": "warning",
+          "message": "Make this class name end with 'Attribute'.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///D:/GitHub/clodoaldozeferini/TestesGit/ASPNet/.NetCore/src/Exemplo/ServerSide/Exemplo.Infrastructure/Repositories/Base/DapperUtils.cs",
+                "region": {
+                  "startLine": 12,
+                  "startColumn": 22,
+                  "endLine": 12,
+                  "endColumn": 31
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S3376",
+          "level": "warning",
+          "message": "Make this class name end with 'Attribute'.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///D:/GitHub/clodoaldozeferini/TestesGit/ASPNet/.NetCore/src/Exemplo/ServerSide/Exemplo.Infrastructure/Repositories/Base/DapperUtils.cs",
+                "region": {
+                  "startLine": 15,
+                  "startColumn": 22,
+                  "endLine": 15,
+                  "endColumn": 34
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S2436",
+          "level": "warning",
+          "message": "Reduce the number of generic parameters in the 'Repository.GetMultiple' method to no more than the 3 authorized.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///D:/GitHub/clodoaldozeferini/TestesGit/ASPNet/.NetCore/src/Exemplo/ServerSide/Exemplo.Infrastructure/Repositories/Base/Repository.cs",
+                "region": {
+                  "startLine": 44,
+                  "startColumn": 90,
+                  "endLine": 44,
+                  "endColumn": 101
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S2436",
+          "level": "warning",
+          "message": "Reduce the number of generic parameters in the 'Repository.GetMultiple' method to no more than the 3 authorized.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///D:/GitHub/clodoaldozeferini/TestesGit/ASPNet/.NetCore/src/Exemplo/ServerSide/Exemplo.Infrastructure/Repositories/Base/Repository.cs",
+                "region": {
+                  "startLine": 75,
+                  "startColumn": 13,
+                  "endLine": 75,
+                  "endColumn": 24
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S2436",
+          "level": "warning",
+          "message": "Reduce the number of generic parameters in the 'Repository.GetMultiple' method to no more than the 3 authorized.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///D:/GitHub/clodoaldozeferini/TestesGit/ASPNet/.NetCore/src/Exemplo/ServerSide/Exemplo.Infrastructure/Repositories/Base/Repository.cs",
+                "region": {
+                  "startLine": 56,
+                  "startColumn": 5,
+                  "endLine": 56,
+                  "endColumn": 16
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S2436",
+          "level": "warning",
+          "message": "Reduce the number of generic parameters in the 'Repository.GetMultiple' method to no more than the 3 authorized.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///D:/GitHub/clodoaldozeferini/TestesGit/ASPNet/.NetCore/src/Exemplo/ServerSide/Exemplo.Infrastructure/Repositories/Base/Repository.cs",
+                "region": {
+                  "startLine": 96,
+                  "startColumn": 13,
+                  "endLine": 96,
+                  "endColumn": 24
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CA1822",
+          "level": "note",
+          "message": "Member 'ParsePropertiesInsert' does not access instance data and can be marked as static",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///D:/GitHub/clodoaldozeferini/TestesGit/ASPNet/.NetCore/src/Exemplo/ServerSide/Exemplo.Infrastructure/Repositories/Base/DapperUtils.cs",
+                "region": {
+                  "startLine": 20,
+                  "startColumn": 34,
+                  "endLine": 20,
+                  "endColumn": 55
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S1481",
+          "level": "warning",
+          "message": "Remove the unused local variable 'sEx'.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///D:/GitHub/clodoaldozeferini/TestesGit/ASPNet/.NetCore/src/Exemplo/ServerSide/Exemplo.Infrastructure/Repositories/Base/Repository.cs",
+                "region": {
+                  "startLine": 357,
+                  "startColumn": 28,
+                  "endLine": 357,
+                  "endColumn": 31
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S1481",
+          "level": "warning",
+          "message": "Remove the unused local variable 'sEx'.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///D:/GitHub/clodoaldozeferini/TestesGit/ASPNet/.NetCore/src/Exemplo/ServerSide/Exemplo.Infrastructure/Repositories/Base/Repository.cs",
+                "region": {
+                  "startLine": 270,
+                  "startColumn": 28,
+                  "endLine": 270,
+                  "endColumn": 31
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CA1822",
+          "level": "note",
+          "message": "Member 'SetId' does not access instance data and can be marked as static",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///D:/GitHub/clodoaldozeferini/TestesGit/ASPNet/.NetCore/src/Exemplo/ServerSide/Exemplo.Infrastructure/Repositories/Base/Repository.cs",
+                "region": {
+                  "startLine": 238,
+                  "startColumn": 22,
+                  "endLine": 238,
+                  "endColumn": 27
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        }
+      ],
+      "rules": {
+        "CA1822": {
+          "id": "CA1822",
+          "shortDescription": "Mark members as static",
+          "fullDescription": "Members that do not access instance data or call instance methods can be marked as static. After you mark the methods as static, the compiler will emit nonvirtual call sites to these members. This can give you a measurable performance gain for performance-sensitive code.",
+          "defaultLevel": "note",
+          "helpUri": "https://docs.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1822",
+          "properties": {
+            "category": "Performance",
+            "isEnabledByDefault": true,
+            "tags": [
+              "PortedFromFxCop",
+              "Telemetry",
+              "EnabledRuleInAggressiveMode"
+            ]
+          }
+        },
+        "S1481": {
+          "id": "S1481",
+          "shortDescription": "Unused local variables should be removed",
+          "fullDescription": "If a local variable is declared but not used, it is dead code and should be removed. Doing so will improve maintainability because developers will not wonder what the variable is used for.",
+          "defaultLevel": "warning",
+          "helpUri": "https://rules.sonarsource.com/csharp/RSPEC-1481",
+          "properties": {
+            "category": "Minor Code Smell",
+            "isEnabledByDefault": true,
+            "tags": [
+              "C#",
+              "SonarWay",
+              "MainSourceScope",
+              "TestSourceScope"
+            ]
+          }
+        },
+        "S2436": {
+          "id": "S2436",
+          "shortDescription": "Types and methods should not have too many generic parameters",
+          "fullDescription": "A method or class with too many type parameters has likely aggregated too many responsibilities and should be split.",
+          "defaultLevel": "warning",
+          "helpUri": "https://rules.sonarsource.com/csharp/RSPEC-2436",
+          "properties": {
+            "category": "Major Code Smell",
+            "isEnabledByDefault": false,
+            "tags": [
+              "C#",
+              "SonarWay",
+              "MainSourceScope",
+              "TestSourceScope"
+            ]
+          }
+        },
+        "S3376": {
+          "id": "S3376",
+          "shortDescription": "Attribute, EventArgs, and Exception type names should end with the type being extended",
+          "fullDescription": "Adherence to the standard naming conventions makes your code not only more readable, but more usable. For instance, class FirstAttribute : Attribute can be used simply with First, but you must use the full name for class AttributeOne : Attribute.",
+          "defaultLevel": "warning",
+          "helpUri": "https://rules.sonarsource.com/csharp/RSPEC-3376",
+          "properties": {
+            "category": "Minor Code Smell",
+            "isEnabledByDefault": true,
+            "tags": [
+              "C#",
+              "SonarWay",
+              "MainSourceScope",
+              "TestSourceScope"
+            ]
+          }
+        }
+      }
+    }
+  ]
+}

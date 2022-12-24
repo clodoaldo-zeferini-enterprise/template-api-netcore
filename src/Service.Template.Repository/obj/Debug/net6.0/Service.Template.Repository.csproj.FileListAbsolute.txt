@@ -1,0 +1,15 @@
+D:\GitHub\clodoaldo-zeferini-enterprise\template-api-netcore\src\Service.Template.Repository\bin\Debug\net6.0\ServiceService.Template.Repository.deps.json
+D:\GitHub\clodoaldo-zeferini-enterprise\template-api-netcore\src\Service.Template.Repository\bin\Debug\net6.0\ServiceService.Template.Repository.dll
+D:\GitHub\clodoaldo-zeferini-enterprise\template-api-netcore\src\Service.Template.Repository\bin\Debug\net6.0\ServiceService.Template.Repository.pdb
+D:\GitHub\clodoaldo-zeferini-enterprise\template-api-netcore\src\Service.Template.Repository\bin\Debug\net6.0\ServiceService.Template.Domain.dll
+D:\GitHub\clodoaldo-zeferini-enterprise\template-api-netcore\src\Service.Template.Repository\bin\Debug\net6.0\ServiceService.Template.Domain.pdb
+D:\GitHub\clodoaldo-zeferini-enterprise\template-api-netcore\src\Service.Template.Repository\obj\Debug\net6.0\Service.Template.Repository.csproj.AssemblyReference.cache
+D:\GitHub\clodoaldo-zeferini-enterprise\template-api-netcore\src\Service.Template.Repository\obj\Debug\net6.0\Service.Template.Repository.GeneratedMSBuildEditorConfig.editorconfig
+D:\GitHub\clodoaldo-zeferini-enterprise\template-api-netcore\src\Service.Template.Repository\obj\Debug\net6.0\Service.Template.Repository.AssemblyInfoInputs.cache
+D:\GitHub\clodoaldo-zeferini-enterprise\template-api-netcore\src\Service.Template.Repository\obj\Debug\net6.0\Service.Template.Repository.AssemblyInfo.cs
+D:\GitHub\clodoaldo-zeferini-enterprise\template-api-netcore\src\Service.Template.Repository\obj\Debug\net6.0\Service.Template.Repository.csproj.CoreCompileInputs.cache
+D:\GitHub\clodoaldo-zeferini-enterprise\template-api-netcore\src\Service.Template.Repository\obj\Debug\net6.0\Service.Template.Repository.csproj.CopyComplete
+D:\GitHub\clodoaldo-zeferini-enterprise\template-api-netcore\src\Service.Template.Repository\obj\Debug\net6.0\ServiceService.Template.Repository.dll
+D:\GitHub\clodoaldo-zeferini-enterprise\template-api-netcore\src\Service.Template.Repository\obj\Debug\net6.0\refint\ServiceService.Template.Repository.dll
+D:\GitHub\clodoaldo-zeferini-enterprise\template-api-netcore\src\Service.Template.Repository\obj\Debug\net6.0\ServiceService.Template.Repository.pdb
+D:\GitHub\clodoaldo-zeferini-enterprise\template-api-netcore\src\Service.Template.Repository\obj\Debug\net6.0\ref\ServiceService.Template.Repository.dll

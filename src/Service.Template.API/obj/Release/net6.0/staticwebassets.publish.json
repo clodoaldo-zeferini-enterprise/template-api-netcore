@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "enSkmSUSm8W8/IAvna9n9RpVRTmpsDLZZM4mIs5k2yQ=",
+  "Source": "Service.Template.API",
+  "BasePath": "_content/Service.Template.API",
+  "Mode": "Default",
+  "ManifestType": "Publish",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

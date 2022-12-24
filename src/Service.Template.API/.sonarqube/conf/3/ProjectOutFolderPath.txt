@@ -1,0 +1,1 @@
+D:\GitHub\clodoaldozeferini\TestesGit\ASPNet\.NetCore\src\Exemplo\ServerSide\Exemplo.API\.sonarqube\out\3

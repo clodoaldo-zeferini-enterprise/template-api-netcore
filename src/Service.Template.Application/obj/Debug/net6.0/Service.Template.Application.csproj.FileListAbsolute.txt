@@ -1,0 +1,17 @@
+D:\GitHub\clodoaldo-zeferini-enterprise\template-api-netcore\src\Service.Template.Application\bin\Debug\net6.0\Service.Template.Application.deps.json
+D:\GitHub\clodoaldo-zeferini-enterprise\template-api-netcore\src\Service.Template.Application\bin\Debug\net6.0\Service.Template.Application.dll
+D:\GitHub\clodoaldo-zeferini-enterprise\template-api-netcore\src\Service.Template.Application\bin\Debug\net6.0\Service.Template.Application.pdb
+D:\GitHub\clodoaldo-zeferini-enterprise\template-api-netcore\src\Service.Template.Application\bin\Debug\net6.0\ServiceService.Template.Domain.dll
+D:\GitHub\clodoaldo-zeferini-enterprise\template-api-netcore\src\Service.Template.Application\bin\Debug\net6.0\ServiceService.Template.Repository.dll
+D:\GitHub\clodoaldo-zeferini-enterprise\template-api-netcore\src\Service.Template.Application\bin\Debug\net6.0\ServiceService.Template.Domain.pdb
+D:\GitHub\clodoaldo-zeferini-enterprise\template-api-netcore\src\Service.Template.Application\bin\Debug\net6.0\ServiceService.Template.Repository.pdb
+D:\GitHub\clodoaldo-zeferini-enterprise\template-api-netcore\src\Service.Template.Application\obj\Debug\net6.0\Service.Template.Application.csproj.AssemblyReference.cache
+D:\GitHub\clodoaldo-zeferini-enterprise\template-api-netcore\src\Service.Template.Application\obj\Debug\net6.0\Service.Template.Application.GeneratedMSBuildEditorConfig.editorconfig
+D:\GitHub\clodoaldo-zeferini-enterprise\template-api-netcore\src\Service.Template.Application\obj\Debug\net6.0\Service.Template.Application.AssemblyInfoInputs.cache
+D:\GitHub\clodoaldo-zeferini-enterprise\template-api-netcore\src\Service.Template.Application\obj\Debug\net6.0\Service.Template.Application.AssemblyInfo.cs
+D:\GitHub\clodoaldo-zeferini-enterprise\template-api-netcore\src\Service.Template.Application\obj\Debug\net6.0\Service.Template.Application.csproj.CoreCompileInputs.cache
+D:\GitHub\clodoaldo-zeferini-enterprise\template-api-netcore\src\Service.Template.Application\obj\Debug\net6.0\Service.Template.Application.csproj.CopyComplete
+D:\GitHub\clodoaldo-zeferini-enterprise\template-api-netcore\src\Service.Template.Application\obj\Debug\net6.0\Service.Template.Application.dll
+D:\GitHub\clodoaldo-zeferini-enterprise\template-api-netcore\src\Service.Template.Application\obj\Debug\net6.0\refint\Service.Template.Application.dll
+D:\GitHub\clodoaldo-zeferini-enterprise\template-api-netcore\src\Service.Template.Application\obj\Debug\net6.0\Service.Template.Application.pdb
+D:\GitHub\clodoaldo-zeferini-enterprise\template-api-netcore\src\Service.Template.Application\obj\Debug\net6.0\ref\Service.Template.Application.dll

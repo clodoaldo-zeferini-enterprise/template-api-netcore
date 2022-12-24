@@ -1,0 +1,15 @@
+﻿D:\GitHub\clodoaldozeferini\TestesGit\ASPNet\.NetCore\src\Exemplo\ServerSide\Exemplo.Application\Interfaces\IUseCaseReq.cs
+D:\GitHub\clodoaldozeferini\TestesGit\ASPNet\.NetCore\src\Exemplo\ServerSide\Exemplo.Application\Mappers\AutoMapperProfile.cs
+D:\GitHub\clodoaldozeferini\TestesGit\ASPNet\.NetCore\src\Exemplo\ServerSide\Exemplo.Application\Models\Request\JWT\UserRequest.cs
+D:\GitHub\clodoaldozeferini\TestesGit\ASPNet\.NetCore\src\Exemplo\ServerSide\Exemplo.Application\Models\Request\Template\TemplateBuscaRequest.cs
+D:\GitHub\clodoaldozeferini\TestesGit\ASPNet\.NetCore\src\Exemplo\ServerSide\Exemplo.Application\Models\Request\Template\TemplateRequest.cs
+D:\GitHub\clodoaldozeferini\TestesGit\ASPNet\.NetCore\src\Exemplo\ServerSide\Exemplo.Application\Models\Response\Errors\ErrorResponse.cs
+D:\GitHub\clodoaldozeferini\TestesGit\ASPNet\.NetCore\src\Exemplo\ServerSide\Exemplo.Application\Models\Response\Errors\ErrorsResponse.cs
+D:\GitHub\clodoaldozeferini\TestesGit\ASPNet\.NetCore\src\Exemplo\ServerSide\Exemplo.Application\Models\Response\JWT\UserOutResponse.cs
+D:\GitHub\clodoaldozeferini\TestesGit\ASPNet\.NetCore\src\Exemplo\ServerSide\Exemplo.Application\Models\Response\JWT\UserResponse.cs
+D:\GitHub\clodoaldozeferini\TestesGit\ASPNet\.NetCore\src\Exemplo\ServerSide\Exemplo.Application\Models\Response\Template\TemplateOutResponse.cs
+D:\GitHub\clodoaldozeferini\TestesGit\ASPNet\.NetCore\src\Exemplo\ServerSide\Exemplo.Application\Models\Response\Template\TemplateResponse.cs
+D:\GitHub\clodoaldozeferini\TestesGit\ASPNet\.NetCore\src\Exemplo\ServerSide\Exemplo.Application\Models\Response\ResponseBase.cs
+D:\GitHub\clodoaldozeferini\TestesGit\ASPNet\.NetCore\src\Exemplo\ServerSide\Exemplo.Application\UseCases\JWT\AutenticarUserUseCaseAsync.cs
+D:\GitHub\clodoaldozeferini\TestesGit\ASPNet\.NetCore\src\Exemplo\ServerSide\Exemplo.Application\UseCases\Template\GetTemplateUseCaseAsync.cs
+D:\GitHub\clodoaldozeferini\TestesGit\ASPNet\.NetCore\src\Exemplo\ServerSide\Exemplo.Application\UseCases\Template\TemplateUseCaseAsync.cs

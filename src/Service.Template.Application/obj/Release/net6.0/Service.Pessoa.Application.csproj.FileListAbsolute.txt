@@ -1,0 +1,17 @@
+D:\GitHub\clodoaldozeferini\TestesGit\ASPNet\.NetCore\src\Exemplo\ServerSide\Template\Service.Template.Application\bin\Release\net6.0\Service.Template.Application.deps.json
+D:\GitHub\clodoaldozeferini\TestesGit\ASPNet\.NetCore\src\Exemplo\ServerSide\Template\Service.Template.Application\bin\Release\net6.0\Service.Template.Application.dll
+D:\GitHub\clodoaldozeferini\TestesGit\ASPNet\.NetCore\src\Exemplo\ServerSide\Template\Service.Template.Application\bin\Release\net6.0\Service.Template.Application.pdb
+D:\GitHub\clodoaldozeferini\TestesGit\ASPNet\.NetCore\src\Exemplo\ServerSide\Template\Service.Template.Application\bin\Release\net6.0\ServiceService.Template.Domain.dll
+D:\GitHub\clodoaldozeferini\TestesGit\ASPNet\.NetCore\src\Exemplo\ServerSide\Template\Service.Template.Application\bin\Release\net6.0\ServiceService.Template.Repository.dll
+D:\GitHub\clodoaldozeferini\TestesGit\ASPNet\.NetCore\src\Exemplo\ServerSide\Template\Service.Template.Application\bin\Release\net6.0\ServiceService.Template.Domain.pdb
+D:\GitHub\clodoaldozeferini\TestesGit\ASPNet\.NetCore\src\Exemplo\ServerSide\Template\Service.Template.Application\bin\Release\net6.0\ServiceService.Template.Repository.pdb
+D:\GitHub\clodoaldozeferini\TestesGit\ASPNet\.NetCore\src\Exemplo\ServerSide\Template\Service.Template.Application\obj\Release\net6.0\Service.Template.Application.csproj.AssemblyReference.cache
+D:\GitHub\clodoaldozeferini\TestesGit\ASPNet\.NetCore\src\Exemplo\ServerSide\Template\Service.Template.Application\obj\Release\net6.0\Service.Template.Application.GeneratedMSBuildEditorConfig.editorconfig
+D:\GitHub\clodoaldozeferini\TestesGit\ASPNet\.NetCore\src\Exemplo\ServerSide\Template\Service.Template.Application\obj\Release\net6.0\Service.Template.Application.AssemblyInfoInputs.cache
+D:\GitHub\clodoaldozeferini\TestesGit\ASPNet\.NetCore\src\Exemplo\ServerSide\Template\Service.Template.Application\obj\Release\net6.0\Service.Template.Application.AssemblyInfo.cs
+D:\GitHub\clodoaldozeferini\TestesGit\ASPNet\.NetCore\src\Exemplo\ServerSide\Template\Service.Template.Application\obj\Release\net6.0\Service.Template.Application.csproj.CoreCompileInputs.cache
+D:\GitHub\clodoaldozeferini\TestesGit\ASPNet\.NetCore\src\Exemplo\ServerSide\Template\Service.Template.Application\obj\Release\net6.0\Service.Template.Application.csproj.CopyComplete
+D:\GitHub\clodoaldozeferini\TestesGit\ASPNet\.NetCore\src\Exemplo\ServerSide\Template\Service.Template.Application\obj\Release\net6.0\Service.Template.Application.dll
+D:\GitHub\clodoaldozeferini\TestesGit\ASPNet\.NetCore\src\Exemplo\ServerSide\Template\Service.Template.Application\obj\Release\net6.0\refint\Service.Template.Application.dll
+D:\GitHub\clodoaldozeferini\TestesGit\ASPNet\.NetCore\src\Exemplo\ServerSide\Template\Service.Template.Application\obj\Release\net6.0\Service.Template.Application.pdb
+D:\GitHub\clodoaldozeferini\TestesGit\ASPNet\.NetCore\src\Exemplo\ServerSide\Template\Service.Template.Application\obj\Release\net6.0\ref\Service.Template.Application.dll
