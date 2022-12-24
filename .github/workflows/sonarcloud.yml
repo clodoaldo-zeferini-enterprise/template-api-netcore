@@ -47,5 +47,5 @@ jobs:
         shell: pwsh
         run: |
           .\.sonar\scanner\dotnet-sonarscanner begin /k:"clodoaldozeferini_MyProEventosBack" /o:"clodoaldozeferini" /d:sonar.login="${{ secrets.SONAR_TOKEN }}" /d:sonar.host.url="https://sonarcloud.io"
-          dotnet build src\MyProEventosBack.API\  --configuration Release
+          dotnet build src\Service.Template.API\  --configuration Release
           .\.sonar\scanner\dotnet-sonarscanner end /d:sonar.login="${{ secrets.SONAR_TOKEN }}"
