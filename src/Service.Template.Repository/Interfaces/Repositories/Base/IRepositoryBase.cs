@@ -53,7 +53,7 @@ namespace Service.Template.Domain.Interfaces.Repositories.Base
         Task<IEnumerable<TEntity>> GetAll();
         Task<TEntity> GetById(long id);
         Task<bool> InsertCommand(string query);
-        void Insert(TEntity entity);
+        Task Insert(TEntity entity);
         Task<bool> Update(TEntity entity);
         Task<bool> Delete(TEntity entity);
         Task<int> ExecuteCommand(string query);

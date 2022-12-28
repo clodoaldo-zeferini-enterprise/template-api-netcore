@@ -1,5 +1,6 @@
 ﻿using Service.Template.Application.Models.Response.Errors;
 using System;
+using System.Collections.Generic;
 
 namespace Service.Template.Application.Models.Response
 {
@@ -8,7 +9,8 @@ namespace Service.Template.Application.Models.Response
         public bool Resultado { get; set; }
              
         public string Mensagem { get; set; }
-
+        public List<Mensagem> Mensagens { get; set; }
+        public List<Exception> Exceptions { get; set; }
         public object Data { get; set; }
 
         public string Request { get; set; }
@@ -17,27 +19,16 @@ namespace Service.Template.Application.Models.Response
 
         public ResponseBase()
         {
-        }
+            Mensagens = new List<Mensagem>();
+            Exceptions = new List<Exception>(); 
+            ErrorsResponse = new Errors.ErrorsResponse();
+            Resultado = false;
+        } 
 
-        public ResponseBase(bool resultado, string mensagem, object data)
+        public void AddMensagem(string mensagem)
         {
-            Resultado = resultado;
-            Mensagem = mensagem;
-            Data = data;
+            Mensagens.Add(new Mensagem(mensagem));
         }
-
-        public ResponseBase(bool resultado, string mensagem, object data, ErrorsResponse errorsResponse) : this(resultado, mensagem, data)
-        {
-            ErrorsResponse = errorsResponse;
-        }
-
-        public ResponseBase(bool resultado, string mensagem, object data, string request, ErrorsResponse errorsResponse) : this(resultado, mensagem, data)
-        {
-            Request = request;
-            ErrorsResponse = errorsResponse;
-        }
-
-
 
 
 

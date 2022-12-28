@@ -13,11 +13,11 @@ namespace Service.Template.Application.UseCases.Template
 {
     public class GetTemplateUseCaseAsync : IUseCaseAsync<TemplateBuscaRequest, TemplateOutResponse>, IDisposable
     {
-        private ITemplateRepository _pessoaRepository;
+        private ITemplateRepository _templateRepository;
 
-        public GetTemplateUseCaseAsync(ITemplateRepository pessoaRepository)
+        public GetTemplateUseCaseAsync(ITemplateRepository templateRepository)
         {
-            _pessoaRepository = pessoaRepository;
+            _templateRepository = templateRepository;
         }
 
         public async Task<TemplateOutResponse> ExecuteAsync(TemplateBuscaRequest request)
@@ -33,11 +33,11 @@ namespace Service.Template.Application.UseCases.Template
             {
                 if (request.Id != null)
                 {
-                    Service.Template.Domain.Entities.Template pessoa = await _pessoaRepository.GetById(request.Id.Value);
+                    Service.Template.Domain.Entities.Template template = await _templateRepository.GetById(request.Id.Value);
 
                     output.Resultado = true;
                     output.Mensagem = "Dado recuperado com Sucesso!";
-                    output.Data = pessoa;
+                    output.Data = template;
                 }
                 else
                 {
@@ -143,33 +143,33 @@ namespace Service.Template.Application.UseCases.Template
                         /*SELECT @SelectTabelaDesejada;*/
                       ";
 
-                    var navigatorNovosCasosLog = _pessoaRepository.GetMultiple(_query, new { param = "" },
+                    var navigatorNovosCasosLog = _templateRepository.GetMultiple(_query, new { param = "" },
                                 gr => gr.Read<Domain.Entities.Navigator>()
                               , gr => gr.Read<Service.Template.Domain.Entities.Template>()
 
                               );
 
                     var navigators = navigatorNovosCasosLog.Item1;
-                    var pessoas = navigatorNovosCasosLog.Item2;
+                    var templates = navigatorNovosCasosLog.Item2;
 
-                    TemplateResponse pessoaResponse = new TemplateResponse();
+                    TemplateResponse templateResponse = new TemplateResponse();
 
                     foreach (Domain.Entities.Navigator navigator in navigators)
                     {
-                        pessoaResponse.Navigators.Add(new Models.Response.Navigator(navigator.RecordCount, navigator.PageNumber, navigator.PageSize, navigator.PageCount));
+                        templateResponse.Navigators.Add(new Models.Response.Navigator(navigator.RecordCount, navigator.PageNumber, navigator.PageSize, navigator.PageCount));
                     }
 
-                    foreach (Service.Template.Domain.Entities.Template pessoa in pessoas)
+                    foreach (Service.Template.Domain.Entities.Template template in templates)
                     {
-                        pessoaResponse.Templates.Add(new Models.Template(pessoa.Id, pessoa.Nome, pessoa.DataNascimento, pessoa.Status, pessoa.DataInsert.Value, ((pessoa.DataUpdate != null) ? pessoa.DataUpdate.Value : null)));
+                        templateResponse.Templates.Add(new Models.Template(template.Id, template.Nome, template.DataNascimento, template.Status, template.DataInsert.Value, ((template.DataUpdate != null) ? template.DataUpdate.Value : null)));
                     }
 
 
-                    if (navigators.Any() && pessoas.Any())
+                    if (navigators.Any() && templates.Any())
                     {
                         output.Resultado = true;
                         output.Mensagem = "Dados retornados com sucesso!";
-                        output.Data = pessoaResponse;
+                        output.Data = templateResponse;
                     }
                     else
                     {
@@ -219,7 +219,7 @@ namespace Service.Template.Application.UseCases.Template
 
         protected virtual void Dispose(bool disposing)
         {
-            _pessoaRepository = null;
+            _templateRepository = null;
         }
 
         ~GetTemplateUseCaseAsync()

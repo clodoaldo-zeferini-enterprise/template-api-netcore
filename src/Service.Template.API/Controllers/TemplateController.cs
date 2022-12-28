@@ -19,12 +19,12 @@ namespace Service.Template.API.Controllers
     public class TemplateController : ApiController
     {
         private readonly IUseCaseAsync<TemplateBuscaRequest, TemplateOutResponse> _getTemplateUseCaseAsync;
-        private readonly IUseCaseAsync<TemplateRequest, TemplateOutResponse> _pessoaUseCaseAsync;
+        private readonly IUseCaseAsync<TemplateRequest, TemplateOutResponse> _templateUseCaseAsync;
 
-        public TemplateController(IUseCaseAsync<TemplateBuscaRequest, TemplateOutResponse> getTemplateUseCaseAsync, IUseCaseAsync<TemplateRequest, TemplateOutResponse> pessoaUseCaseAsync)
+        public TemplateController(IUseCaseAsync<TemplateBuscaRequest, TemplateOutResponse> getTemplateUseCaseAsync, IUseCaseAsync<TemplateRequest, TemplateOutResponse> templateUseCaseAsync)
         {
             _getTemplateUseCaseAsync = getTemplateUseCaseAsync;
-            _pessoaUseCaseAsync = pessoaUseCaseAsync;
+            _templateUseCaseAsync = templateUseCaseAsync;
         }
 
         [HttpGet("Get")]
@@ -37,8 +37,8 @@ namespace Service.Template.API.Controllers
         {
             try
             {
-                using TemplateOutResponse pessoaOutResponse = await _getTemplateUseCaseAsync.ExecuteAsync(request);
-                return Ok(pessoaOutResponse);
+                using TemplateOutResponse templateOutResponse = await _getTemplateUseCaseAsync.ExecuteAsync(request);
+                return Ok(templateOutResponse);
             }
             catch (Exception)
             {
@@ -60,8 +60,8 @@ namespace Service.Template.API.Controllers
                 if (request == null || request.Id != 0 || request.EAction != Domain.Enum.EAction.INSERT)
                     return BadRequest();
 
-                using TemplateOutResponse pessoaOutResponse = await _pessoaUseCaseAsync.ExecuteAsync(request);
-                return Ok(pessoaOutResponse);
+                using TemplateOutResponse templateOutResponse = await _templateUseCaseAsync.ExecuteAsync(request);
+                return Ok(templateOutResponse);
             }
             catch (Exception)
             {
@@ -83,8 +83,8 @@ namespace Service.Template.API.Controllers
                 if (request == null || request.Id != id || request.EAction != Domain.Enum.EAction.UPDATE)
                     return BadRequest();
 
-                using TemplateOutResponse pessoaOutResponse = await _pessoaUseCaseAsync.ExecuteAsync(request);
-                return Ok(pessoaOutResponse);
+                using TemplateOutResponse templateOutResponse = await _templateUseCaseAsync.ExecuteAsync(request);
+                return Ok(templateOutResponse);
             }
             catch (Exception)
             {
@@ -106,8 +106,8 @@ namespace Service.Template.API.Controllers
                 if (request == null || request.Id != id || request.EAction != Domain.Enum.EAction.DELETE)
                     return BadRequest();
 
-                using TemplateOutResponse pessoaOutResponse = await _pessoaUseCaseAsync.ExecuteAsync(request);
-                return Ok(pessoaOutResponse);
+                using TemplateOutResponse templateOutResponse = await _templateUseCaseAsync.ExecuteAsync(request);
+                return Ok(templateOutResponse);
             }
             catch (Exception)
             {

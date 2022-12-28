@@ -13,10 +13,10 @@ namespace Service.Template.Application.Models.Response
             Templates = new List<Template>();
         }
 
-        public TemplateResponse(List<Navigator> navigators, List<Template> pessoas)
+        public TemplateResponse(List<Navigator> navigators, List<Template> templates)
         {
             Navigators = navigators;
-            Templates = pessoas;
+            Templates = templates;
         }
     }
 }
