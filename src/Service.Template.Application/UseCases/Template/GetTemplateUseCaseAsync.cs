@@ -8,21 +8,24 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Service.Template.Domain.Interfaces.Repositories.DB;
+using Microsoft.Extensions.Configuration;
 
 namespace Service.Template.Application.UseCases.Template
 {
-    public class GetTemplateUseCaseAsync : IUseCaseAsync<TemplateBuscaRequest, TemplateOutResponse>, IDisposable
+    public class GetTemplateUseCaseAsync : IUseCaseAsync<GetTemplateRequest, TemplateOutResponse>, IDisposable
     {
         private ITemplateRepository _templateRepository;
 
-        public GetTemplateUseCaseAsync(ITemplateRepository templateRepository)
+        public GetTemplateUseCaseAsync(
+            IConfiguration configuration ,
+            ITemplateRepository templateRepository)
         {
             _templateRepository = templateRepository;
         }
 
-        public async Task<TemplateOutResponse> ExecuteAsync(TemplateBuscaRequest request)
+        public async Task<TemplateOutResponse> ExecuteAsync(GetTemplateRequest request)
         {
-            TemplateOutResponse output = new TemplateOutResponse
+            TemplateOutResponse output = new()
             {
                 Resultado = false
             };
@@ -152,7 +155,7 @@ namespace Service.Template.Application.UseCases.Template
                     var navigators = navigatorNovosCasosLog.Item1;
                     var templates = navigatorNovosCasosLog.Item2;
 
-                    TemplateResponse templateResponse = new TemplateResponse();
+                    TemplateResponse templateResponse = new();
 
                     foreach (Domain.Entities.Navigator navigator in navigators)
                     {
@@ -161,9 +164,9 @@ namespace Service.Template.Application.UseCases.Template
 
                     foreach (Service.Template.Domain.Entities.Template template in templates)
                     {
-                        templateResponse.Templates.Add(new Models.Template(template.Id, template.Nome, template.DataNascimento, template.Status, template.DataInsert.Value, ((template.DataUpdate != null) ? template.DataUpdate.Value : null)));
+                        templateResponse.Templates.Add(new Models.Template(
+                            template.Id, template.Name, template.Status, template.DataInsert.Value, (template.DataUpdate != null) ? template.DataUpdate.Value : null));
                     }
-
 
                     if (navigators.Any() && templates.Any())
                     {
@@ -196,7 +199,7 @@ namespace Service.Template.Application.UseCases.Template
             return output;
         }
 
-        private string ValidaRequestTemplate(TemplateBuscaRequest request)
+        private string ValidaRequestTemplate(GetTemplateRequest request)
         {
             try
             {

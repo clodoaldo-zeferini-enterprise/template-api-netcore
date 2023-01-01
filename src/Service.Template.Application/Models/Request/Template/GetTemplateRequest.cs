@@ -8,14 +8,16 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Service.Template.Application.Models.Request
 {
-    public class TemplateBuscaRequest
+    public class GetTemplateRequest
     {
+        public Guid SysUsuSessionId { get; set; }
+
         [Range(1, 1000, ErrorMessage = "O Número da Página deverá estar entre 1 e 100")]
         public int PageNumber { get; set; }
 
         [Range(1, 1000, ErrorMessage = "O Tamanho da Página deverá estar entre 1 e 100")]
         public int PageSize { get; set; }
-        public long? Id { get; set; }
+        public Guid? Id { get; set; }
 
         public bool FiltraNome { get; set; }
         public string FiltroNome { get; set; }
@@ -27,11 +29,11 @@ namespace Service.Template.Application.Models.Request
         public bool FiltraStatus { get; set; }
         public int Status { get; set; }
 
-        public TemplateBuscaRequest()
+        public GetTemplateRequest()
         {
         }
 
-        public TemplateBuscaRequest(long id)
+        public GetTemplateRequest(Guid id)
         {
             Id = id;
         }

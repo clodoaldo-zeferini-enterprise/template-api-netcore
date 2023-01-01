@@ -9,15 +9,15 @@ using System.Threading.Tasks;
 
 namespace Service.Template.Application.UseCases.Template
 {
-    public class InsertTemplateUseCaseAsync : IUseCaseAsync<TemplateRequest, TemplateOutResponse>, IDisposable
+    public class InsertTemplateUseCaseAsync : IUseCaseAsync<InsertTemplateRequest, TemplateOutResponse>, IDisposable
     {
         private IMapper _mapper;
         private ITemplateRepository _templateRepository;
-        private IUseCaseAsync<TemplateBuscaRequest, TemplateOutResponse> _getTemplateUseCaseAsync;
+        private IUseCaseAsync<GetTemplateRequest, TemplateOutResponse> _getTemplateUseCaseAsync;
 
         public InsertTemplateUseCaseAsync(
               IMapper mapper
-            , IUseCaseAsync<TemplateBuscaRequest, TemplateOutResponse> getTemplateUseCaseAsync
+            , IUseCaseAsync<GetTemplateRequest, TemplateOutResponse> getTemplateUseCaseAsync
             , ITemplateRepository templateRepository
         )
         {
@@ -26,7 +26,7 @@ namespace Service.Template.Application.UseCases.Template
             _templateRepository = templateRepository;
         }
 
-        public async Task<TemplateOutResponse> ExecuteAsync(TemplateRequest request)
+        public async Task<TemplateOutResponse> ExecuteAsync(InsertTemplateRequest request)
         {
             TemplateOutResponse output = new()
             {
@@ -34,7 +34,7 @@ namespace Service.Template.Application.UseCases.Template
                 Mensagem = "Dados Fornecidos são inválidos!"
             };
 
-            if ((!request.IsValidTemplate) && (request.EAction != Domain.Enum.EAction.INSERT))
+            if (!request.IsValidTemplate)
             {
                 output.AddMensagem("Parâmetros recebidos estão inválidos!");
                 output.AddMensagem(JsonConvert.SerializeObject(request, Formatting.Indented));
@@ -45,22 +45,14 @@ namespace Service.Template.Application.UseCases.Template
 
             try
             {
-                if (request.EAction == Domain.Enum.EAction.INSERT)
-                {
-                    template.Nome = request.Nome;
-                    template.DataNascimento = DateTime.Parse(request.DataNascimento.ToString("yyyy-MM-dd HH:mm:ss"));
-                    template.Status = request.Status;
-                    template.DataInsert = DateTime.Parse(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
+                var templateToInsert = _mapper.Map<Domain.Entities.Template>(request);
 
-                    await _templateRepository.Insert(template);
+                templateToInsert.Id = Guid.NewGuid();
+                templateToInsert.Name = request.Name;
+                templateToInsert.Status = Domain.Enum.EStatus.ATIVO;
+                template.DataInsert = DateTime.Parse(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
 
-                    if (template.Id > 0)
-                    {
-                        output.AddMensagem("Registro Inserido com Sucesso!");
-                        output.Data = template;
-                        output.Resultado = true;
-                    }
-                }                
+                await _templateRepository.Insert(template);
             }
             catch (Exception ex)
             {

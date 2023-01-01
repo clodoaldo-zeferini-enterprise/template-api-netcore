@@ -20,8 +20,10 @@ namespace Service.Template.Infrastructure.IoC
             #endregion[Registrar Injeção de Dependência - Authentication]
 
             #region[Registrar Injeção de Dependência - Template]
-            services.AddTransient<IUseCaseAsync<TemplateBuscaRequest, TemplateOutResponse>, GetTemplateUseCaseAsync>();
-            services.AddTransient<IUseCaseAsync<TemplateRequest, TemplateOutResponse>, TemplateUseCaseAsync>();
+            services.AddTransient<IUseCaseAsync<DeleteTemplateRequest, TemplateOutResponse>, DeleteTemplateUseCaseAsync>();
+            services.AddTransient<IUseCaseAsync<GetTemplateRequest, TemplateOutResponse>, GetTemplateUseCaseAsync>();
+            services.AddTransient<IUseCaseAsync<InsertTemplateRequest, TemplateOutResponse>, InsertTemplateUseCaseAsync>();
+            services.AddTransient<IUseCaseAsync<UpdateTemplateRequest, TemplateOutResponse>, UpdateTemplateUseCaseAsync>();
             #endregion[Registrar Injeção de Dependência - Template]
         }
 

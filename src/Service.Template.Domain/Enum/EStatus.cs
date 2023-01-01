@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace Service.Template.Domain.Enum
 {
-    public enum EAction
+    public enum EStatus
     {
-        INSERT = 1,
-        UPDATE = 2,
-        DELETE = 3
+        EXCLUIDO = -1,
+        INATIVO  =  0,
+        ATIVO    =  1
     }
 }

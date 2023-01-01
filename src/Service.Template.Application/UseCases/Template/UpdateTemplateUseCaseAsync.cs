@@ -9,15 +9,15 @@ using System.Threading.Tasks;
 
 namespace Service.Template.Application.UseCases.Template
 {
-    public class UpdateTemplateUseCaseAsync : IUseCaseAsync<TemplateRequest, TemplateOutResponse>, IDisposable
+    public class UpdateTemplateUseCaseAsync : IUseCaseAsync<UpdateTemplateRequest, TemplateOutResponse>, IDisposable
     {
         private IMapper _mapper;
         private ITemplateRepository _templateRepository;
-        private IUseCaseAsync<TemplateBuscaRequest, TemplateOutResponse> _getTemplateUseCaseAsync;
+        private IUseCaseAsync<GetTemplateRequest, TemplateOutResponse> _getTemplateUseCaseAsync;
 
         public UpdateTemplateUseCaseAsync(
               IMapper mapper
-            , IUseCaseAsync<TemplateBuscaRequest, TemplateOutResponse> getTemplateUseCaseAsync
+            , IUseCaseAsync<GetTemplateRequest, TemplateOutResponse> getTemplateUseCaseAsync
             , ITemplateRepository templateRepository
         )
         {
@@ -26,7 +26,7 @@ namespace Service.Template.Application.UseCases.Template
             _templateRepository = templateRepository;
         }
 
-        public async Task<TemplateOutResponse> ExecuteAsync(TemplateRequest request)
+        public async Task<TemplateOutResponse> ExecuteAsync(UpdateTemplateRequest request)
         {
             TemplateOutResponse output = new()
             {
@@ -34,7 +34,7 @@ namespace Service.Template.Application.UseCases.Template
                 Mensagem = "Dados Fornecidos são inválidos!"
             };
 
-            if ((!request.IsValidTemplate) && (request.EAction != Domain.Enum.EAction.UPDATE))
+            if (!request.IsValidTemplate)
             {
                 output.AddMensagem("Parâmetros recebidos estão inválidos!");
                 output.AddMensagem(JsonConvert.SerializeObject(request, Formatting.Indented));
@@ -43,33 +43,25 @@ namespace Service.Template.Application.UseCases.Template
 
             Service.Template.Domain.Entities.Template template = new();
 
-            if ((request.EAction == Domain.Enum.EAction.UPDATE))
-            {
-                TemplateOutResponse templateOutResponse = await _getTemplateUseCaseAsync.ExecuteAsync(new TemplateBuscaRequest(request.Id));
+
+                TemplateOutResponse templateOutResponse = await _getTemplateUseCaseAsync.ExecuteAsync(new GetTemplateRequest(request.Id));
 
                 if (!templateOutResponse.Resultado) return output;
 
                 template = _mapper.Map<Service.Template.Domain.Entities.Template>(templateOutResponse.Data);
-            }
 
             try
             {
-                if (request.EAction == Domain.Enum.EAction.UPDATE)
+                template.Name = request.Name;
+                template.Status = request.Status;
+                template.DataUpdate = DateTime.Parse(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
+
+                if (await _templateRepository.Update(template))
                 {
-                    template.Nome = request.Nome;
-                    template.DataNascimento = request.DataNascimento;
-                    template.Status = request.Status;
-                    template.DataUpdate = DateTime.Parse(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
-
-                    template = new Service.Template.Domain.Entities.Template(request.Id, request.Nome, request.DataNascimento, request.Status);
-
-                    if (await _templateRepository.Update(template))
-                    {
-                        output.AddMensagem("Registro Alterado com Sucesso!");
-                        output.Data = await _templateRepository.GetById(template.Id);
-                        output.Resultado = true;
-                    }
-                }                
+                    output.AddMensagem("Registro Alterado com Sucesso!");
+                    output.Data = await _templateRepository.GetById(template.Id);
+                    output.Resultado = true;
+                }
             }
             catch (Exception ex)
             {

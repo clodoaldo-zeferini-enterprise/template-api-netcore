@@ -9,15 +9,15 @@ using System.Threading.Tasks;
 
 namespace Service.Template.Application.UseCases.Template
 {
-    public class DeleteTemplateUseCaseAsync : IUseCaseAsync<TemplateRequest, TemplateOutResponse>, IDisposable
+    public class DeleteTemplateUseCaseAsync : IUseCaseAsync<DeleteTemplateRequest, TemplateOutResponse>, IDisposable
     {
         private IMapper _mapper;
         private ITemplateRepository _templateRepository;
-        private IUseCaseAsync<TemplateBuscaRequest, TemplateOutResponse> _getTemplateUseCaseAsync;
+        private IUseCaseAsync<GetTemplateRequest, TemplateOutResponse> _getTemplateUseCaseAsync;
 
         public DeleteTemplateUseCaseAsync(
               IMapper mapper
-            , IUseCaseAsync<TemplateBuscaRequest, TemplateOutResponse> getTemplateUseCaseAsync
+            , IUseCaseAsync<GetTemplateRequest, TemplateOutResponse> getTemplateUseCaseAsync
             , ITemplateRepository templateRepository
         )
         {
@@ -26,7 +26,7 @@ namespace Service.Template.Application.UseCases.Template
             _templateRepository = templateRepository;
         }
 
-        public async Task<TemplateOutResponse> ExecuteAsync(TemplateRequest request)
+        public async Task<TemplateOutResponse> ExecuteAsync(DeleteTemplateRequest request)
         {
             TemplateOutResponse output = new()
             {
@@ -34,30 +34,26 @@ namespace Service.Template.Application.UseCases.Template
                 Mensagem = "Dados Fornecidos são inválidos!"
             };
 
-            if ((!request.IsValidTemplate) && (request.EAction != Domain.Enum.EAction.DELETE))
+            if (!request.IsValidTemplate)
             {
                 output.AddMensagem("Parâmetros recebidos estão inválidos!");
                 output.AddMensagem(JsonConvert.SerializeObject(request, Formatting.Indented));
                 return output;
             }
 
-            Service.Template.Domain.Entities.Template template = new();
-
-            if (request.EAction == Domain.Enum.EAction.DELETE)
-            {
-                TemplateOutResponse templateOutResponse = await _getTemplateUseCaseAsync.ExecuteAsync(new TemplateBuscaRequest(request.Id));
-
-                if (!templateOutResponse.Resultado) return output;
-
-                template = _mapper.Map<Service.Template.Domain.Entities.Template>(templateOutResponse.Data);
-            }
-
             try
-            {                
-                if (request.EAction == Domain.Enum.EAction.DELETE && await _templateRepository.Delete(template))
+            {
+                Domain.Entities.Template template = new Domain.Entities.Template(request.Id);
+
+                if (await _templateRepository.Delete(template))
                 {
                     output.Mensagem = "Registro Excluído com Sucesso!";
                     output.Resultado = true;
+                }
+                else
+                {
+                    output.Mensagem = "Ocorreu uma falha ao Excluir o Registro!";
+                    output.Resultado = false;
                 }
             }
             catch (Exception ex)
@@ -69,12 +65,14 @@ namespace Service.Template.Application.UseCases.Template
                 };
                 output.ErrorsResponse = new Models.Response.Errors.ErrorsResponse(errorResponses);
 
-                output.Mensagem = "Ocorreu uma falha ao Inserir o Registro!";
+                output.Mensagem = "Ocorreu uma falha ao Excluir o Registro!";
                 output.Resultado = false;
             }
             finally
             {
                 output.Request = JsonConvert.SerializeObject(request, Formatting.Indented);
+
+                /*Consumir serviço de Log*/
             }
 
             return output;

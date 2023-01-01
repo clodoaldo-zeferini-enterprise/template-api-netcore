@@ -51,15 +51,15 @@ namespace Service.Template.Domain.Interfaces.Repositories.Base
 
         Task<IEnumerable<TEntity>> Get(string query);
         Task<IEnumerable<TEntity>> GetAll();
-        Task<TEntity> GetById(long id);
+        Task<TEntity> GetById(Guid id);
         Task<bool> InsertCommand(string query);
-        Task Insert(TEntity entity);
+        Task<bool> Insert(TEntity entity);
         Task<bool> Update(TEntity entity);
         Task<bool> Delete(TEntity entity);
         Task<int> ExecuteCommand(string query);
         IEnumerable<TEntity> GetSync(string query);
         IEnumerable<TEntity> GetAllSync();
-        TEntity GetByIdSync(long id);
+        TEntity GetByIdSync(Guid id);
         bool UpdateSync(TEntity entity);
 
     }

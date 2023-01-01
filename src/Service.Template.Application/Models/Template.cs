@@ -1,32 +1,29 @@
 ﻿using Service.Template.Domain.Enum;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-using Service.Template.Domain.Entities;
 
 namespace Service.Template.Application.Models
 {
     public class Template
     {
-        public long Id { get; set; }
-        public string Nome { get; set; }
-        public DateTime DataNascimento { get; set; }
-        public int Status { get; set; }
+        public Guid Id { get; set; }
+        public string Name { get; set; }
+        public EStatus Status { get; set; }
         public DateTime? DataInsert { get; set; }
         public DateTime? DataUpdate { get; set; }
+
 
         public Template()
         {
         }
 
-        public Template(long id, string nome, DateTime dataNascimento, int status, DateTime? dataInsert, DateTime? dataUpdate)
+        public Template(Guid id)
         {
             Id = id;
-            Nome = nome;
-            DataNascimento = dataNascimento;
+        }
+
+        public Template(Guid id, string name, EStatus status, DateTime? dataInsert, DateTime? dataUpdate) : this(id)
+        {
+            Name = name;
             Status = status;
             DataInsert = dataInsert;
             DataUpdate = dataUpdate;

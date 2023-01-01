@@ -202,7 +202,7 @@ namespace Service.Template.Infrastructure.Repositories.Base
             }
         }
 
-        public virtual async Task<TEntity> GetById(long id)
+        public virtual async Task<TEntity> GetById(Guid id)
         {
             using (var con = new SqlConnection(_connectionString))
             {
@@ -219,7 +219,7 @@ namespace Service.Template.Infrastructure.Repositories.Base
         }
 
 
-        public TEntity GetByIdSync(long id)
+        public TEntity GetByIdSync(Guid id)
         {
             using (var con = new SqlConnection(_connectionString))
             {
@@ -234,23 +234,11 @@ namespace Service.Template.Infrastructure.Repositories.Base
                 }
             }
         }
-
-        private void SetId<T>(T obj, int id, IDictionary<string, object> propertyPairs)
-        {
-            if (propertyPairs.Count == 1)
-            {
-                var propertyName = propertyPairs.Keys.First();
-                var propertyInfo = obj.GetType().GetProperty(propertyName);
-                if (propertyInfo.PropertyType == typeof(int) || propertyInfo.PropertyType == typeof(Int64))
-                {
-                    propertyInfo.SetValue(obj, id, null);
-                }
-            }
-        }
-        public void Insert(TEntity entity)
+        
+        public virtual async Task<bool> Insert(TEntity entity)
         {
             var propertyContainer = new DapperUtils().ParsePropertiesInsert(entity);
-            var sql = string.Format("INSERT INTO [{0}] ({1}) VALUES (@{2}) SELECT CAST(scope_identity() AS int)",
+            var sql = string.Format("INSERT INTO [{0}] ({1}) VALUES (@{2})",
             typeof(TEntity).Name,
             string.Join(", ", propertyContainer.ValueNames),
             string.Join(", @", propertyContainer.ValueNames));
@@ -260,15 +248,13 @@ namespace Service.Template.Infrastructure.Repositories.Base
                 try
                 {
                     con.Open();
-                    var id = con.Query<int>(sql, propertyContainer.ValuePairs, commandType: System.Data.CommandType.Text).First();
+                    var result = await con.ExecuteAsync(sql, propertyContainer.ValuePairs, commandType: System.Data.CommandType.Text);
 
-                    SetId(entity, id, propertyContainer.IdPairs);
-
+                    return (result > 0);
                 }
-                catch (Exception ex)
+                catch
                 {
-                    string sEx = ex.Message;
-
+                    return false;
                 }
                 finally
                 {
@@ -363,7 +349,5 @@ namespace Service.Template.Infrastructure.Repositories.Base
                 }
             }
         }
-
-
     }
 }

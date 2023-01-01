@@ -18,13 +18,24 @@ namespace Service.Template.API.Controllers
     [ApiController]
     public class TemplateController : ApiController
     {
-        private readonly IUseCaseAsync<TemplateBuscaRequest, TemplateOutResponse> _getTemplateUseCaseAsync;
-        private readonly IUseCaseAsync<TemplateRequest, TemplateOutResponse> _templateUseCaseAsync;
+        private readonly IUseCaseAsync<DeleteTemplateRequest, TemplateOutResponse> _deleteTemplateUseCaseAsync;
+        private readonly IUseCaseAsync<GetTemplateRequest, TemplateOutResponse>    _getTemplateUseCaseAsync;
+        private readonly IUseCaseAsync<InsertTemplateRequest, TemplateOutResponse> _insertTemplateUseCaseAsync;
+        private readonly IUseCaseAsync<UpdateTemplateRequest, TemplateOutResponse> _updateTemplateUseCaseAsync;
 
-        public TemplateController(IUseCaseAsync<TemplateBuscaRequest, TemplateOutResponse> getTemplateUseCaseAsync, IUseCaseAsync<TemplateRequest, TemplateOutResponse> templateUseCaseAsync)
+        public TemplateController(
+            IUseCaseAsync<DeleteTemplateRequest, TemplateOutResponse> deleteTemplateUseCaseAsync,
+            IUseCaseAsync<GetTemplateRequest, TemplateOutResponse> getTemplateUseCaseAsync,
+            IUseCaseAsync<InsertTemplateRequest, TemplateOutResponse> insertTemplateUseCaseAsync,
+            IUseCaseAsync<UpdateTemplateRequest, TemplateOutResponse> updateTemplateUseCaseAsync
+
+
+            )
         {
+            _deleteTemplateUseCaseAsync = deleteTemplateUseCaseAsync;
             _getTemplateUseCaseAsync = getTemplateUseCaseAsync;
-            _templateUseCaseAsync = templateUseCaseAsync;
+            _insertTemplateUseCaseAsync = insertTemplateUseCaseAsync;
+            _updateTemplateUseCaseAsync = updateTemplateUseCaseAsync;
         }
 
         [HttpGet("Get")]
@@ -33,7 +44,7 @@ namespace Service.Template.API.Controllers
         [ProducesResponseType(typeof(ErrorsResponse), StatusCodes.Status400BadRequest)]
         [ProducesResponseType(typeof(ErrorsResponse), StatusCodes.Status404NotFound)]
         [ProducesResponseType(typeof(ErrorsResponse), StatusCodes.Status500InternalServerError)]
-        public async Task<IActionResult> Get([FromQuery] TemplateBuscaRequest request)
+        public async Task<IActionResult> Get([FromQuery] GetTemplateRequest request)
         {
             try
             {
@@ -53,14 +64,14 @@ namespace Service.Template.API.Controllers
         [ProducesResponseType(typeof(ErrorsResponse), StatusCodes.Status400BadRequest)]
         [ProducesResponseType(typeof(ErrorsResponse), StatusCodes.Status404NotFound)]
         [ProducesResponseType(typeof(ErrorsResponse), StatusCodes.Status500InternalServerError)]
-        public async Task<IActionResult> Post([FromBody] TemplateRequest request)
+        public async Task<IActionResult> Post([FromBody] InsertTemplateRequest request)
         {
             try
             {
-                if (request == null || request.Id != 0 || request.EAction != Domain.Enum.EAction.INSERT)
+                if (request == null)
                     return BadRequest();
 
-                using TemplateOutResponse templateOutResponse = await _templateUseCaseAsync.ExecuteAsync(request);
+                using TemplateOutResponse templateOutResponse = await _insertTemplateUseCaseAsync.ExecuteAsync(request);
                 return Ok(templateOutResponse);
             }
             catch (Exception)
@@ -76,14 +87,14 @@ namespace Service.Template.API.Controllers
         [ProducesResponseType(typeof(ErrorsResponse), StatusCodes.Status400BadRequest)]
         [ProducesResponseType(typeof(ErrorsResponse), StatusCodes.Status404NotFound)]
         [ProducesResponseType(typeof(ErrorsResponse), StatusCodes.Status500InternalServerError)]
-        public async Task<IActionResult> Put(long id, [FromBody] TemplateRequest request)
+        public async Task<IActionResult> Put(long id, [FromBody] UpdateTemplateRequest request)
         {
             try
             {
-                if (request == null || request.Id != id || request.EAction != Domain.Enum.EAction.UPDATE)
+                if (request == null)
                     return BadRequest();
 
-                using TemplateOutResponse templateOutResponse = await _templateUseCaseAsync.ExecuteAsync(request);
+                using TemplateOutResponse templateOutResponse = await _updateTemplateUseCaseAsync.ExecuteAsync(request);
                 return Ok(templateOutResponse);
             }
             catch (Exception)
@@ -99,14 +110,14 @@ namespace Service.Template.API.Controllers
         [ProducesResponseType(typeof(ErrorsResponse), StatusCodes.Status400BadRequest)]
         [ProducesResponseType(typeof(ErrorsResponse), StatusCodes.Status404NotFound)]
         [ProducesResponseType(typeof(ErrorsResponse), StatusCodes.Status500InternalServerError)]
-        public async Task<IActionResult> Delete(long id, [FromBody] TemplateRequest request)
+        public async Task<IActionResult> Delete(long id, [FromBody] DeleteTemplateRequest request)
         {
             try
             {
-                if (request == null || request.Id != id || request.EAction != Domain.Enum.EAction.DELETE)
+                if (request == null)
                     return BadRequest();
 
-                using TemplateOutResponse templateOutResponse = await _templateUseCaseAsync.ExecuteAsync(request);
+                using TemplateOutResponse templateOutResponse = await _deleteTemplateUseCaseAsync.ExecuteAsync(request);
                 return Ok(templateOutResponse);
             }
             catch (Exception)
