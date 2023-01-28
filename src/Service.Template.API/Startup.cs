@@ -46,10 +46,10 @@ namespace Service.Template.API
             Registry.RegisterDatabase(services);
 
             services.RegisterAutoMapper<AutoMapperProfile>();
-
+ /*
             var key = System.Text.Encoding.ASCII.GetBytes(Configuration["Client:Secret"]);
 
-            /*
+           
             services.AddAuthentication(
                     x =>
                     {

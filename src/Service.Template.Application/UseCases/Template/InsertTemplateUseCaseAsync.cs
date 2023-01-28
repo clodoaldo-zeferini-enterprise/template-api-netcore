@@ -15,7 +15,7 @@ namespace Service.Template.Application.UseCases.Template
         private ITemplateRepository _templateRepository;
         private IUseCaseAsync<GetTemplateRequest, TemplateOutResponse> _getTemplateUseCaseAsync;
 
-        private TemplateOutResponse output;
+        private readonly TemplateOutResponse _output;
 
         public InsertTemplateUseCaseAsync(
               IMapper mapper
@@ -27,7 +27,7 @@ namespace Service.Template.Application.UseCases.Template
             _getTemplateUseCaseAsync = getTemplateUseCaseAsync;
             _templateRepository = templateRepository;
 
-            output = new()
+            _output = new()
             {
                 Resultado = false,
                 Mensagem = "Dados Fornecidos são inválidos!"
@@ -40,9 +40,9 @@ namespace Service.Template.Application.UseCases.Template
 
             if (!request.IsValidTemplate)
             {
-                output.AddMensagem("Parâmetros recebidos estão inválidos!");
-                output.AddMensagem(JsonConvert.SerializeObject(request, Formatting.Indented));
-                return output;
+                _output.AddMensagem("Parâmetros recebidos estão inválidos!");
+                _output.AddMensagem(JsonConvert.SerializeObject(request, Formatting.Indented));
+                return _output;
             }
 
             try
@@ -57,8 +57,8 @@ namespace Service.Template.Application.UseCases.Template
                 templateToInsert.Nome = request.Nome;
 
 
-                output.Resultado = await _templateRepository.Insert(templateToInsert);
-                output.Mensagem = "Registro inserido com Sucesso!";
+                _output.Resultado = await _templateRepository.Insert(templateToInsert);
+                _output.Mensagem = "Registro inserido com Sucesso!";
             }
             catch (Exception ex)
             {
@@ -67,19 +67,19 @@ namespace Service.Template.Application.UseCases.Template
                 {
                     errorResponse
                 };
-                output.ErrorsResponse = new Models.Response.Errors.ErrorsResponse(errorResponses);
+                _output.ErrorsResponse = new Models.Response.Errors.ErrorsResponse(errorResponses);
 
-                output.Exceptions.Add(ex);
-                output.AddMensagem("Ocorreu uma falha ao Inserir o Registro!");
-                output.Resultado = false;
+                _output.Exceptions.Add(ex);
+                _output.AddMensagem("Ocorreu uma falha ao Inserir o Registro!");
+                _output.Resultado = false;
             }
             finally
             {
-                output.Request = JsonConvert.SerializeObject(request, Formatting.Indented);
-                output.Data = templateToInsert;
+                _output.Request = JsonConvert.SerializeObject(request, Formatting.Indented);
+                _output.Data = templateToInsert;
             }
 
-            return output;
+            return _output;
         }
 
         #region IDisposable Support

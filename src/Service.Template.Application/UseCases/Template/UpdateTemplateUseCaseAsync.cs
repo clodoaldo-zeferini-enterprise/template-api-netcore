@@ -15,7 +15,7 @@ namespace Service.Template.Application.UseCases.Template
         private ITemplateRepository _templateRepository;
         private IUseCaseAsync<GetTemplateRequest, TemplateOutResponse> _getTemplateUseCaseAsync;
 
-        private TemplateOutResponse output;
+        private readonly TemplateOutResponse _output;
 
         public UpdateTemplateUseCaseAsync(
               IMapper mapper
@@ -27,7 +27,7 @@ namespace Service.Template.Application.UseCases.Template
             _getTemplateUseCaseAsync = getTemplateUseCaseAsync;
             _templateRepository = templateRepository;
 
-            output = new()
+            _output = new()
             {
                 Resultado = false,
                 Mensagem = "Dados Fornecidos são inválidos!"
@@ -38,9 +38,9 @@ namespace Service.Template.Application.UseCases.Template
         {
             if (!request.IsValidTemplate)
             {
-                output.AddMensagem("Parâmetros recebidos estão inválidos!");
-                output.AddMensagem(JsonConvert.SerializeObject(request, Formatting.Indented));
-                return output;
+                _output.AddMensagem("Parâmetros recebidos estão inválidos!");
+                _output.AddMensagem(JsonConvert.SerializeObject(request, Formatting.Indented));
+                return _output;
             }
 
             Service.Template.Domain.Entities.Template template;
@@ -49,7 +49,7 @@ namespace Service.Template.Application.UseCases.Template
             TemplateOutResponse templateOutResponse =
                 await _getTemplateUseCaseAsync.ExecuteAsync(new GetTemplateRequest(request.Id));
 
-            if (!templateOutResponse.Resultado) return output;
+            if (!templateOutResponse.Resultado) return _output;
 
             template = _mapper.Map<Service.Template.Domain.Entities.Template>(templateOutResponse.Data);
 
@@ -61,9 +61,9 @@ namespace Service.Template.Application.UseCases.Template
 
                 if (await _templateRepository.Update(template))
                 {
-                    output.AddMensagem("Registro Alterado com Sucesso!");
-                    output.Data = await _templateRepository.GetById(template.Id);
-                    output.Resultado = true;
+                    _output.AddMensagem("Registro Alterado com Sucesso!");
+                    _output.Data = await _templateRepository.GetById(template.Id);
+                    _output.Resultado = true;
                 }
             }
             catch (Exception ex)
@@ -74,18 +74,18 @@ namespace Service.Template.Application.UseCases.Template
                 {
                     errorResponse
                 };
-                output.ErrorsResponse = new Models.Response.Errors.ErrorsResponse(errorResponses);
+                _output.ErrorsResponse = new Models.Response.Errors.ErrorsResponse(errorResponses);
 
-                output.Exceptions.Add(ex);
-                output.AddMensagem("Ocorreu uma falha ao Atualizar o Registro!");
-                output.Resultado = false;
+                _output.Exceptions.Add(ex);
+                _output.AddMensagem("Ocorreu uma falha ao Atualizar o Registro!");
+                _output.Resultado = false;
             }
             finally
             {
-                output.Request = JsonConvert.SerializeObject(request, Formatting.Indented);
+                _output.Request = JsonConvert.SerializeObject(request, Formatting.Indented);
             }
 
-            return output;
+            return _output;
         }
 
         #region IDisposable Support

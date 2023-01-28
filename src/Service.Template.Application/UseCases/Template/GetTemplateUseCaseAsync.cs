@@ -16,7 +16,7 @@ namespace Service.Template.Application.UseCases.Template
     {
         private ITemplateRepository _templateRepository;
 
-        private TemplateOutResponse output;
+        private readonly TemplateOutResponse _output;
 
         public GetTemplateUseCaseAsync(
             IConfiguration configuration ,
@@ -24,7 +24,7 @@ namespace Service.Template.Application.UseCases.Template
         {
             _templateRepository = templateRepository;
 
-            output = new()
+            _output = new()
             {
                 Resultado = false,
                 Mensagem = "Dados Fornecidos são inválidos!"
@@ -39,9 +39,9 @@ namespace Service.Template.Application.UseCases.Template
                 {
                     Service.Template.Domain.Entities.Template template = await _templateRepository.GetById(request.Id.Value);
 
-                    output.Resultado = true;
-                    output.Mensagem = "Dado recuperado com Sucesso!";
-                    output.Data = template;
+                    _output.Resultado = true;
+                    _output.Mensagem = "Dado recuperado com Sucesso!";
+                    _output.Data = template;
                 }
                 else
                 {
@@ -169,35 +169,35 @@ namespace Service.Template.Application.UseCases.Template
 
                     if (navigators.Any() && templates.Any())
                     {
-                        output.Resultado = true;
-                        output.Mensagem = "Dados retornados com sucesso!";
-                        output.Data = templateResponse;
+                        _output.Resultado = true;
+                        _output.Mensagem = "Dados retornados com sucesso!";
+                        _output.Data = templateResponse;
                     }
                     else
                     {
-                        output.Resultado = true;
-                        output.Mensagem = "Nenhum dado encontrado!";
+                        _output.Resultado = true;
+                        _output.Mensagem = "Nenhum dado encontrado!";
                     }
 
-                    return output;
+                    return _output;
                 }
 
             }            
             catch (Exception ex)
             {
-                output.Mensagem = "Ocorreram Exceções durante a execução";
-                output.AddExceptions(ex);
+                _output.Mensagem = "Ocorreram Exceções durante a execução";
+                _output.AddExceptions(ex);
                 Models.Response.Errors.ErrorResponse errorResponse = new Models.Response.Errors.ErrorResponse("id", "parameter", JsonConvert.SerializeObject(ex, Formatting.Indented));
                 System.Collections.Generic.List<Models.Response.Errors.ErrorResponse> errorResponses = new System.Collections.Generic.List<Models.Response.Errors.ErrorResponse>();
                 errorResponses.Add(errorResponse);
-                output.ErrorsResponse = new Models.Response.Errors.ErrorsResponse(errorResponses);
+                _output.ErrorsResponse = new Models.Response.Errors.ErrorsResponse(errorResponses);
             }
             finally
             {
-                output.Request = JsonConvert.SerializeObject(request, Formatting.Indented);
+                _output.Request = JsonConvert.SerializeObject(request, Formatting.Indented);
             }
 
-            return output;
+            return _output;
         }
 
         #region IDisposable Support

@@ -15,7 +15,7 @@ namespace Service.Template.Application.UseCases.Template
         private ITemplateRepository _templateRepository;
         private IUseCaseAsync<GetTemplateRequest, TemplateOutResponse> _getTemplateUseCaseAsync;
 
-        private TemplateOutResponse output;
+        private readonly TemplateOutResponse _output;
 
         public DeleteTemplateUseCaseAsync(
               IMapper mapper
@@ -27,7 +27,7 @@ namespace Service.Template.Application.UseCases.Template
             _getTemplateUseCaseAsync = getTemplateUseCaseAsync;
             _templateRepository = templateRepository;
 
-            output = new()
+            _output = new()
             {
                 Resultado = false,
                 Mensagem = "Dados Fornecidos são inválidos!"
@@ -38,18 +38,18 @@ namespace Service.Template.Application.UseCases.Template
         {
             if (!request.IsValidTemplate)
             {
-                output.AddMensagem("Parâmetros recebidos estão inválidos!");
-                output.AddMensagem(JsonConvert.SerializeObject(request, Formatting.Indented));
-                return output;
+                _output.AddMensagem("Parâmetros recebidos estão inválidos!");
+                _output.AddMensagem(JsonConvert.SerializeObject(request, Formatting.Indented));
+                return _output;
             }
 
             try
             {
                 Domain.Entities.Template template = new Domain.Entities.Template(request.Id);
 
-                output.Resultado = await _templateRepository.Delete(template);
+                _output.Resultado = await _templateRepository.Delete(template);
 
-                output.Mensagem = (output.Resultado ? "Registro Excluído com Sucesso!" : "Ocorreu uma falha ao Excluir o Registro!");
+                _output.Mensagem = (_output.Resultado ? "Registro Excluído com Sucesso!" : "Ocorreu uma falha ao Excluir o Registro!");
             }
             catch (Exception ex)
             {
@@ -58,20 +58,20 @@ namespace Service.Template.Application.UseCases.Template
                 {
                     errorResponse
                 };
-                output.ErrorsResponse = new Models.Response.Errors.ErrorsResponse(errorResponses);
+                _output.ErrorsResponse = new Models.Response.Errors.ErrorsResponse(errorResponses);
 
-                output.Exceptions.Add(ex);
-                output.Mensagem = "Ocorreu uma falha ao Excluir o Registro!";
-                output.Resultado = false;
+                _output.Exceptions.Add(ex);
+                _output.Mensagem = "Ocorreu uma falha ao Excluir o Registro!";
+                _output.Resultado = false;
             }
             finally
             {
-                output.Request = JsonConvert.SerializeObject(request, Formatting.Indented);
+                _output.Request = JsonConvert.SerializeObject(request, Formatting.Indented);
 
                 /*Consumir serviço de Log*/
             }
 
-            return output;
+            return _output;
         }
 
         #region IDisposable Support
