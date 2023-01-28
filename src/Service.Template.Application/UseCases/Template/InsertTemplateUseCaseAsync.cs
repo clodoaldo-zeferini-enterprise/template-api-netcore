@@ -13,18 +13,15 @@ namespace Service.Template.Application.UseCases.Template
     {
         private IMapper _mapper;
         private ITemplateRepository _templateRepository;
-        private IUseCaseAsync<GetTemplateRequest, TemplateOutResponse> _getTemplateUseCaseAsync;
 
         private readonly TemplateOutResponse _output;
 
         public InsertTemplateUseCaseAsync(
               IMapper mapper
-            , IUseCaseAsync<GetTemplateRequest, TemplateOutResponse> getTemplateUseCaseAsync
-            , ITemplateRepository templateRepository
+              , ITemplateRepository templateRepository
         )
         {
             _mapper = mapper;
-            _getTemplateUseCaseAsync = getTemplateUseCaseAsync;
             _templateRepository = templateRepository;
 
             _output = new()
