@@ -21,7 +21,7 @@ namespace Service.Template.Infrastructure.Repositories.Base
 
         private static PropertyContainer GetPropertyContainer(TEntity entity)
         {
-            PropertyContainer propertyContainer = new DapperUtils().ParsePropertiesInsert(entity);
+             var propertyContainer = ParsePropertiesInsert(entity);
             
             return propertyContainer;
         }

@@ -17,7 +17,7 @@ namespace Service.Template.Infrastructure.Repositories.Base
         /// <summary>
         /// Este método oi criado especificamente para a montagem dos parâmetros quando for insert 
         /// </summary>
-        public PropertyContainer ParsePropertiesInsert<T>(T obj)
+        public static PropertyContainer ParsePropertiesInsert<T>(T obj)
         {
 
             //Caso não tenhamos nenhum impacto remover esse método e usar apenas o ParseProperties
