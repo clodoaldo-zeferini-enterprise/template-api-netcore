@@ -30,7 +30,10 @@ namespace Service.Template.Application.Models.Response
             Mensagens.Add(new Mensagem(mensagem));
         }
 
-
+        public void AddExceptions(Exception exception)
+        {
+            Exceptions.Add(exception);
+        }
 
         #region IDisposable Support
         public void Dispose()

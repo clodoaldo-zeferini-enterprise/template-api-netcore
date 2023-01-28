@@ -1,13 +1,10 @@
-﻿using Service.Template.Application.Interfaces;
-using Service.Template.Application.Models.Request.JWT;
+﻿using Microsoft.Extensions.DependencyInjection;
+using Service.Template.Application.Interfaces;
 using Service.Template.Application.Models.Request;
-using Service.Template.Application.Models.Response.JWT;
 using Service.Template.Application.Models.Response;
-using Service.Template.Application.UseCases.JWT;
 using Service.Template.Application.UseCases.Template;
-using Service.Template.Infrastructure.Repositories.DBTemplate;
-using Microsoft.Extensions.DependencyInjection;
 using Service.Template.Domain.Interfaces.Repositories.DB;
+using Service.Template.Infrastructure.Repositories.DBTemplate;
 
 namespace Service.Template.Infrastructure.IoC
 {
@@ -16,7 +13,6 @@ namespace Service.Template.Infrastructure.IoC
         public static void RegisterApplication(this IServiceCollection services)
         {
             #region[Registrar Injeção de Dependência - Authentication]
-            services.AddTransient<IUseCaseAsync<UserRequest, UserOutResponse>, AutenticarUserUseCaseAsync>();
             #endregion[Registrar Injeção de Dependência - Authentication]
 
             #region[Registrar Injeção de Dependência - Template]

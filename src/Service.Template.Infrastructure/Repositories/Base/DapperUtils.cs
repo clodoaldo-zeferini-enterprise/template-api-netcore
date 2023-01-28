@@ -43,7 +43,7 @@ namespace Service.Template.Infrastructure.Repositories.Base
                 var value = property.GetValue(obj);
 
 
-                if (property.IsDefined(typeof(DapperKeyAttribute), false) || validKeyNames.Contains(name.ToUpper()))
+                if (property.IsDefined(typeof(DapperKeyAttribute), false) || validKeyNames.Contains(name))
                 {
                     propertyContainer.AddId(name, value);
                 }

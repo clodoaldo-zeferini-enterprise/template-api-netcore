@@ -15,6 +15,8 @@ namespace Service.Template.Application.UseCases.Template
         private ITemplateRepository _templateRepository;
         private IUseCaseAsync<GetTemplateRequest, TemplateOutResponse> _getTemplateUseCaseAsync;
 
+        private TemplateOutResponse output;
+
         public DeleteTemplateUseCaseAsync(
               IMapper mapper
             , IUseCaseAsync<GetTemplateRequest, TemplateOutResponse> getTemplateUseCaseAsync
@@ -24,16 +26,16 @@ namespace Service.Template.Application.UseCases.Template
             _mapper = mapper;
             _getTemplateUseCaseAsync = getTemplateUseCaseAsync;
             _templateRepository = templateRepository;
-        }
 
-        public async Task<TemplateOutResponse> ExecuteAsync(DeleteTemplateRequest request)
-        {
-            TemplateOutResponse output = new()
+            output = new()
             {
                 Resultado = false,
                 Mensagem = "Dados Fornecidos são inválidos!"
             };
+        }
 
+        public async Task<TemplateOutResponse> ExecuteAsync(DeleteTemplateRequest request)
+        {
             if (!request.IsValidTemplate)
             {
                 output.AddMensagem("Parâmetros recebidos estão inválidos!");
@@ -45,16 +47,9 @@ namespace Service.Template.Application.UseCases.Template
             {
                 Domain.Entities.Template template = new Domain.Entities.Template(request.Id);
 
-                if (await _templateRepository.Delete(template))
-                {
-                    output.Mensagem = "Registro Excluído com Sucesso!";
-                    output.Resultado = true;
-                }
-                else
-                {
-                    output.Mensagem = "Ocorreu uma falha ao Excluir o Registro!";
-                    output.Resultado = false;
-                }
+                output.Resultado = await _templateRepository.Delete(template);
+
+                output.Mensagem = (output.Resultado ? "Registro Excluído com Sucesso!" : "Ocorreu uma falha ao Excluir o Registro!");
             }
             catch (Exception ex)
             {
@@ -65,6 +60,7 @@ namespace Service.Template.Application.UseCases.Template
                 };
                 output.ErrorsResponse = new Models.Response.Errors.ErrorsResponse(errorResponses);
 
+                output.Exceptions.Add(ex);
                 output.Mensagem = "Ocorreu uma falha ao Excluir o Registro!";
                 output.Resultado = false;
             }

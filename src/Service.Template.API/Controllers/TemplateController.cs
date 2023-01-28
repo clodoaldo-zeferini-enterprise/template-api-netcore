@@ -1,15 +1,10 @@
-﻿using Service.Template.Application.Interfaces;
+﻿using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
+using Service.Template.Application.Interfaces;
 using Service.Template.Application.Models.Request;
-using Service.Template.Application.Models.Request.JWT;
 using Service.Template.Application.Models.Response;
 using Service.Template.Application.Models.Response.Errors;
-using Service.Template.Application.Models.Response.JWT;
-using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 
 namespace Service.Template.API.Controllers
@@ -39,7 +34,6 @@ namespace Service.Template.API.Controllers
         }
 
         [HttpGet("Get")]
-        [Authorize]
         [ProducesResponseType(typeof(TemplateOutResponse), StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(ErrorsResponse), StatusCodes.Status400BadRequest)]
         [ProducesResponseType(typeof(ErrorsResponse), StatusCodes.Status404NotFound)]
@@ -59,7 +53,6 @@ namespace Service.Template.API.Controllers
         }
 
         [HttpPost("Post")]
-        [Authorize]
         [ProducesResponseType(typeof(TemplateOutResponse), StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(ErrorsResponse), StatusCodes.Status400BadRequest)]
         [ProducesResponseType(typeof(ErrorsResponse), StatusCodes.Status404NotFound)]
@@ -82,7 +75,6 @@ namespace Service.Template.API.Controllers
         }
 
         [HttpPut("Put")]
-        [Authorize]
         [ProducesResponseType(typeof(TemplateOutResponse), StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(ErrorsResponse), StatusCodes.Status400BadRequest)]
         [ProducesResponseType(typeof(ErrorsResponse), StatusCodes.Status404NotFound)]
@@ -105,7 +97,6 @@ namespace Service.Template.API.Controllers
         }
 
         [HttpDelete("Delete")]
-        [Authorize]
         [ProducesResponseType(typeof(TemplateOutResponse), StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(ErrorsResponse), StatusCodes.Status400BadRequest)]
         [ProducesResponseType(typeof(ErrorsResponse), StatusCodes.Status404NotFound)]

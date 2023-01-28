@@ -1,36 +1,27 @@
-﻿using Service.Template.Domain.Enum;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System;
+using Service.Template.Application.Models.Request.Template;
 
-using Service.Template.Domain.Entities;
 
 namespace Service.Template.Application.Models.Request
 {
-    public class InsertTemplateRequest
+    public class InsertTemplateRequest : RequestBase
     {
-        public Guid SysUsuSessionId { get; set; }
-
         private bool isValidTemplate;       
         public bool IsValidTemplate
         {
             get 
             {
-                bool isValidNome = (Name != null && Name.Length > 1);
+                bool isValidNome = Nome is { Length: > 1 };
                 isValidTemplate = (isValidNome);
                 return isValidTemplate;
             }
         }
 
-        public EStatus Status { get; set; }
-        public string Name { get; set; }
+        public string Nome { get; set; }
 
-        public InsertTemplateRequest(EStatus status, string name)
+        public InsertTemplateRequest(string nome)
         {
-            Status = status;
-            Name = name;
+            Nome = nome;
         }
     }
 }

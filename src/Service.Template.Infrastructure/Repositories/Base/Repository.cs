@@ -1,49 +1,59 @@
 ﻿
-using Dapper; 
+using Dapper;
 using Dapper.Contrib.Extensions;
-using Service.Template.Domain.Enum; 
 using Microsoft.Extensions.Configuration;
-using System; 
-using System.Collections.Generic; 
-using System.Threading.Tasks; using System.Linq; 
-using static Dapper.SqlMapper;
+using Service.Template.Domain.Enum;
 using Service.Template.Domain.Interfaces.Repositories.Base;
+using System;
+using System.Collections.Generic;
 using System.Data.SqlClient;
+using System.Threading.Tasks;
+using Service.Template.Domain.Entities;
+using static Dapper.SqlMapper;
+using static Service.Template.Infrastructure.Repositories.Base.DapperUtils;
 
 namespace Service.Template.Infrastructure.Repositories.Base
 {
+    
     public abstract class Repository<TEntity> : IRepositoryBase<TEntity> where TEntity : class
     {
         private readonly string _connectionString;
+
+        private static PropertyContainer GetPropertyContainer(TEntity entity)
+        {
+            PropertyContainer propertyContainer = new DapperUtils().ParsePropertiesInsert(entity);
+            
+            return propertyContainer;
+        }
 
         protected Repository(EDataBaseConnection eDataBaseConnection, IConfiguration configuration)
         {
             _connectionString = configuration.GetConnectionString(Convert.ToString((int)eDataBaseConnection));
         }
 
-        public Tuple<IEnumerable<T1>, IEnumerable<T2>> GetMultiple<T1, T2>(string sql, object parameters,
+        public Tuple<IEnumerable<T1>, IEnumerable<T2>> GetMultiple<T1, T2>(DapperQuery dapperQuery, object parameters,
                                         Func<GridReader, IEnumerable<T1>> func1,
                                         Func<GridReader, IEnumerable<T2>> func2)
         {
-            var objs = ObterMultiple(sql, parameters, func1, func2);
+            var objs = ObterMultiple(dapperQuery, parameters, func1, func2);
             return Tuple.Create(objs[0] as IEnumerable<T1>, objs[1] as IEnumerable<T2>);
         }
 
-        public Tuple<IEnumerable<T1>, IEnumerable<T2>, IEnumerable<T3>> GetMultiple<T1, T2, T3>(string sql, object parameters,
+        public Tuple<IEnumerable<T1>, IEnumerable<T2>, IEnumerable<T3>> GetMultiple<T1, T2, T3>(DapperQuery dapperQuery, object parameters,
                                         Func<GridReader, IEnumerable<T1>> func1,
                                         Func<GridReader, IEnumerable<T2>> func2,
                                         Func<GridReader, IEnumerable<T3>> func3)
         {
-            var objs = ObterMultiple(sql, parameters, func1, func2, func3);
+            var objs = ObterMultiple(dapperQuery, parameters, func1, func2, func3);
             return Tuple.Create(
                   objs[0] as IEnumerable<T1>
                 , objs[1] as IEnumerable<T2>
                 , objs[2] as IEnumerable<T3>);
         }
 
-        public Tuple<IEnumerable<T1>, IEnumerable<T2>, IEnumerable<T3>, IEnumerable<T4>> GetMultiple<T1, T2, T3, T4>(string sql, object parameters, Func<GridReader, IEnumerable<T1>> func1, Func<GridReader, IEnumerable<T2>> func2, Func<GridReader, IEnumerable<T3>> func3, Func<GridReader, IEnumerable<T4>> func4)
+        public Tuple<IEnumerable<T1>, IEnumerable<T2>, IEnumerable<T3>, IEnumerable<T4>> GetMultiple<T1, T2, T3, T4>(DapperQuery dapperQuery, object parameters, Func<GridReader, IEnumerable<T1>> func1, Func<GridReader, IEnumerable<T2>> func2, Func<GridReader, IEnumerable<T3>> func3, Func<GridReader, IEnumerable<T4>> func4)
         {
-            var objs = ObterMultiple(sql, parameters, func1, func2, func3, func4);
+            var objs = ObterMultiple(dapperQuery, parameters, func1, func2, func3, func4);
             return Tuple.Create(
                   objs[0] as IEnumerable<T1>
                 , objs[1] as IEnumerable<T2>
@@ -53,7 +63,7 @@ namespace Service.Template.Infrastructure.Repositories.Base
         }
 
     public Tuple<IEnumerable<T1>, IEnumerable<T2>, IEnumerable<T3>, IEnumerable<T4>, IEnumerable<T5>>
-    GetMultiple<T1, T2, T3, T4, T5>(string sql, object parameters,
+    GetMultiple<T1, T2, T3, T4, T5>(DapperQuery dapperQuery, object parameters,
                                 Func<GridReader, IEnumerable<T1>> func1,
                                 Func<GridReader, IEnumerable<T2>> func2,
                                 Func<GridReader, IEnumerable<T3>> func3,
@@ -61,7 +71,7 @@ namespace Service.Template.Infrastructure.Repositories.Base
                                 Func<GridReader, IEnumerable<T5>> func5
     )
         {
-            var objs = ObterMultiple(sql, parameters, func1, func2, func3, func4, func5);
+            var objs = ObterMultiple(dapperQuery, parameters, func1, func2, func3, func4, func5);
             return Tuple.Create(
                   objs[0] as IEnumerable<T1>
                 , objs[1] as IEnumerable<T2>
@@ -72,7 +82,7 @@ namespace Service.Template.Infrastructure.Repositories.Base
         }
 
         public Tuple<IEnumerable<T1>, IEnumerable<T2>, IEnumerable<T3>, IEnumerable<T4>, IEnumerable<T5>, IEnumerable<T6>>
-            GetMultiple<T1, T2, T3, T4, T5, T6>(string sql, object parameters,
+            GetMultiple<T1, T2, T3, T4, T5, T6>(DapperQuery dapperQuery, object parameters,
                                         Func<GridReader, IEnumerable<T1>> func1,
                                         Func<GridReader, IEnumerable<T2>> func2,
                                         Func<GridReader, IEnumerable<T3>> func3,
@@ -81,7 +91,7 @@ namespace Service.Template.Infrastructure.Repositories.Base
                                         Func<GridReader, IEnumerable<T6>> func6
             )
         {
-            var objs = ObterMultiple(sql, parameters, func1, func2, func3, func4, func5, func6);
+            var objs = ObterMultiple(dapperQuery, parameters, func1, func2, func3, func4, func5, func6);
             return Tuple.Create(
                   objs[0] as IEnumerable<T1>
                 , objs[1] as IEnumerable<T2>
@@ -93,7 +103,7 @@ namespace Service.Template.Infrastructure.Repositories.Base
         }
 
         public Tuple<IEnumerable<T1>, IEnumerable<T2>, IEnumerable<T3>, IEnumerable<T4>, IEnumerable<T5>, IEnumerable<T6>, IEnumerable<T7>>
-            GetMultiple<T1, T2, T3, T4, T5, T6, T7>(string sql, object parameters,
+            GetMultiple<T1, T2, T3, T4, T5, T6, T7>(DapperQuery dapperQuery, object parameters,
                                         Func<GridReader, IEnumerable<T1>> func1,
                                         Func<GridReader, IEnumerable<T2>> func2,
                                         Func<GridReader, IEnumerable<T3>> func3,
@@ -103,7 +113,7 @@ namespace Service.Template.Infrastructure.Repositories.Base
                                         Func<GridReader, IEnumerable<T7>> func7
             )
         {
-            var objs = ObterMultiple(sql, parameters, func1, func2, func3, func4, func5, func6, func7);
+            var objs = ObterMultiple(dapperQuery, parameters, func1, func2, func3, func4, func5, func6, func7);
             return Tuple.Create(
                   objs[0] as IEnumerable<T1>
                 , objs[1] as IEnumerable<T2>
@@ -115,7 +125,7 @@ namespace Service.Template.Infrastructure.Repositories.Base
                 );
         }
 
-        private List<object> ObterMultiple(string sql, object parameters, params Func<GridReader, object>[] readerFuncs)
+        private List<object> ObterMultiple(DapperQuery dapperQuery, object parameters, params Func<GridReader, object>[] readerFuncs)
         {
             var returnResults = new List<object>();
             using (var con = new SqlConnection(_connectionString))
@@ -123,7 +133,7 @@ namespace Service.Template.Infrastructure.Repositories.Base
                 try
                 {
                     con.Open();
-                    var gridReader = con.QueryMultiple(sql, parameters);
+                    var gridReader = con.QueryMultiple(dapperQuery.Query, parameters);
 
                     foreach (var readerFunc in readerFuncs)
                     {
@@ -138,215 +148,182 @@ namespace Service.Template.Infrastructure.Repositories.Base
         }
 
 
-        public virtual async Task<IEnumerable<TEntity>> Get(string query)
+        public virtual async Task<IEnumerable<TEntity>> Get(DapperQuery dapperQuery) 
         {
-            using (var con = new SqlConnection(_connectionString))
+            await using var con = new SqlConnection(_connectionString);
+            try
             {
-                try
-                {
-                    con.Open();
-                    return await con.QueryAsync<TEntity>(query);
-                }
-                finally
-                {
-                    con.Close();
-                }
+                con.Open();
+                return await con.QueryAsync<TEntity>(dapperQuery.Query);
+            }
+            finally
+            {
+                con.Close();
             }
         }
 
         public virtual async Task<IEnumerable<TEntity>> GetAll()
         {
-            using (var con = new SqlConnection(_connectionString))
+            using var con = new SqlConnection(_connectionString);
+            try
             {
-                try
-                {
-                    con.Open();
-                    return await con.GetAllAsync<TEntity>();
-                }
-                finally
-                {
-                    con.Close();
-                }
+                con.Open();
+                return await con.GetAllAsync<TEntity>();
+            }
+            finally
+            {
+                con.Close();
             }
         }
 
-        public virtual IEnumerable<TEntity> GetSync(string query)
+        public virtual IEnumerable<TEntity> GetSync(DapperQuery dapperQuery)
         {
-            using (var con = new SqlConnection(_connectionString))
+            using var con = new SqlConnection(_connectionString);
+            try
             {
-                try
-                {
-                    con.Open();
-                    return con.Query<TEntity>(query);
-                }
-                finally
-                {
-                    con.Close();
-                }
+                con.Open();
+                return con.Query<TEntity>(dapperQuery.Query);
+            }
+            finally
+            {
+                con.Close();
             }
         }
 
         public virtual IEnumerable<TEntity> GetAllSync()
         {
-            using (var con = new SqlConnection(_connectionString))
+            using var con = new SqlConnection(_connectionString);
+            try
             {
-                try
-                {
-                    con.Open();
-                    return con.GetAll<TEntity>();
-                }
-                finally
-                {
-                    con.Close();
-                }
+                con.Open();
+                return con.GetAll<TEntity>();
+            }
+            finally
+            {
+                con.Close();
             }
         }
 
         public virtual async Task<TEntity> GetById(Guid id)
         {
-            using (var con = new SqlConnection(_connectionString))
+            await using var con = new SqlConnection(_connectionString);
+            try
             {
-                try
-                {
-                    con.Open();
-                    return await con.GetAsync<TEntity>(id);
-                }
-                finally
-                {
-                    con.Close();
-                }
+                con.Open();
+                return await con.GetAsync<TEntity>(id);
+            }
+            finally
+            {
+                con.Close();
             }
         }
 
-
         public TEntity GetByIdSync(Guid id)
         {
-            using (var con = new SqlConnection(_connectionString))
+            using var con = new SqlConnection(_connectionString);
+            try
             {
-                try
-                {
-                    con.Open();
-                    return con.Get<TEntity>(id);
-                }
-                finally
-                {
-                    con.Close();
-                }
+                con.Open();
+                return con.Get<TEntity>(id);
+            }
+            finally
+            {
+                con.Close();
             }
         }
         
         public virtual async Task<bool> Insert(TEntity entity)
         {
-            var propertyContainer = new DapperUtils().ParsePropertiesInsert(entity);
+            PropertyContainer propertyContainer = GetPropertyContainer(entity);
+
             var sql = string.Format("INSERT INTO [{0}] ({1}) VALUES (@{2})",
             typeof(TEntity).Name,
             string.Join(", ", propertyContainer.ValueNames),
             string.Join(", @", propertyContainer.ValueNames));
 
-            using (var con = new SqlConnection(_connectionString))
+            using var con = new SqlConnection(_connectionString);
+            try
             {
-                try
-                {
-                    con.Open();
-                    var result = await con.ExecuteAsync(sql, propertyContainer.ValuePairs, commandType: System.Data.CommandType.Text);
+                con.Open();
+                var result = await con.ExecuteAsync(sql, propertyContainer.ValuePairs, commandType: System.Data.CommandType.Text);
 
-                    return (result > 0);
-                }
-                catch
-                {
-                    return false;
-                }
-                finally
-                {
-                    con.Close();
-                }
+                return (result > 0);
+            }
+            finally
+            {
+                con.Close();
             }
         }
 
         public virtual async Task<bool> Update(TEntity entity)
         {
-            using (var con = new SqlConnection(_connectionString))
+            await using var con = new SqlConnection(_connectionString);
+            try
             {
-                try
-                {
-                    con.Open();
-                    return await con.UpdateAsync<TEntity>(entity);
-                }
-                finally
-                {
-                    con.Close();
-                }
+                con.Open();
+                return await con.UpdateAsync<TEntity>(entity);
+            }
+            finally
+            {
+                con.Close();
             }
         }
 
         public bool UpdateSync(TEntity entity)
         {
-            using (var con = new SqlConnection(_connectionString))
+            using var con = new SqlConnection(_connectionString);
+            try
             {
-                try
-                {
-                    con.Open();
-                    return con.Update<TEntity>(entity);
-                }
-                finally
-                {
-                    con.Close();
-                }
+                con.Open();
+                return con.Update<TEntity>(entity);
+            }
+            finally
+            {
+                con.Close();
             }
         }
 
         public virtual async Task<bool> Delete(TEntity entity)
         {
-            using (var con = new SqlConnection(_connectionString))
+            await using var con = new SqlConnection(_connectionString);
+            try
             {
-                try
-                {
-                    con.Open();
-                    return await con.DeleteAsync<TEntity>(entity);
-                }
-                finally
-                {
-                    con.Close();
-                }
+                con.Open();
+                return await con.DeleteAsync<TEntity>(entity);
+            }
+            finally
+            {
+                con.Close();
             }
         }
 
-        public virtual async Task<int> ExecuteCommand(string query)
+        public virtual async Task<int> ExecuteCommand(DapperQuery dapperQuery)
         {
-            using (var con = new SqlConnection(_connectionString))
+            await using var con = new SqlConnection(_connectionString);
+            try
             {
-                try
-                {
-                    con.Open();
-                    var resultado = (await con.ExecuteAsync(query));
-                    return resultado;
-                }
-                finally
-                {
-                    con.Close();
-                }
+                con.Open();
+                var resultado = (await con.ExecuteAsync(dapperQuery.Query));
+                return resultado;
+            }
+            finally
+            {
+                con.Close();
             }
         }
 
-        public virtual async Task<bool> InsertCommand(string query)
+        public virtual async Task<bool> InsertCommand(DapperQuery dapperQuery)
         {
-            using (var con = new SqlConnection(_connectionString))
+            await using var con = new SqlConnection(_connectionString);
+            try
             {
-                try
-                {
-                    con.Open();
-                    var rowsAffected = await con.ExecuteAsync(query);
-                    return (rowsAffected > 0);
-                }
-                catch (Exception ex)
-                {
-                    string sEx = ex.Message;
-                    return false;
-                }
-                finally
-                {
-                    con.Close();
-                }
+                con.Open();
+                var rowsAffected = await con.ExecuteAsync(dapperQuery.Query);
+                return (rowsAffected > 0);
+            }
+            finally
+            {
+                con.Close();
             }
         }
     }

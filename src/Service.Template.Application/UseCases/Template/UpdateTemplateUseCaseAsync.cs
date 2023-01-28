@@ -15,6 +15,8 @@ namespace Service.Template.Application.UseCases.Template
         private ITemplateRepository _templateRepository;
         private IUseCaseAsync<GetTemplateRequest, TemplateOutResponse> _getTemplateUseCaseAsync;
 
+        private TemplateOutResponse output;
+
         public UpdateTemplateUseCaseAsync(
               IMapper mapper
             , IUseCaseAsync<GetTemplateRequest, TemplateOutResponse> getTemplateUseCaseAsync
@@ -24,16 +26,16 @@ namespace Service.Template.Application.UseCases.Template
             _mapper = mapper;
             _getTemplateUseCaseAsync = getTemplateUseCaseAsync;
             _templateRepository = templateRepository;
-        }
 
-        public async Task<TemplateOutResponse> ExecuteAsync(UpdateTemplateRequest request)
-        {
-            TemplateOutResponse output = new()
+            output = new()
             {
                 Resultado = false,
                 Mensagem = "Dados Fornecidos são inválidos!"
             };
+        }
 
+        public async Task<TemplateOutResponse> ExecuteAsync(UpdateTemplateRequest request)
+        {
             if (!request.IsValidTemplate)
             {
                 output.AddMensagem("Parâmetros recebidos estão inválidos!");
@@ -41,18 +43,19 @@ namespace Service.Template.Application.UseCases.Template
                 return output;
             }
 
-            Service.Template.Domain.Entities.Template template = new();
+            Service.Template.Domain.Entities.Template template;
 
 
-                TemplateOutResponse templateOutResponse = await _getTemplateUseCaseAsync.ExecuteAsync(new GetTemplateRequest(request.Id));
+            TemplateOutResponse templateOutResponse =
+                await _getTemplateUseCaseAsync.ExecuteAsync(new GetTemplateRequest(request.Id));
 
-                if (!templateOutResponse.Resultado) return output;
+            if (!templateOutResponse.Resultado) return output;
 
-                template = _mapper.Map<Service.Template.Domain.Entities.Template>(templateOutResponse.Data);
+            template = _mapper.Map<Service.Template.Domain.Entities.Template>(templateOutResponse.Data);
 
             try
             {
-                template.Name = request.Name;
+                template.Nome = request.Name;
                 template.Status = request.Status;
                 template.DataUpdate = DateTime.Parse(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
 
@@ -65,13 +68,15 @@ namespace Service.Template.Application.UseCases.Template
             }
             catch (Exception ex)
             {
-                Models.Response.Errors.ErrorResponse errorResponse = new("id", "parameter", JsonConvert.SerializeObject(ex, Formatting.Indented));
+                Models.Response.Errors.ErrorResponse errorResponse =
+                    new("id", "parameter", JsonConvert.SerializeObject(ex, Formatting.Indented));
                 System.Collections.Generic.List<Models.Response.Errors.ErrorResponse> errorResponses = new()
                 {
                     errorResponse
                 };
                 output.ErrorsResponse = new Models.Response.Errors.ErrorsResponse(errorResponses);
 
+                output.Exceptions.Add(ex);
                 output.AddMensagem("Ocorreu uma falha ao Atualizar o Registro!");
                 output.Resultado = false;
             }

@@ -1,11 +1,11 @@
-﻿using Service.Template.Domain.Enum;
+﻿using Service.Template.Application.Models.Request.Template;
+using Service.Template.Domain.Enum;
 using System;
 
 namespace Service.Template.Application.Models.Request
 {
-    public class UpdateTemplateRequest
+    public class UpdateTemplateRequest : RequestBase
     {
-        public Guid SysUsuSessionId { get; set; }
 
         private bool isValidTemplate;       
         public bool IsValidTemplate

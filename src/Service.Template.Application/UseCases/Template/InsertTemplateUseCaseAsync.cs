@@ -15,6 +15,8 @@ namespace Service.Template.Application.UseCases.Template
         private ITemplateRepository _templateRepository;
         private IUseCaseAsync<GetTemplateRequest, TemplateOutResponse> _getTemplateUseCaseAsync;
 
+        private TemplateOutResponse output;
+
         public InsertTemplateUseCaseAsync(
               IMapper mapper
             , IUseCaseAsync<GetTemplateRequest, TemplateOutResponse> getTemplateUseCaseAsync
@@ -24,15 +26,17 @@ namespace Service.Template.Application.UseCases.Template
             _mapper = mapper;
             _getTemplateUseCaseAsync = getTemplateUseCaseAsync;
             _templateRepository = templateRepository;
-        }
 
-        public async Task<TemplateOutResponse> ExecuteAsync(InsertTemplateRequest request)
-        {
-            TemplateOutResponse output = new()
+            output = new()
             {
                 Resultado = false,
                 Mensagem = "Dados Fornecidos são inválidos!"
             };
+        }
+
+        public async Task<TemplateOutResponse> ExecuteAsync(InsertTemplateRequest request)
+        {
+            Domain.Entities.Template templateToInsert = new Domain.Entities.Template();
 
             if (!request.IsValidTemplate)
             {
@@ -41,18 +45,20 @@ namespace Service.Template.Application.UseCases.Template
                 return output;
             }
 
-            Service.Template.Domain.Entities.Template template = new();
-
             try
             {
-                var templateToInsert = _mapper.Map<Domain.Entities.Template>(request);
+                templateToInsert = _mapper.Map<Domain.Entities.Template>(request);
 
                 templateToInsert.Id = Guid.NewGuid();
-                templateToInsert.Name = request.Name;
                 templateToInsert.Status = Domain.Enum.EStatus.ATIVO;
-                template.DataInsert = DateTime.Parse(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
+                templateToInsert.DataInsert = DateTime.Parse(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
+                
 
-                await _templateRepository.Insert(template);
+                templateToInsert.Nome = request.Nome;
+
+
+                output.Resultado = await _templateRepository.Insert(templateToInsert);
+                output.Mensagem = "Registro inserido com Sucesso!";
             }
             catch (Exception ex)
             {
@@ -63,12 +69,14 @@ namespace Service.Template.Application.UseCases.Template
                 };
                 output.ErrorsResponse = new Models.Response.Errors.ErrorsResponse(errorResponses);
 
+                output.Exceptions.Add(ex);
                 output.AddMensagem("Ocorreu uma falha ao Inserir o Registro!");
                 output.Resultado = false;
             }
             finally
             {
                 output.Request = JsonConvert.SerializeObject(request, Formatting.Indented);
+                output.Data = templateToInsert;
             }
 
             return output;

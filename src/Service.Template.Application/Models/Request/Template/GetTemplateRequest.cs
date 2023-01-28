@@ -1,18 +1,12 @@
-﻿using Service.Template.Domain.Enum;
+﻿using Service.Template.Application.Models.Request.Template;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations;
 
 namespace Service.Template.Application.Models.Request
 {
-    public class GetTemplateRequest
+    public class GetTemplateRequest : RequestBase
     {
-        public Guid SysUsuSessionId { get; set; }
-
-        [Range(1, 1000, ErrorMessage = "O Número da Página deverá estar entre 1 e 100")]
+        [Range(1, 1000, ErrorMessage = "O Número da Página deverá estar entre 1 e 1000")]
         public int PageNumber { get; set; }
 
         [Range(1, 1000, ErrorMessage = "O Tamanho da Página deverá estar entre 1 e 100")]
@@ -22,7 +16,7 @@ namespace Service.Template.Application.Models.Request
         public bool FiltraNome { get; set; }
         public string FiltroNome { get; set; }
 
-        public bool FiltraDataNascimento { get; set; }
+        public bool FiltraDataInsert { get; set; }
         public DateTime? DataInicial { get; set; }
         public DateTime? DataFinal { get; set; }
 

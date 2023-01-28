@@ -16,22 +16,23 @@ namespace Service.Template.Application.UseCases.Template
     {
         private ITemplateRepository _templateRepository;
 
+        private TemplateOutResponse output;
+
         public GetTemplateUseCaseAsync(
             IConfiguration configuration ,
             ITemplateRepository templateRepository)
         {
             _templateRepository = templateRepository;
+
+            output = new()
+            {
+                Resultado = false,
+                Mensagem = "Dados Fornecidos são inválidos!"
+            };
         }
 
         public async Task<TemplateOutResponse> ExecuteAsync(GetTemplateRequest request)
         {
-            TemplateOutResponse output = new()
-            {
-                Resultado = false
-            };
-
-            if (!string.IsNullOrEmpty(ValidaRequestTemplate(request))) return output;
-
             try
             {
                 if (request.Id != null)
@@ -49,14 +50,12 @@ namespace Service.Template.Application.UseCases.Template
                     string _where = String.Empty;
 
                     string tabela = $@"Template";
-                    string select = $@" SELECT [Id], [Nome], [DataNascimento], [Status], [DataInsert], [DataUpdate] FROM [dbo].[{tabela}] ";
+                    string select = $@" SELECT [Id],[Nome],[Status],[DataInsert],[DataUpdate] FROM [Exemplo].[dbo].[Template] ";
 
                     if (request.PageNumber <= 0) { request.PageNumber = 1; }
                     if (request.PageSize   <= 0) { request.PageSize   = 1; }
 
                     _where = "' Status <> -1 '";
-                    
-
 
                     string whereNome = String.Empty;
                     if (request.FiltraNome && ((request.FiltroNome != null) && (request.FiltroNome.Trim().Length > 0)))
@@ -64,8 +63,8 @@ namespace Service.Template.Application.UseCases.Template
                         whereNome = $@"' Nome LIKE ' , '''', '%' , '{request.FiltroNome}' , '%', ''''";
                     }
 
-                    string whereDataNascimento = String.Empty;
-                    if ((request.FiltraDataNascimento) && (request.DataInicial != null && request.DataFinal != null))
+                    string whereDataInsert = String.Empty;
+                    if ((request.FiltraDataInsert) && (request.DataInicial != null && request.DataFinal != null))
                     {
                         DateTime aux;
 
@@ -76,7 +75,7 @@ namespace Service.Template.Application.UseCases.Template
                             request.DataFinal = aux;
                         }
 
-                        whereDataNascimento = $@"' DataNascimento BETWEEN ', '''', '{request.DataInicial.Value:yyyy-MM-dd}{$@" 00:00:00.000"}' , '''', ' AND ' , '''', '{request.DataFinal.Value:yyyy-MM-dd}{$@" 23:59:59.999"}', ''''";
+                        whereDataInsert = $@"' DataInsert BETWEEN ', '''', '{request.DataInicial.Value:yyyy-MM-dd}{$@" 00:00:00.000"}' , '''', ' AND ' , '''', '{request.DataFinal.Value:yyyy-MM-dd}{$@" 23:59:59.999"}', ''''";
 
                     }
                     
@@ -85,7 +84,7 @@ namespace Service.Template.Application.UseCases.Template
                              
                                                         {((whereNome.Trim().Length > 0)           ? ($@" AND CONCAT({whereNome}));") : ($@""))}
 
-                                                        {((whereDataNascimento.Trim().Length > 0) ? ($@" AND CONCAT({whereDataNascimento}));") : ($@""))}
+                                                        {((whereDataInsert.Trim().Length > 0) ? ($@" AND CONCAT({whereDataInsert}));") : ($@""))}
                                                     );
                     ";                   
 
@@ -146,7 +145,7 @@ namespace Service.Template.Application.UseCases.Template
                         /*SELECT @SelectTabelaDesejada;*/
                       ";
 
-                    var navigatorNovosCasosLog = _templateRepository.GetMultiple(_query, new { param = "" },
+                    var navigatorNovosCasosLog = _templateRepository.GetMultiple(new DapperQuery(request.SysUsuSessionId, _query), new { param = "" },
                                 gr => gr.Read<Domain.Entities.Navigator>()
                               , gr => gr.Read<Service.Template.Domain.Entities.Template>()
 
@@ -165,7 +164,7 @@ namespace Service.Template.Application.UseCases.Template
                     foreach (Service.Template.Domain.Entities.Template template in templates)
                     {
                         templateResponse.Templates.Add(new Models.Template(
-                            template.Id, template.Name, template.Status, template.DataInsert.Value, (template.DataUpdate != null) ? template.DataUpdate.Value : null));
+                            template.Id, template.Nome, template.Status, template.DataInsert.Value, (template.DataUpdate != null) ? template.DataUpdate.Value : null));
                     }
 
                     if (navigators.Any() && templates.Any())
@@ -176,7 +175,7 @@ namespace Service.Template.Application.UseCases.Template
                     }
                     else
                     {
-                        output.Resultado = false;
+                        output.Resultado = true;
                         output.Mensagem = "Nenhum dado encontrado!";
                     }
 
@@ -186,6 +185,8 @@ namespace Service.Template.Application.UseCases.Template
             }            
             catch (Exception ex)
             {
+                output.Mensagem = "Ocorreram Exceções durante a execução";
+                output.AddExceptions(ex);
                 Models.Response.Errors.ErrorResponse errorResponse = new Models.Response.Errors.ErrorResponse("id", "parameter", JsonConvert.SerializeObject(ex, Formatting.Indented));
                 System.Collections.Generic.List<Models.Response.Errors.ErrorResponse> errorResponses = new System.Collections.Generic.List<Models.Response.Errors.ErrorResponse>();
                 errorResponses.Add(errorResponse);
@@ -197,20 +198,6 @@ namespace Service.Template.Application.UseCases.Template
             }
 
             return output;
-        }
-
-        private string ValidaRequestTemplate(GetTemplateRequest request)
-        {
-            try
-            {
-                StringBuilder validationError = new StringBuilder();
-
-                return validationError.ToString();
-            }
-            catch (Exception ex)
-            {
-                throw new ArgumentException(ex.Message);
-            }
         }
 
         #region IDisposable Support

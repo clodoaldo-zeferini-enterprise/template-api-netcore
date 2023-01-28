@@ -1,21 +1,12 @@
-using Service.Template.Application.Mappers;
-using Service.Template.Infrastructure.IoC;
-using Service.Template.Infrastructure.Mappers;
-using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
-using Microsoft.IdentityModel.Tokens;
-using Microsoft.OpenApi.Models;
-using System;
-using System.Collections.Generic;
+using Service.Template.Application.Mappers;
+using Service.Template.Infrastructure.IoC;
+using Service.Template.Infrastructure.Mappers;
 using System.Linq;
-using System.Threading.Tasks;
 
 namespace Service.Template.API
 {
@@ -58,6 +49,7 @@ namespace Service.Template.API
 
             var key = System.Text.Encoding.ASCII.GetBytes(Configuration["Client:Secret"]);
 
+            /*
             services.AddAuthentication(
                     x =>
                     {
@@ -78,7 +70,7 @@ namespace Service.Template.API
                             ValidateAudience = false
                         };
                     });
-
+            */
 
             services.AddSwaggerGen(c =>
             {

@@ -1,18 +1,10 @@
-﻿using Service.Template.Domain.Enum;
+﻿using Service.Template.Application.Models.Request.Template;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-using Service.Template.Domain.Entities;
-using System.Xml.Linq;
 
 namespace Service.Template.Application.Models.Request
 {
-    public class DeleteTemplateRequest
+    public class DeleteTemplateRequest : RequestBase
     { 
-        public Guid SysUsuSessionId { get; set; }
         public Guid Id { get; set; }
 
 

@@ -9,7 +9,9 @@ namespace Service.Template.Application.Mappers
     {
         public AutoMapperProfile()
         {
-            CreateMap<TemplateRequest, Service.Template.Domain.Entities.Template>();
+            CreateMap<DeleteTemplateRequest, Service.Template.Domain.Entities.Template>();
+            CreateMap<InsertTemplateRequest, Service.Template.Domain.Entities.Template>();
+            CreateMap<UpdateTemplateRequest, Service.Template.Domain.Entities.Template>();
 
             CreateMap<Service.Template.Domain.Entities.Template, TemplateResponse>();
         }
