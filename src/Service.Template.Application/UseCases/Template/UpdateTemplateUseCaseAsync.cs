@@ -6,6 +6,7 @@ using Service.Template.Application.Models.Response;
 using Service.Template.Domain.Interfaces.Repositories.DB;
 using System;
 using System.Threading.Tasks;
+using Service.Template.Application.Models.Request.Template;
 
 namespace Service.Template.Application.UseCases.Template
 {

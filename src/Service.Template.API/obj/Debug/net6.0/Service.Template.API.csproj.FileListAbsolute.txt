@@ -1,3 +1,5 @@
+D:\GitHub\clodoaldo-zeferini-enterprise\template-api-netcore\src\Service.Template.API\bin\Debug\net6.0\appsettings.des.json
+D:\GitHub\clodoaldo-zeferini-enterprise\template-api-netcore\src\Service.Template.API\bin\Debug\net6.0\appsettings.hom..json
 D:\GitHub\clodoaldo-zeferini-enterprise\template-api-netcore\src\Service.Template.API\bin\Debug\net6.0\appsettings.json
 D:\GitHub\clodoaldo-zeferini-enterprise\template-api-netcore\src\Service.Template.API\bin\Debug\net6.0\Service.Template.API.exe
 D:\GitHub\clodoaldo-zeferini-enterprise\template-api-netcore\src\Service.Template.API\bin\Debug\net6.0\Service.Template.API.deps.json
@@ -7,6 +9,7 @@ D:\GitHub\clodoaldo-zeferini-enterprise\template-api-netcore\src\Service.Templat
 D:\GitHub\clodoaldo-zeferini-enterprise\template-api-netcore\src\Service.Template.API\bin\Debug\net6.0\AutoMapper.dll
 D:\GitHub\clodoaldo-zeferini-enterprise\template-api-netcore\src\Service.Template.API\bin\Debug\net6.0\Dapper.dll
 D:\GitHub\clodoaldo-zeferini-enterprise\template-api-netcore\src\Service.Template.API\bin\Debug\net6.0\Dapper.Contrib.dll
+D:\GitHub\clodoaldo-zeferini-enterprise\template-api-netcore\src\Service.Template.API\bin\Debug\net6.0\Microsoft.Data.Sqlite.dll
 D:\GitHub\clodoaldo-zeferini-enterprise\template-api-netcore\src\Service.Template.API\bin\Debug\net6.0\Microsoft.Extensions.Configuration.dll
 D:\GitHub\clodoaldo-zeferini-enterprise\template-api-netcore\src\Service.Template.API\bin\Debug\net6.0\Microsoft.Extensions.Configuration.Abstractions.dll
 D:\GitHub\clodoaldo-zeferini-enterprise\template-api-netcore\src\Service.Template.API\bin\Debug\net6.0\Microsoft.Extensions.DependencyInjection.dll
@@ -14,6 +17,7 @@ D:\GitHub\clodoaldo-zeferini-enterprise\template-api-netcore\src\Service.Templat
 D:\GitHub\clodoaldo-zeferini-enterprise\template-api-netcore\src\Service.Template.API\bin\Debug\net6.0\Microsoft.Extensions.Primitives.dll
 D:\GitHub\clodoaldo-zeferini-enterprise\template-api-netcore\src\Service.Template.API\bin\Debug\net6.0\Microsoft.OpenApi.dll
 D:\GitHub\clodoaldo-zeferini-enterprise\template-api-netcore\src\Service.Template.API\bin\Debug\net6.0\Newtonsoft.Json.dll
+D:\GitHub\clodoaldo-zeferini-enterprise\template-api-netcore\src\Service.Template.API\bin\Debug\net6.0\SQLitePCLRaw.core.dll
 D:\GitHub\clodoaldo-zeferini-enterprise\template-api-netcore\src\Service.Template.API\bin\Debug\net6.0\Swashbuckle.AspNetCore.Swagger.dll
 D:\GitHub\clodoaldo-zeferini-enterprise\template-api-netcore\src\Service.Template.API\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerGen.dll
 D:\GitHub\clodoaldo-zeferini-enterprise\template-api-netcore\src\Service.Template.API\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerUI.dll

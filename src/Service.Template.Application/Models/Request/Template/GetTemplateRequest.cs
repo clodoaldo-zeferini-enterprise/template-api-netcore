@@ -23,13 +23,19 @@ namespace Service.Template.Application.Models.Request
         public bool FiltraStatus { get; set; }
         public int Status { get; set; }
 
-        public GetTemplateRequest()
+        private GetTemplateRequest()
         {
         }
 
         public GetTemplateRequest(Guid id)
         {
             Id = id;
+        }
+
+        public GetTemplateRequest(int pageNumber, int pageSize)
+        {
+            PageNumber = pageNumber;
+            PageSize = pageSize;
         }
     }
 }

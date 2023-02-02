@@ -1,8 +1,7 @@
-﻿using Service.Template.Application.Models.Request.Template;
+﻿using System;
 using Service.Template.Domain.Enum;
-using System;
 
-namespace Service.Template.Application.Models.Request
+namespace Service.Template.Application.Models.Request.Template
 {
     public class UpdateTemplateRequest : RequestBase
     {

@@ -5,7 +5,9 @@ using Service.Template.Application.Models.Request;
 using Service.Template.Application.Models.Response;
 using Service.Template.Application.Models.Response.Errors;
 using System;
+using System.ComponentModel.DataAnnotations;
 using System.Threading.Tasks;
+using Service.Template.Application.Models.Request.Template;
 
 namespace Service.Template.API.Controllers
 {

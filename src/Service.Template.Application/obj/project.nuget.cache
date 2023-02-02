@@ -1,10 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "wNehZjoHtqdPs6JEbhO/MN+wpvhe9k9GauHcDYQ1S9ZIFQZDzCIcwKcvuaKwqurVpgB3GWV33n5CoilNglEkwg==",
+  "dgSpecHash": "WZduPa3TDSHe0CHMvM6KCYc+44eSR2az77piHhGcbaEXmX/x/JlcPC4xFRSQsx55FsuiMIQ53/an3lFqhzXLpA==",
   "success": true,
   "projectFilePath": "D:\\GitHub\\clodoaldo-zeferini-enterprise\\template-api-netcore\\src\\Service.Template.Application\\Service.Template.Application.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\clodo\\.nuget\\packages\\automapper\\12.0.0\\automapper.12.0.0.nupkg.sha512",
+    "C:\\Users\\clodo\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
     "C:\\Users\\clodo\\.nuget\\packages\\dapper\\2.0.123\\dapper.2.0.123.nupkg.sha512",
     "C:\\Users\\clodo\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
     "C:\\Users\\clodo\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\7.0.0\\microsoft.extensions.configuration.abstractions.7.0.0.nupkg.sha512",

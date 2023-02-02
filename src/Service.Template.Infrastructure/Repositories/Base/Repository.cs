@@ -8,13 +8,13 @@ using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Threading.Tasks;
-using Service.Template.Domain.Entities;
 using static Dapper.SqlMapper;
 using static Service.Template.Infrastructure.Repositories.Base.DapperUtils;
+using Service.Template.Domain.Base;
 
 namespace Service.Template.Infrastructure.Repositories.Base
 {
-    
+
     public abstract class Repository<TEntity> : IRepositoryBase<TEntity> where TEntity : class
     {
         private readonly string _connectionString;

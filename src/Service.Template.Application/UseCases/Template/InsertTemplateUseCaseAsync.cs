@@ -1,8 +1,10 @@
 ﻿using AutoMapper;
+using ervice.Template.Domain.Base;
 using Newtonsoft.Json;
 using Service.Template.Application.Interfaces;
 using Service.Template.Application.Models.Request;
 using Service.Template.Application.Models.Response;
+using Service.Template.Domain.Base;
 using Service.Template.Domain.Interfaces.Repositories.DB;
 using System;
 using System.Threading.Tasks;
@@ -17,7 +19,7 @@ namespace Service.Template.Application.UseCases.Template
         private readonly TemplateOutResponse _output;
 
         public InsertTemplateUseCaseAsync(
-              IMapper mapper
+                IMapper mapper
               , ITemplateRepository templateRepository
         )
         {
@@ -33,7 +35,7 @@ namespace Service.Template.Application.UseCases.Template
 
         public async Task<TemplateOutResponse> ExecuteAsync(InsertTemplateRequest request)
         {
-            Domain.Entities.Template templateToInsert = new Domain.Entities.Template();
+            Domain.Entities.Template templateToInsert = new Domain.Entities.Template(Guid.NewGuid());
 
             if (!request.IsValidTemplate)
             {
@@ -45,14 +47,10 @@ namespace Service.Template.Application.UseCases.Template
             try
             {
                 templateToInsert = _mapper.Map<Domain.Entities.Template>(request);
-
-                templateToInsert.Id = Guid.NewGuid();
                 templateToInsert.Status = Domain.Enum.EStatus.ATIVO;
                 templateToInsert.DataInsert = DateTime.Parse(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
-                
 
                 templateToInsert.Nome = request.Nome;
-
 
                 _output.Resultado = await _templateRepository.Insert(templateToInsert);
                 _output.Mensagem = "Registro inserido com Sucesso!";
@@ -90,7 +88,6 @@ namespace Service.Template.Application.UseCases.Template
         {
             _mapper = null;
             _templateRepository = null;
-            _getTemplateUseCaseAsync = null;
         }
 
         ~InsertTemplateUseCaseAsync()

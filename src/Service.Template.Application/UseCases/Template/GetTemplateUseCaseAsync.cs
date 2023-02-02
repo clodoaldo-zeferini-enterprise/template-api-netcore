@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Service.Template.Domain.Interfaces.Repositories.DB;
 using Microsoft.Extensions.Configuration;
+using Service.Template.Domain.Base;
 
 namespace Service.Template.Application.UseCases.Template
 {

@@ -1,4 +1,4 @@
-﻿using Service.Template.Domain.Entities;
+﻿using Service.Template.Domain.Base;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
