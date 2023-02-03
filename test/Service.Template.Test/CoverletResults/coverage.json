@@ -1,0 +1,1828 @@
+{
+  "Service.Template.Application.dll": {
+    "D:\\GitHub\\clodoaldo-zeferini-enterprise\\template-api-netcore\\src\\Service.Template.Application\\UseCases\\Template\\DeleteTemplateUseCaseAsync.cs": {
+      "Service.Template.Application.UseCases.Template.DeleteTemplateUseCaseAsync": {
+        "System.Void Service.Template.Application.UseCases.Template.DeleteTemplateUseCaseAsync::Dispose()": {
+          "Lines": {
+            "79": 0,
+            "80": 0,
+            "81": 0,
+            "82": 0
+          },
+          "Branches": []
+        },
+        "System.Void Service.Template.Application.UseCases.Template.DeleteTemplateUseCaseAsync::Dispose(System.Boolean)": {
+          "Lines": {
+            "85": 0,
+            "86": 0,
+            "87": 0,
+            "88": 0,
+            "89": 0
+          },
+          "Branches": []
+        },
+        "System.Void Service.Template.Application.UseCases.Template.DeleteTemplateUseCaseAsync::Finalize()": {
+          "Lines": {
+            "92": 0,
+            "93": 0,
+            "94": 0
+          },
+          "Branches": []
+        },
+        "System.Void Service.Template.Application.UseCases.Template.DeleteTemplateUseCaseAsync::.ctor(AutoMapper.IMapper,Service.Template.Application.Interfaces.IUseCaseAsync`2<Service.Template.Application.Models.Request.GetTemplateRequest,Service.Template.Application.Models.Response.TemplateOutResponse>,Service.Template.Domain.Interfaces.Repositories.DB.ITemplateRepository)": {
+          "Lines": {
+            "20": 0,
+            "21": 0,
+            "22": 0,
+            "23": 0,
+            "24": 0,
+            "25": 0,
+            "26": 0,
+            "27": 0,
+            "28": 0,
+            "30": 0,
+            "31": 0,
+            "32": 0,
+            "33": 0,
+            "34": 0,
+            "35": 0
+          },
+          "Branches": []
+        }
+      },
+      "Service.Template.Application.UseCases.Template.DeleteTemplateUseCaseAsync/<ExecuteAsync>d__5": {
+        "System.Void Service.Template.Application.UseCases.Template.DeleteTemplateUseCaseAsync/<ExecuteAsync>d__5::MoveNext()": {
+          "Lines": {
+            "38": 0,
+            "39": 0,
+            "40": 0,
+            "41": 0,
+            "42": 0,
+            "43": 0,
+            "47": 0,
+            "48": 0,
+            "50": 0,
+            "52": 0,
+            "53": 0,
+            "54": 0,
+            "55": 0,
+            "56": 0,
+            "57": 0,
+            "58": 0,
+            "59": 0,
+            "60": 0,
+            "61": 0,
+            "63": 0,
+            "64": 0,
+            "65": 0,
+            "66": 0,
+            "68": 0,
+            "69": 0,
+            "72": 0,
+            "74": 0,
+            "75": 0
+          },
+          "Branches": [
+            {
+              "Line": 39,
+              "Offset": 31,
+              "EndOffset": 33,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 39,
+              "Offset": 31,
+              "EndOffset": 102,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            },
+            {
+              "Line": 52,
+              "Offset": 320,
+              "EndOffset": 322,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 0
+            },
+            {
+              "Line": 52,
+              "Offset": 320,
+              "EndOffset": 329,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 0
+            }
+          ]
+        }
+      }
+    },
+    "D:\\GitHub\\clodoaldo-zeferini-enterprise\\template-api-netcore\\src\\Service.Template.Application\\UseCases\\Template\\GetTemplateUseCaseAsync.cs": {
+      "Service.Template.Application.UseCases.Template.GetTemplateUseCaseAsync": {
+        "System.Void Service.Template.Application.UseCases.Template.GetTemplateUseCaseAsync::Dispose()": {
+          "Lines": {
+            "206": 0,
+            "207": 0,
+            "208": 0,
+            "209": 0
+          },
+          "Branches": []
+        },
+        "System.Void Service.Template.Application.UseCases.Template.GetTemplateUseCaseAsync::Dispose(System.Boolean)": {
+          "Lines": {
+            "212": 0,
+            "213": 0,
+            "214": 0
+          },
+          "Branches": []
+        },
+        "System.Void Service.Template.Application.UseCases.Template.GetTemplateUseCaseAsync::Finalize()": {
+          "Lines": {
+            "217": 0,
+            "218": 0,
+            "219": 0
+          },
+          "Branches": []
+        },
+        "System.Void Service.Template.Application.UseCases.Template.GetTemplateUseCaseAsync::.ctor(Microsoft.Extensions.Configuration.IConfiguration,Service.Template.Domain.Interfaces.Repositories.DB.ITemplateRepository)": {
+          "Lines": {
+            "22": 0,
+            "23": 0,
+            "24": 0,
+            "25": 0,
+            "26": 0,
+            "28": 0,
+            "29": 0,
+            "30": 0,
+            "31": 0,
+            "32": 0,
+            "33": 0
+          },
+          "Branches": []
+        }
+      },
+      "Service.Template.Application.UseCases.Template.GetTemplateUseCaseAsync/<>c": {
+        "System.Collections.Generic.IEnumerable`1<Service.Template.Domain.Entities.Navigator> Service.Template.Application.UseCases.Template.GetTemplateUseCaseAsync/<>c::<ExecuteAsync>b__3_0(Dapper.SqlMapper/GridReader)": {
+          "Lines": {
+            "150": 0
+          },
+          "Branches": []
+        },
+        "System.Collections.Generic.IEnumerable`1<Service.Template.Domain.Entities.Template> Service.Template.Application.UseCases.Template.GetTemplateUseCaseAsync/<>c::<ExecuteAsync>b__3_1(Dapper.SqlMapper/GridReader)": {
+          "Lines": {
+            "151": 0
+          },
+          "Branches": []
+        }
+      },
+      "Service.Template.Application.UseCases.Template.GetTemplateUseCaseAsync/<ExecuteAsync>d__3": {
+        "System.Void Service.Template.Application.UseCases.Template.GetTemplateUseCaseAsync/<ExecuteAsync>d__3::MoveNext()": {
+          "Lines": {
+            "36": 0,
+            "38": 0,
+            "39": 0,
+            "40": 0,
+            "41": 0,
+            "43": 0,
+            "44": 0,
+            "45": 0,
+            "46": 0,
+            "48": 0,
+            "50": 0,
+            "51": 0,
+            "53": 0,
+            "54": 0,
+            "56": 0,
+            "57": 0,
+            "59": 0,
+            "61": 0,
+            "62": 0,
+            "63": 0,
+            "64": 0,
+            "65": 0,
+            "67": 0,
+            "68": 0,
+            "69": 0,
+            "72": 0,
+            "73": 0,
+            "74": 0,
+            "75": 0,
+            "76": 0,
+            "77": 0,
+            "79": 0,
+            "81": 0,
+            "83": 0,
+            "84": 0,
+            "85": 0,
+            "86": 0,
+            "87": 0,
+            "88": 0,
+            "89": 0,
+            "90": 0,
+            "92": 0,
+            "93": 0,
+            "94": 0,
+            "95": 0,
+            "96": 0,
+            "97": 0,
+            "98": 0,
+            "99": 0,
+            "100": 0,
+            "101": 0,
+            "102": 0,
+            "103": 0,
+            "104": 0,
+            "105": 0,
+            "106": 0,
+            "107": 0,
+            "108": 0,
+            "109": 0,
+            "110": 0,
+            "111": 0,
+            "112": 0,
+            "113": 0,
+            "114": 0,
+            "115": 0,
+            "116": 0,
+            "117": 0,
+            "118": 0,
+            "119": 0,
+            "120": 0,
+            "121": 0,
+            "122": 0,
+            "123": 0,
+            "124": 0,
+            "125": 0,
+            "126": 0,
+            "127": 0,
+            "128": 0,
+            "129": 0,
+            "130": 0,
+            "131": 0,
+            "132": 0,
+            "133": 0,
+            "134": 0,
+            "135": 0,
+            "136": 0,
+            "137": 0,
+            "138": 0,
+            "139": 0,
+            "140": 0,
+            "141": 0,
+            "142": 0,
+            "143": 0,
+            "144": 0,
+            "145": 0,
+            "146": 0,
+            "147": 0,
+            "149": 0,
+            "152": 0,
+            "153": 0,
+            "155": 0,
+            "156": 0,
+            "158": 0,
+            "160": 0,
+            "161": 0,
+            "162": 0,
+            "163": 0,
+            "165": 0,
+            "166": 0,
+            "167": 0,
+            "168": 0,
+            "169": 0,
+            "171": 0,
+            "172": 0,
+            "173": 0,
+            "174": 0,
+            "175": 0,
+            "176": 0,
+            "178": 0,
+            "179": 0,
+            "180": 0,
+            "181": 0,
+            "183": 0,
+            "186": 0,
+            "187": 0,
+            "188": 0,
+            "189": 0,
+            "190": 0,
+            "191": 0,
+            "192": 0,
+            "193": 0,
+            "194": 0,
+            "195": 0,
+            "197": 0,
+            "198": 0,
+            "199": 0,
+            "201": 0,
+            "202": 0
+          },
+          "Branches": [
+            {
+              "Line": 39,
+              "Offset": 45,
+              "EndOffset": 50,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 39,
+              "Offset": 45,
+              "EndOffset": 280,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            },
+            {
+              "Line": 56,
+              "Offset": 346,
+              "EndOffset": 348,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 0
+            },
+            {
+              "Line": 56,
+              "Offset": 346,
+              "EndOffset": 363,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 0
+            },
+            {
+              "Line": 57,
+              "Offset": 384,
+              "EndOffset": 386,
+              "Path": 0,
+              "Ordinal": 4,
+              "Hits": 0
+            },
+            {
+              "Line": 57,
+              "Offset": 384,
+              "EndOffset": 401,
+              "Path": 1,
+              "Ordinal": 5,
+              "Hits": 0
+            },
+            {
+              "Line": 62,
+              "Offset": 434,
+              "EndOffset": 436,
+              "Path": 0,
+              "Ordinal": 6,
+              "Hits": 0
+            },
+            {
+              "Line": 62,
+              "Offset": 447,
+              "EndOffset": 449,
+              "Path": 0,
+              "Ordinal": 8,
+              "Hits": 0
+            },
+            {
+              "Line": 62,
+              "Offset": 447,
+              "EndOffset": 475,
+              "Path": 1,
+              "Ordinal": 9,
+              "Hits": 0
+            },
+            {
+              "Line": 62,
+              "Offset": 434,
+              "EndOffset": 478,
+              "Path": 1,
+              "Ordinal": 7,
+              "Hits": 0
+            },
+            {
+              "Line": 62,
+              "Offset": 483,
+              "EndOffset": 485,
+              "Path": 0,
+              "Ordinal": 10,
+              "Hits": 0
+            },
+            {
+              "Line": 62,
+              "Offset": 483,
+              "EndOffset": 519,
+              "Path": 1,
+              "Ordinal": 11,
+              "Hits": 0
+            },
+            {
+              "Line": 68,
+              "Offset": 541,
+              "EndOffset": 543,
+              "Path": 0,
+              "Ordinal": 12,
+              "Hits": 0
+            },
+            {
+              "Line": 68,
+              "Offset": 563,
+              "EndOffset": 565,
+              "Path": 0,
+              "Ordinal": 14,
+              "Hits": 0
+            },
+            {
+              "Line": 68,
+              "Offset": 563,
+              "EndOffset": 587,
+              "Path": 1,
+              "Ordinal": 15,
+              "Hits": 0
+            },
+            {
+              "Line": 68,
+              "Offset": 541,
+              "EndOffset": 590,
+              "Path": 1,
+              "Ordinal": 13,
+              "Hits": 0
+            },
+            {
+              "Line": 68,
+              "Offset": 595,
+              "EndOffset": 600,
+              "Path": 0,
+              "Ordinal": 16,
+              "Hits": 0
+            },
+            {
+              "Line": 72,
+              "Offset": 642,
+              "EndOffset": 644,
+              "Path": 0,
+              "Ordinal": 18,
+              "Hits": 0
+            },
+            {
+              "Line": 72,
+              "Offset": 642,
+              "EndOffset": 647,
+              "Path": 1,
+              "Ordinal": 19,
+              "Hits": 0
+            },
+            {
+              "Line": 72,
+              "Offset": 670,
+              "EndOffset": 672,
+              "Path": 0,
+              "Ordinal": 20,
+              "Hits": 0
+            },
+            {
+              "Line": 72,
+              "Offset": 670,
+              "EndOffset": 746,
+              "Path": 1,
+              "Ordinal": 21,
+              "Hits": 0
+            },
+            {
+              "Line": 68,
+              "Offset": 595,
+              "EndOffset": 901,
+              "Path": 1,
+              "Ordinal": 17,
+              "Hits": 0
+            },
+            {
+              "Line": 83,
+              "Offset": 974,
+              "EndOffset": 976,
+              "Path": 0,
+              "Ordinal": 22,
+              "Hits": 0
+            },
+            {
+              "Line": 83,
+              "Offset": 974,
+              "EndOffset": 983,
+              "Path": 1,
+              "Ordinal": 23,
+              "Hits": 0
+            },
+            {
+              "Line": 83,
+              "Offset": 1042,
+              "EndOffset": 1044,
+              "Path": 0,
+              "Ordinal": 24,
+              "Hits": 0
+            },
+            {
+              "Line": 83,
+              "Offset": 1042,
+              "EndOffset": 1051,
+              "Path": 1,
+              "Ordinal": 25,
+              "Hits": 0
+            },
+            {
+              "Line": 160,
+              "Offset": 1571,
+              "EndOffset": 1468,
+              "Path": 1,
+              "Ordinal": 27,
+              "Hits": 0
+            },
+            {
+              "Line": 160,
+              "Offset": 1571,
+              "EndOffset": 1573,
+              "Path": 0,
+              "Ordinal": 26,
+              "Hits": 0
+            },
+            {
+              "Line": 165,
+              "Offset": 1806,
+              "EndOffset": 1630,
+              "Path": 1,
+              "Ordinal": 31,
+              "Hits": 0
+            },
+            {
+              "Line": 167,
+              "Offset": 1737,
+              "EndOffset": 1739,
+              "Path": 0,
+              "Ordinal": 28,
+              "Hits": 0
+            },
+            {
+              "Line": 167,
+              "Offset": 1737,
+              "EndOffset": 1751,
+              "Path": 1,
+              "Ordinal": 29,
+              "Hits": 0
+            },
+            {
+              "Line": 165,
+              "Offset": 1806,
+              "EndOffset": 1811,
+              "Path": 0,
+              "Ordinal": 30,
+              "Hits": 0
+            },
+            {
+              "Line": 171,
+              "Offset": 1856,
+              "EndOffset": 1858,
+              "Path": 0,
+              "Ordinal": 32,
+              "Hits": 0
+            },
+            {
+              "Line": 171,
+              "Offset": 1856,
+              "EndOffset": 1871,
+              "Path": 1,
+              "Ordinal": 33,
+              "Hits": 0
+            },
+            {
+              "Line": 171,
+              "Offset": 1876,
+              "EndOffset": 1878,
+              "Path": 0,
+              "Ordinal": 34,
+              "Hits": 0
+            },
+            {
+              "Line": 171,
+              "Offset": 1876,
+              "EndOffset": 1945,
+              "Path": 1,
+              "Ordinal": 35,
+              "Hits": 0
+            }
+          ]
+        }
+      }
+    },
+    "D:\\GitHub\\clodoaldo-zeferini-enterprise\\template-api-netcore\\src\\Service.Template.Application\\UseCases\\Template\\InsertTemplateUseCaseAsync.cs": {
+      "Service.Template.Application.UseCases.Template.InsertTemplateUseCaseAsync": {
+        "System.Void Service.Template.Application.UseCases.Template.InsertTemplateUseCaseAsync::Dispose()": {
+          "Lines": {
+            "82": 0,
+            "83": 0,
+            "84": 0,
+            "85": 0
+          },
+          "Branches": []
+        },
+        "System.Void Service.Template.Application.UseCases.Template.InsertTemplateUseCaseAsync::Dispose(System.Boolean)": {
+          "Lines": {
+            "88": 0,
+            "89": 0,
+            "90": 0,
+            "91": 0
+          },
+          "Branches": []
+        },
+        "System.Void Service.Template.Application.UseCases.Template.InsertTemplateUseCaseAsync::Finalize()": {
+          "Lines": {
+            "94": 0,
+            "95": 0,
+            "96": 0
+          },
+          "Branches": []
+        },
+        "System.Void Service.Template.Application.UseCases.Template.InsertTemplateUseCaseAsync::.ctor(AutoMapper.IMapper,Service.Template.Domain.Interfaces.Repositories.DB.ITemplateRepository)": {
+          "Lines": {
+            "21": 0,
+            "22": 0,
+            "23": 0,
+            "24": 0,
+            "25": 0,
+            "26": 0,
+            "27": 0,
+            "29": 0,
+            "30": 0,
+            "31": 0,
+            "32": 0,
+            "33": 0,
+            "34": 0
+          },
+          "Branches": []
+        }
+      },
+      "Service.Template.Application.UseCases.Template.InsertTemplateUseCaseAsync/<ExecuteAsync>d__4": {
+        "System.Void Service.Template.Application.UseCases.Template.InsertTemplateUseCaseAsync/<ExecuteAsync>d__4::MoveNext()": {
+          "Lines": {
+            "37": 0,
+            "38": 0,
+            "40": 0,
+            "41": 0,
+            "42": 0,
+            "43": 0,
+            "44": 0,
+            "48": 0,
+            "49": 0,
+            "50": 0,
+            "51": 0,
+            "53": 0,
+            "55": 0,
+            "56": 0,
+            "57": 0,
+            "58": 0,
+            "59": 0,
+            "60": 0,
+            "61": 0,
+            "62": 0,
+            "63": 0,
+            "64": 0,
+            "65": 0,
+            "67": 0,
+            "68": 0,
+            "69": 0,
+            "70": 0,
+            "72": 0,
+            "73": 0,
+            "74": 0,
+            "75": 0,
+            "77": 0,
+            "78": 0
+          },
+          "Branches": [
+            {
+              "Line": 40,
+              "Offset": 47,
+              "EndOffset": 49,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 40,
+              "Offset": 47,
+              "EndOffset": 118,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            }
+          ]
+        }
+      }
+    },
+    "D:\\GitHub\\clodoaldo-zeferini-enterprise\\template-api-netcore\\src\\Service.Template.Application\\UseCases\\Template\\UpdateTemplateUseCaseAsync.cs": {
+      "Service.Template.Application.UseCases.Template.UpdateTemplateUseCaseAsync": {
+        "System.Void Service.Template.Application.UseCases.Template.UpdateTemplateUseCaseAsync::Dispose()": {
+          "Lines": {
+            "94": 0,
+            "95": 0,
+            "96": 0,
+            "97": 0
+          },
+          "Branches": []
+        },
+        "System.Void Service.Template.Application.UseCases.Template.UpdateTemplateUseCaseAsync::Dispose(System.Boolean)": {
+          "Lines": {
+            "100": 0,
+            "101": 0,
+            "102": 0,
+            "103": 0,
+            "104": 0
+          },
+          "Branches": []
+        },
+        "System.Void Service.Template.Application.UseCases.Template.UpdateTemplateUseCaseAsync::Finalize()": {
+          "Lines": {
+            "107": 0,
+            "108": 0,
+            "109": 0
+          },
+          "Branches": []
+        },
+        "System.Void Service.Template.Application.UseCases.Template.UpdateTemplateUseCaseAsync::.ctor(AutoMapper.IMapper,Service.Template.Application.Interfaces.IUseCaseAsync`2<Service.Template.Application.Models.Request.GetTemplateRequest,Service.Template.Application.Models.Response.TemplateOutResponse>,Service.Template.Domain.Interfaces.Repositories.DB.ITemplateRepository)": {
+          "Lines": {
+            "21": 0,
+            "22": 0,
+            "23": 0,
+            "24": 0,
+            "25": 0,
+            "26": 0,
+            "27": 0,
+            "28": 0,
+            "29": 0,
+            "31": 0,
+            "32": 0,
+            "33": 0,
+            "34": 0,
+            "35": 0,
+            "36": 0
+          },
+          "Branches": []
+        }
+      },
+      "Service.Template.Application.UseCases.Template.UpdateTemplateUseCaseAsync/<ExecuteAsync>d__5": {
+        "System.Void Service.Template.Application.UseCases.Template.UpdateTemplateUseCaseAsync/<ExecuteAsync>d__5::MoveNext()": {
+          "Lines": {
+            "39": 0,
+            "40": 0,
+            "41": 0,
+            "42": 0,
+            "43": 0,
+            "44": 0,
+            "50": 0,
+            "51": 0,
+            "53": 0,
+            "55": 0,
+            "58": 0,
+            "59": 0,
+            "60": 0,
+            "61": 0,
+            "63": 0,
+            "64": 0,
+            "65": 0,
+            "66": 0,
+            "67": 0,
+            "68": 0,
+            "69": 0,
+            "70": 0,
+            "71": 0,
+            "72": 0,
+            "73": 0,
+            "74": 0,
+            "75": 0,
+            "76": 0,
+            "77": 0,
+            "78": 0,
+            "80": 0,
+            "81": 0,
+            "82": 0,
+            "83": 0,
+            "85": 0,
+            "86": 0,
+            "87": 0,
+            "89": 0,
+            "90": 0
+          },
+          "Branches": [
+            {
+              "Line": 39,
+              "Offset": 16,
+              "EndOffset": 30,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 40,
+              "Offset": 47,
+              "EndOffset": 49,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 0
+            },
+            {
+              "Line": 40,
+              "Offset": 47,
+              "EndOffset": 118,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 0
+            },
+            {
+              "Line": 53,
+              "Offset": 283,
+              "EndOffset": 285,
+              "Path": 0,
+              "Ordinal": 4,
+              "Hits": 0
+            },
+            {
+              "Line": 53,
+              "Offset": 283,
+              "EndOffset": 302,
+              "Path": 1,
+              "Ordinal": 5,
+              "Hits": 0
+            },
+            {
+              "Line": 39,
+              "Offset": 16,
+              "EndOffset": 335,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            },
+            {
+              "Line": 63,
+              "Offset": 577,
+              "EndOffset": 582,
+              "Path": 0,
+              "Ordinal": 6,
+              "Hits": 0
+            },
+            {
+              "Line": 63,
+              "Offset": 577,
+              "EndOffset": 799,
+              "Path": 1,
+              "Ordinal": 7,
+              "Hits": 0
+            }
+          ]
+        }
+      }
+    },
+    "D:\\GitHub\\clodoaldo-zeferini-enterprise\\template-api-netcore\\src\\Service.Template.Application\\Models\\Template.cs": {
+      "Service.Template.Application.Models.Template": {
+        "System.Guid Service.Template.Application.Models.Template::get_Id()": {
+          "Lines": {
+            "8": 0
+          },
+          "Branches": []
+        },
+        "System.String Service.Template.Application.Models.Template::get_Name()": {
+          "Lines": {
+            "9": 0
+          },
+          "Branches": []
+        },
+        "Service.Template.Domain.Enum.EStatus Service.Template.Application.Models.Template::get_Status()": {
+          "Lines": {
+            "10": 0
+          },
+          "Branches": []
+        },
+        "System.Nullable`1<System.DateTime> Service.Template.Application.Models.Template::get_DataInsert()": {
+          "Lines": {
+            "11": 0
+          },
+          "Branches": []
+        },
+        "System.Nullable`1<System.DateTime> Service.Template.Application.Models.Template::get_DataUpdate()": {
+          "Lines": {
+            "12": 0
+          },
+          "Branches": []
+        },
+        "System.Void Service.Template.Application.Models.Template::.ctor()": {
+          "Lines": {
+            "15": 0,
+            "16": 0,
+            "17": 0
+          },
+          "Branches": []
+        },
+        "System.Void Service.Template.Application.Models.Template::.ctor(System.Guid)": {
+          "Lines": {
+            "19": 0,
+            "20": 0,
+            "21": 0,
+            "22": 0
+          },
+          "Branches": []
+        },
+        "System.Void Service.Template.Application.Models.Template::.ctor(System.Guid,System.String,Service.Template.Domain.Enum.EStatus,System.Nullable`1<System.DateTime>,System.Nullable`1<System.DateTime>)": {
+          "Lines": {
+            "24": 0,
+            "25": 0,
+            "26": 0,
+            "27": 0,
+            "28": 0,
+            "29": 0,
+            "30": 0
+          },
+          "Branches": []
+        }
+      }
+    },
+    "D:\\GitHub\\clodoaldo-zeferini-enterprise\\template-api-netcore\\src\\Service.Template.Application\\Models\\Response\\Mensagem.cs": {
+      "Service.Template.Application.Models.Response.Mensagem": {
+        "System.DateTime Service.Template.Application.Models.Response.Mensagem::get_DataHora()": {
+          "Lines": {
+            "7": 0
+          },
+          "Branches": []
+        },
+        "System.String Service.Template.Application.Models.Response.Mensagem::get_Texto()": {
+          "Lines": {
+            "8": 0
+          },
+          "Branches": []
+        },
+        "System.Void Service.Template.Application.Models.Response.Mensagem::.ctor()": {
+          "Lines": {
+            "10": 0
+          },
+          "Branches": []
+        },
+        "System.Void Service.Template.Application.Models.Response.Mensagem::.ctor(System.String)": {
+          "Lines": {
+            "12": 0,
+            "13": 0,
+            "14": 0,
+            "15": 0,
+            "16": 0
+          },
+          "Branches": []
+        }
+      }
+    },
+    "D:\\GitHub\\clodoaldo-zeferini-enterprise\\template-api-netcore\\src\\Service.Template.Application\\Models\\Response\\Navigator.cs": {
+      "Service.Template.Application.Models.Response.Navigator": {
+        "System.Int32 Service.Template.Application.Models.Response.Navigator::get_RecordCount()": {
+          "Lines": {
+            "11": 0
+          },
+          "Branches": []
+        },
+        "System.Int32 Service.Template.Application.Models.Response.Navigator::get_PageNumber()": {
+          "Lines": {
+            "12": 0
+          },
+          "Branches": []
+        },
+        "System.Int32 Service.Template.Application.Models.Response.Navigator::get_PageSize()": {
+          "Lines": {
+            "13": 0
+          },
+          "Branches": []
+        },
+        "System.Int32 Service.Template.Application.Models.Response.Navigator::get_PageCount()": {
+          "Lines": {
+            "14": 0
+          },
+          "Branches": []
+        },
+        "System.Void Service.Template.Application.Models.Response.Navigator::.ctor()": {
+          "Lines": {
+            "16": 0,
+            "17": 0,
+            "18": 0
+          },
+          "Branches": []
+        },
+        "System.Void Service.Template.Application.Models.Response.Navigator::.ctor(System.Int32,System.Int32,System.Int32,System.Int32)": {
+          "Lines": {
+            "20": 0,
+            "21": 0,
+            "22": 0,
+            "23": 0,
+            "24": 0,
+            "25": 0,
+            "26": 0
+          },
+          "Branches": []
+        }
+      }
+    },
+    "D:\\GitHub\\clodoaldo-zeferini-enterprise\\template-api-netcore\\src\\Service.Template.Application\\Models\\Response\\ResponseBase.cs": {
+      "Service.Template.Application.Models.Response.ResponseBase": {
+        "System.Boolean Service.Template.Application.Models.Response.ResponseBase::get_Resultado()": {
+          "Lines": {
+            "9": 0
+          },
+          "Branches": []
+        },
+        "System.String Service.Template.Application.Models.Response.ResponseBase::get_Mensagem()": {
+          "Lines": {
+            "11": 0
+          },
+          "Branches": []
+        },
+        "System.Collections.Generic.List`1<Service.Template.Application.Models.Response.Mensagem> Service.Template.Application.Models.Response.ResponseBase::get_Mensagens()": {
+          "Lines": {
+            "12": 0
+          },
+          "Branches": []
+        },
+        "System.Collections.Generic.List`1<System.Exception> Service.Template.Application.Models.Response.ResponseBase::get_Exceptions()": {
+          "Lines": {
+            "13": 0
+          },
+          "Branches": []
+        },
+        "System.Object Service.Template.Application.Models.Response.ResponseBase::get_Data()": {
+          "Lines": {
+            "14": 0
+          },
+          "Branches": []
+        },
+        "System.String Service.Template.Application.Models.Response.ResponseBase::get_Request()": {
+          "Lines": {
+            "16": 0
+          },
+          "Branches": []
+        },
+        "Service.Template.Application.Models.Response.Errors.ErrorsResponse Service.Template.Application.Models.Response.ResponseBase::get_ErrorsResponse()": {
+          "Lines": {
+            "18": 0
+          },
+          "Branches": []
+        },
+        "System.Void Service.Template.Application.Models.Response.ResponseBase::AddMensagem(System.String)": {
+          "Lines": {
+            "29": 0,
+            "30": 0,
+            "31": 0
+          },
+          "Branches": []
+        },
+        "System.Void Service.Template.Application.Models.Response.ResponseBase::AddExceptions(System.Exception)": {
+          "Lines": {
+            "34": 0,
+            "35": 0,
+            "36": 0
+          },
+          "Branches": []
+        },
+        "System.Void Service.Template.Application.Models.Response.ResponseBase::Dispose()": {
+          "Lines": {
+            "40": 0,
+            "41": 0,
+            "42": 0,
+            "43": 0
+          },
+          "Branches": []
+        },
+        "System.Void Service.Template.Application.Models.Response.ResponseBase::Dispose(System.Boolean)": {
+          "Lines": {
+            "46": 0,
+            "48": 0
+          },
+          "Branches": []
+        },
+        "System.Void Service.Template.Application.Models.Response.ResponseBase::Finalize()": {
+          "Lines": {
+            "51": 0,
+            "52": 0,
+            "53": 0
+          },
+          "Branches": []
+        },
+        "System.Void Service.Template.Application.Models.Response.ResponseBase::.ctor()": {
+          "Lines": {
+            "20": 0,
+            "21": 0,
+            "22": 0,
+            "23": 0,
+            "24": 0,
+            "25": 0,
+            "26": 0
+          },
+          "Branches": []
+        }
+      }
+    },
+    "D:\\GitHub\\clodoaldo-zeferini-enterprise\\template-api-netcore\\src\\Service.Template.Application\\Models\\Response\\Template\\TemplateResponse.cs": {
+      "Service.Template.Application.Models.Response.TemplateResponse": {
+        "System.Collections.Generic.List`1<Service.Template.Application.Models.Response.Navigator> Service.Template.Application.Models.Response.TemplateResponse::get_Navigators()": {
+          "Lines": {
+            "7": 0
+          },
+          "Branches": []
+        },
+        "System.Collections.Generic.List`1<Service.Template.Application.Models.Template> Service.Template.Application.Models.Response.TemplateResponse::get_Templates()": {
+          "Lines": {
+            "8": 0
+          },
+          "Branches": []
+        },
+        "System.Void Service.Template.Application.Models.Response.TemplateResponse::.ctor()": {
+          "Lines": {
+            "10": 0,
+            "11": 0,
+            "12": 0,
+            "13": 0,
+            "14": 0
+          },
+          "Branches": []
+        },
+        "System.Void Service.Template.Application.Models.Response.TemplateResponse::.ctor(System.Collections.Generic.List`1<Service.Template.Application.Models.Response.Navigator>,System.Collections.Generic.List`1<Service.Template.Application.Models.Template>)": {
+          "Lines": {
+            "16": 0,
+            "17": 0,
+            "18": 0,
+            "19": 0,
+            "20": 0
+          },
+          "Branches": []
+        }
+      }
+    },
+    "D:\\GitHub\\clodoaldo-zeferini-enterprise\\template-api-netcore\\src\\Service.Template.Application\\Models\\Response\\Errors\\ErrorResponse.cs": {
+      "Service.Template.Application.Models.Response.Errors.ErrorResponse": {
+        "System.String Service.Template.Application.Models.Response.Errors.ErrorResponse::get_Id()": {
+          "Lines": {
+            "11": 0
+          },
+          "Branches": []
+        },
+        "System.String Service.Template.Application.Models.Response.Errors.ErrorResponse::get_Parameter()": {
+          "Lines": {
+            "12": 0
+          },
+          "Branches": []
+        },
+        "System.String Service.Template.Application.Models.Response.Errors.ErrorResponse::get_Message()": {
+          "Lines": {
+            "13": 0
+          },
+          "Branches": []
+        },
+        "System.Void Service.Template.Application.Models.Response.Errors.ErrorResponse::.ctor()": {
+          "Lines": {
+            "15": 0,
+            "16": 0,
+            "17": 0
+          },
+          "Branches": []
+        },
+        "System.Void Service.Template.Application.Models.Response.Errors.ErrorResponse::.ctor(System.String,System.String)": {
+          "Lines": {
+            "19": 0,
+            "20": 0,
+            "21": 0,
+            "22": 0,
+            "23": 0
+          },
+          "Branches": []
+        },
+        "System.Void Service.Template.Application.Models.Response.Errors.ErrorResponse::.ctor(System.String,System.String,System.String)": {
+          "Lines": {
+            "25": 0,
+            "26": 0,
+            "27": 0,
+            "28": 0
+          },
+          "Branches": []
+        }
+      }
+    },
+    "D:\\GitHub\\clodoaldo-zeferini-enterprise\\template-api-netcore\\src\\Service.Template.Application\\Models\\Response\\Errors\\ErrorsResponse.cs": {
+      "Service.Template.Application.Models.Response.Errors.ErrorsResponse": {
+        "System.Collections.Generic.List`1<Service.Template.Application.Models.Response.Errors.ErrorResponse> Service.Template.Application.Models.Response.Errors.ErrorsResponse::get_Errors()": {
+          "Lines": {
+            "11": 0
+          },
+          "Branches": []
+        },
+        "System.Void Service.Template.Application.Models.Response.Errors.ErrorsResponse::.ctor()": {
+          "Lines": {
+            "13": 0,
+            "14": 0,
+            "15": 0,
+            "16": 0
+          },
+          "Branches": []
+        },
+        "System.Void Service.Template.Application.Models.Response.Errors.ErrorsResponse::.ctor(System.Collections.Generic.List`1<Service.Template.Application.Models.Response.Errors.ErrorResponse>)": {
+          "Lines": {
+            "18": 0,
+            "19": 0,
+            "20": 0,
+            "21": 0
+          },
+          "Branches": []
+        }
+      }
+    },
+    "D:\\GitHub\\clodoaldo-zeferini-enterprise\\template-api-netcore\\src\\Service.Template.Application\\Models\\Request\\Template\\DeleteTemplateRequest.cs": {
+      "Service.Template.Application.Models.Request.DeleteTemplateRequest": {
+        "System.Guid Service.Template.Application.Models.Request.DeleteTemplateRequest::get_Id()": {
+          "Lines": {
+            "8": 0
+          },
+          "Branches": []
+        },
+        "System.Boolean Service.Template.Application.Models.Request.DeleteTemplateRequest::get_IsValidTemplate()": {
+          "Lines": {
+            "15": 0,
+            "16": 0,
+            "17": 0
+          },
+          "Branches": []
+        },
+        "System.Void Service.Template.Application.Models.Request.DeleteTemplateRequest::.ctor(System.Guid)": {
+          "Lines": {
+            "21": 0,
+            "22": 0,
+            "23": 0,
+            "25": 0,
+            "26": 0
+          },
+          "Branches": [
+            {
+              "Line": 25,
+              "Offset": 42,
+              "EndOffset": 44,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 25,
+              "Offset": 42,
+              "EndOffset": 54,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            }
+          ]
+        }
+      }
+    },
+    "D:\\GitHub\\clodoaldo-zeferini-enterprise\\template-api-netcore\\src\\Service.Template.Application\\Models\\Request\\Template\\GetTemplateRequest.cs": {
+      "Service.Template.Application.Models.Request.GetTemplateRequest": {
+        "System.Int32 Service.Template.Application.Models.Request.GetTemplateRequest::get_PageNumber()": {
+          "Lines": {
+            "10": 0
+          },
+          "Branches": []
+        },
+        "System.Int32 Service.Template.Application.Models.Request.GetTemplateRequest::get_PageSize()": {
+          "Lines": {
+            "13": 0
+          },
+          "Branches": []
+        },
+        "System.Nullable`1<System.Guid> Service.Template.Application.Models.Request.GetTemplateRequest::get_Id()": {
+          "Lines": {
+            "14": 0
+          },
+          "Branches": []
+        },
+        "System.Boolean Service.Template.Application.Models.Request.GetTemplateRequest::get_FiltraNome()": {
+          "Lines": {
+            "16": 0
+          },
+          "Branches": []
+        },
+        "System.String Service.Template.Application.Models.Request.GetTemplateRequest::get_FiltroNome()": {
+          "Lines": {
+            "17": 0
+          },
+          "Branches": []
+        },
+        "System.Boolean Service.Template.Application.Models.Request.GetTemplateRequest::get_FiltraDataInsert()": {
+          "Lines": {
+            "19": 0
+          },
+          "Branches": []
+        },
+        "System.Nullable`1<System.DateTime> Service.Template.Application.Models.Request.GetTemplateRequest::get_DataInicial()": {
+          "Lines": {
+            "20": 0
+          },
+          "Branches": []
+        },
+        "System.Nullable`1<System.DateTime> Service.Template.Application.Models.Request.GetTemplateRequest::get_DataFinal()": {
+          "Lines": {
+            "21": 0
+          },
+          "Branches": []
+        },
+        "System.Boolean Service.Template.Application.Models.Request.GetTemplateRequest::get_FiltraStatus()": {
+          "Lines": {
+            "23": 0
+          },
+          "Branches": []
+        },
+        "System.Int32 Service.Template.Application.Models.Request.GetTemplateRequest::get_Status()": {
+          "Lines": {
+            "24": 0
+          },
+          "Branches": []
+        },
+        "System.Void Service.Template.Application.Models.Request.GetTemplateRequest::.ctor()": {
+          "Lines": {
+            "26": 0,
+            "27": 0,
+            "28": 0
+          },
+          "Branches": []
+        },
+        "System.Void Service.Template.Application.Models.Request.GetTemplateRequest::.ctor(System.Guid)": {
+          "Lines": {
+            "30": 0,
+            "31": 0,
+            "32": 0,
+            "33": 0
+          },
+          "Branches": []
+        },
+        "System.Void Service.Template.Application.Models.Request.GetTemplateRequest::.ctor(System.Int32,System.Int32)": {
+          "Lines": {
+            "35": 0,
+            "36": 0,
+            "37": 0,
+            "38": 0,
+            "39": 0
+          },
+          "Branches": []
+        }
+      }
+    },
+    "D:\\GitHub\\clodoaldo-zeferini-enterprise\\template-api-netcore\\src\\Service.Template.Application\\Models\\Request\\Template\\InsertTemplateRequest.cs": {
+      "Service.Template.Application.Models.Request.InsertTemplateRequest": {
+        "System.Boolean Service.Template.Application.Models.Request.InsertTemplateRequest::get_IsValidTemplate()": {
+          "Lines": {
+            "13": 0,
+            "14": 0,
+            "15": 0,
+            "16": 0,
+            "17": 0
+          },
+          "Branches": [
+            {
+              "Line": 14,
+              "Offset": 9,
+              "EndOffset": 11,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 14,
+              "Offset": 9,
+              "EndOffset": 22,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            }
+          ]
+        },
+        "System.String Service.Template.Application.Models.Request.InsertTemplateRequest::get_Nome()": {
+          "Lines": {
+            "20": 0
+          },
+          "Branches": []
+        },
+        "System.Void Service.Template.Application.Models.Request.InsertTemplateRequest::.ctor(System.String)": {
+          "Lines": {
+            "22": 0,
+            "23": 0,
+            "24": 0,
+            "25": 0
+          },
+          "Branches": []
+        }
+      }
+    },
+    "D:\\GitHub\\clodoaldo-zeferini-enterprise\\template-api-netcore\\src\\Service.Template.Application\\Models\\Request\\Template\\RequestBase.cs": {
+      "Service.Template.Application.Models.Request.Template.RequestBase": {
+        "System.Guid Service.Template.Application.Models.Request.Template.RequestBase::get_SysUsuSessionId()": {
+          "Lines": {
+            "7": 0
+          },
+          "Branches": []
+        }
+      }
+    },
+    "D:\\GitHub\\clodoaldo-zeferini-enterprise\\template-api-netcore\\src\\Service.Template.Application\\Models\\Request\\Template\\UpdateTemplateRequest.cs": {
+      "Service.Template.Application.Models.Request.Template.UpdateTemplateRequest": {
+        "System.Boolean Service.Template.Application.Models.Request.Template.UpdateTemplateRequest::get_IsValidTemplate()": {
+          "Lines": {
+            "13": 0,
+            "14": 0,
+            "15": 0,
+            "16": 0,
+            "17": 0
+          },
+          "Branches": [
+            {
+              "Line": 14,
+              "Offset": 7,
+              "EndOffset": 9,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 14,
+              "Offset": 7,
+              "EndOffset": 25,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            }
+          ]
+        },
+        "System.Guid Service.Template.Application.Models.Request.Template.UpdateTemplateRequest::get_Id()": {
+          "Lines": {
+            "20": 0
+          },
+          "Branches": []
+        },
+        "Service.Template.Domain.Enum.EStatus Service.Template.Application.Models.Request.Template.UpdateTemplateRequest::get_Status()": {
+          "Lines": {
+            "21": 0
+          },
+          "Branches": []
+        },
+        "System.String Service.Template.Application.Models.Request.Template.UpdateTemplateRequest::get_Name()": {
+          "Lines": {
+            "22": 0
+          },
+          "Branches": []
+        },
+        "System.Void Service.Template.Application.Models.Request.Template.UpdateTemplateRequest::.ctor(System.Boolean,System.Guid,Service.Template.Domain.Enum.EStatus,System.String)": {
+          "Lines": {
+            "24": 0,
+            "25": 0,
+            "26": 0,
+            "27": 0,
+            "28": 0,
+            "29": 0,
+            "30": 0
+          },
+          "Branches": []
+        }
+      }
+    },
+    "D:\\GitHub\\clodoaldo-zeferini-enterprise\\template-api-netcore\\src\\Service.Template.Application\\Mappers\\AutoMapperProfile.cs": {
+      "Service.Template.Application.Mappers.AutoMapperProfile": {
+        "System.Void Service.Template.Application.Mappers.AutoMapperProfile::.ctor()": {
+          "Lines": {
+            "11": 0,
+            "12": 0,
+            "13": 0,
+            "14": 0,
+            "15": 0,
+            "17": 0,
+            "18": 0
+          },
+          "Branches": []
+        }
+      }
+    }
+  },
+  "ServiceService.Template.Domain.dll": {
+    "D:\\GitHub\\clodoaldo-zeferini-enterprise\\template-api-netcore\\src\\Service.Template.Domain\\Base\\Resource.cs": {
+      "ervice.Template.Domain.Base.Resource": {
+        "System.Void ervice.Template.Domain.Base.Resource::.cctor()": {
+          "Lines": {
+            "5": 1,
+            "6": 1,
+            "7": 1,
+            "8": 1
+          },
+          "Branches": []
+        }
+      }
+    },
+    "D:\\GitHub\\clodoaldo-zeferini-enterprise\\template-api-netcore\\src\\Service.Template.Domain\\Entities\\Navigator.cs": {
+      "Service.Template.Domain.Entities.Navigator": {
+        "System.Int32 Service.Template.Domain.Entities.Navigator::get_RecordCount()": {
+          "Lines": {
+            "5": 0
+          },
+          "Branches": []
+        },
+        "System.Int32 Service.Template.Domain.Entities.Navigator::get_PageNumber()": {
+          "Lines": {
+            "6": 0
+          },
+          "Branches": []
+        },
+        "System.Int32 Service.Template.Domain.Entities.Navigator::get_PageSize()": {
+          "Lines": {
+            "7": 0
+          },
+          "Branches": []
+        },
+        "System.Int32 Service.Template.Domain.Entities.Navigator::get_PageCount()": {
+          "Lines": {
+            "8": 0
+          },
+          "Branches": []
+        },
+        "System.Void Service.Template.Domain.Entities.Navigator::.ctor()": {
+          "Lines": {
+            "10": 0,
+            "11": 0,
+            "12": 0
+          },
+          "Branches": []
+        },
+        "System.Void Service.Template.Domain.Entities.Navigator::.ctor(System.Int32,System.Int32,System.Int32,System.Int32)": {
+          "Lines": {
+            "14": 0,
+            "15": 0,
+            "16": 0,
+            "17": 0,
+            "18": 0,
+            "19": 0,
+            "20": 0
+          },
+          "Branches": []
+        }
+      }
+    },
+    "D:\\GitHub\\clodoaldo-zeferini-enterprise\\template-api-netcore\\src\\Service.Template.Domain\\Entities\\Template\\Template.cs": {
+      "Service.Template.Domain.Entities.Template": {
+        "System.Void Service.Template.Domain.Entities.Template::Validate()": {
+          "Lines": {
+            "15": 2,
+            "16": 2,
+            "17": 2,
+            "19": 2,
+            "20": 2,
+            "21": 2,
+            "22": 2,
+            "23": 2,
+            "24": 0
+          },
+          "Branches": [
+            {
+              "Line": 19,
+              "Offset": 89,
+              "EndOffset": 91,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 19,
+              "Offset": 89,
+              "EndOffset": 108,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 2
+            }
+          ]
+        },
+        "System.String Service.Template.Domain.Entities.Template::get_Nome()": {
+          "Lines": {
+            "26": 4
+          },
+          "Branches": []
+        },
+        "System.Void Service.Template.Domain.Entities.Template::AlterarNome(System.String)": {
+          "Lines": {
+            "48": 0,
+            "49": 0,
+            "50": 0,
+            "51": 0,
+            "53": 0,
+            "54": 0
+          },
+          "Branches": [
+            {
+              "Line": 49,
+              "Offset": 12,
+              "EndOffset": 14,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 49,
+              "Offset": 12,
+              "EndOffset": 26,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            }
+          ]
+        },
+        "System.Void Service.Template.Domain.Entities.Template::.ctor()": {
+          "Lines": {
+            "13": 0
+          },
+          "Branches": []
+        },
+        "System.Void Service.Template.Domain.Entities.Template::.ctor(System.Guid,System.String,Service.Template.Domain.Enum.EStatus,System.Guid)": {
+          "Lines": {
+            "28": 2,
+            "29": 2,
+            "30": 2,
+            "31": 2,
+            "32": 2,
+            "33": 2,
+            "35": 2,
+            "36": 0
+          },
+          "Branches": []
+        },
+        "System.Void Service.Template.Domain.Entities.Template::.ctor(System.Guid)": {
+          "Lines": {
+            "38": 0,
+            "39": 0,
+            "40": 0,
+            "42": 0,
+            "44": 0,
+            "45": 0
+          },
+          "Branches": []
+        }
+      }
+    },
+    "D:\\GitHub\\clodoaldo-zeferini-enterprise\\template-api-netcore\\src\\Service.Template.Domain\\Base\\Base.cs": {
+      "Service.Template.Domain.Base.Base": {
+        "System.Guid Service.Template.Domain.Base.Base::get_Id()": {
+          "Lines": {
+            "8": 4
+          },
+          "Branches": []
+        },
+        "Service.Template.Domain.Enum.EStatus Service.Template.Domain.Base.Base::get_Status()": {
+          "Lines": {
+            "9": 2
+          },
+          "Branches": []
+        },
+        "System.Nullable`1<System.DateTime> Service.Template.Domain.Base.Base::get_DataInsert()": {
+          "Lines": {
+            "10": 0
+          },
+          "Branches": []
+        },
+        "System.Nullable`1<System.DateTime> Service.Template.Domain.Base.Base::get_DataUpdate()": {
+          "Lines": {
+            "11": 0
+          },
+          "Branches": []
+        },
+        "System.Guid Service.Template.Domain.Base.Base::get_SysUsuSessionId()": {
+          "Lines": {
+            "12": 4
+          },
+          "Branches": []
+        }
+      }
+    },
+    "D:\\GitHub\\clodoaldo-zeferini-enterprise\\template-api-netcore\\src\\Service.Template.Domain\\Base\\DapperQuery.cs": {
+      "Service.Template.Domain.Base.DapperQuery": {
+        "System.Guid Service.Template.Domain.Base.DapperQuery::get_SysUsuSessionId()": {
+          "Lines": {
+            "7": 0
+          },
+          "Branches": []
+        },
+        "System.String Service.Template.Domain.Base.DapperQuery::get_Query()": {
+          "Lines": {
+            "8": 0
+          },
+          "Branches": []
+        },
+        "System.Void Service.Template.Domain.Base.DapperQuery::.ctor()": {
+          "Lines": {
+            "10": 0,
+            "11": 0,
+            "12": 0
+          },
+          "Branches": []
+        },
+        "System.Void Service.Template.Domain.Base.DapperQuery::.ctor(System.Guid,System.String)": {
+          "Lines": {
+            "14": 0,
+            "15": 0,
+            "16": 0,
+            "17": 0,
+            "18": 0
+          },
+          "Branches": []
+        }
+      }
+    },
+    "D:\\GitHub\\clodoaldo-zeferini-enterprise\\template-api-netcore\\src\\Service.Template.Domain\\Base\\ValidadorDeRegra.cs": {
+      "Service.Template.Domain.Base.ValidadorDeRegra": {
+        "Service.Template.Domain.Base.ValidadorDeRegra Service.Template.Domain.Base.ValidadorDeRegra::Novo()": {
+          "Lines": {
+            "17": 2,
+            "18": 2,
+            "19": 2
+          },
+          "Branches": []
+        },
+        "Service.Template.Domain.Base.ValidadorDeRegra Service.Template.Domain.Base.ValidadorDeRegra::Quando(System.Boolean,System.String)": {
+          "Lines": {
+            "22": 6,
+            "23": 6,
+            "24": 2,
+            "26": 6,
+            "27": 6
+          },
+          "Branches": [
+            {
+              "Line": 23,
+              "Offset": 4,
+              "EndOffset": 6,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 2
+            },
+            {
+              "Line": 23,
+              "Offset": 4,
+              "EndOffset": 19,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 6
+            }
+          ]
+        },
+        "System.Void Service.Template.Domain.Base.ValidadorDeRegra::DispararExcecaoSeExistir()": {
+          "Lines": {
+            "30": 2,
+            "31": 2,
+            "32": 2,
+            "33": 0
+          },
+          "Branches": [
+            {
+              "Line": 31,
+              "Offset": 14,
+              "EndOffset": 16,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 2
+            },
+            {
+              "Line": 31,
+              "Offset": 14,
+              "EndOffset": 28,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            }
+          ]
+        },
+        "System.Void Service.Template.Domain.Base.ValidadorDeRegra::.ctor()": {
+          "Lines": {
+            "11": 2,
+            "12": 2,
+            "13": 2,
+            "14": 2
+          },
+          "Branches": []
+        }
+      },
+      "Service.Template.Domain.Base.ExcecaoDeDominio": {
+        "System.Collections.Generic.List`1<System.String> Service.Template.Domain.Base.ExcecaoDeDominio::get_MensagensDeErro()": {
+          "Lines": {
+            "38": 4
+          },
+          "Branches": []
+        },
+        "System.Void Service.Template.Domain.Base.ExcecaoDeDominio::.ctor(System.Collections.Generic.List`1<System.String>)": {
+          "Lines": {
+            "40": 2,
+            "41": 2,
+            "42": 2,
+            "43": 2
+          },
+          "Branches": []
+        }
+      }
+    }
+  },
+  "ServiceService.Template.Repository.dll": {}
+}
