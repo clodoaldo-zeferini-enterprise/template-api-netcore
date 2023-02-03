@@ -11,6 +11,12 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="CoverletResults\46a82cda-d43b-4961-9aaa-d6f5ac9a2b09\**" />
+    <EmbeddedResource Remove="CoverletResults\46a82cda-d43b-4961-9aaa-d6f5ac9a2b09\**" />
+    <None Remove="CoverletResults\46a82cda-d43b-4961-9aaa-d6f5ac9a2b09\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Bogus" Version="34.0.2" />
     <PackageReference Include="coverlet.collector" Version="3.2.0">
       <PrivateAssets>all</PrivateAssets>
