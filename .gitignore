@@ -483,3 +483,4 @@ $RECYCLE.BIN/
 *.lnk
 /src/Service.Template.API/appsettings.json
 /src/Service.Template.API/appsettings.hom..json
+/src/Service.Template.API/appsettings.des.json
