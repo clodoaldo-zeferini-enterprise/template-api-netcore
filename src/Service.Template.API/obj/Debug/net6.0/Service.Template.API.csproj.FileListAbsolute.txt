@@ -56,3 +56,4 @@ D:\GitHub\clodoaldo-zeferini-enterprise\template-api-netcore\src\Service.Templat
 D:\GitHub\clodoaldo-zeferini-enterprise\template-api-netcore\src\Service.Template.API\obj\Debug\net6.0\Service.Template.API.pdb
 D:\GitHub\clodoaldo-zeferini-enterprise\template-api-netcore\src\Service.Template.API\obj\Debug\net6.0\Service.Template.API.genruntimeconfig.cache
 D:\GitHub\clodoaldo-zeferini-enterprise\template-api-netcore\src\Service.Template.API\obj\Debug\net6.0\ref\Service.Template.API.dll
+D:\GitHub\clodoaldo-zeferini-enterprise\template-api-netcore\src\Service.Template.API\bin\Debug\net6.0\CoverletSourceRootsMapping
