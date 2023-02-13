@@ -30,8 +30,6 @@ namespace Service.Template.Application.Models.Request
                 .Quando(((FiltraNome && (FiltroNome == null || FiltroNome.Length == 0 || FiltroNome.Length > 100 ))), Resource.FiltroNomeInvalido)
                 .Quando(((!FiltraNome && (FiltroNome != null && FiltroNome.Length != 0))), Resource.FiltroNomeInvalido)
 
-                .Quando((string.IsNullOrEmpty(Nome) || Nome.Length > 100), Resource.NomeInvalido)
-
                 .DispararExcecaoSeExistir();
         }
 
@@ -45,7 +43,7 @@ namespace Service.Template.Application.Models.Request
             Id = id;
         }
 
-        public GetTemplateRequest(int pageNumber, int pageSize)
+        public GetTemplateRequest(UInt16 pageNumber, UInt16 pageSize)
         {
             PageNumber = pageNumber;
             PageSize = pageSize;
