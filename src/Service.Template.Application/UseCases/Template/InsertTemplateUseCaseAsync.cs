@@ -83,7 +83,7 @@ namespace Service.Template.Application.UseCases.Template
                 };
                 _output.ErrorsResponse = new Models.Response.Errors.ErrorsResponse(errorResponses);
 
-                _output.Exceptions.Add(ex);
+                _output.AddExceptions(ex);
                 _output.AddMensagem("Ocorreu uma falha ao Inserir o Registro!");
                 _output.Resultado = false;
             }

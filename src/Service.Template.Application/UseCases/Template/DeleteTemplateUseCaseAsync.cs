@@ -56,13 +56,6 @@ namespace Service.Template.Application.UseCases.Template
 
         public async Task<TemplateOutResponse> ExecuteAsync(DeleteTemplateRequest request)
         {
-            if (!request.IsValidTemplate)
-            {
-                _output.AddMensagem("Parâmetros recebidos estão inválidos!");
-                _output.AddMensagem(JsonConvert.SerializeObject(request, Formatting.Indented));
-                return _output;
-            }
-
             try
             {
                 Domain.Entities.Template template = new Domain.Entities.Template(request.Id);
@@ -80,7 +73,7 @@ namespace Service.Template.Application.UseCases.Template
                 };
                 _output.ErrorsResponse = new Models.Response.Errors.ErrorsResponse(errorResponses);
 
-                _output.Exceptions.Add(ex);
+                _output.AddExceptions(ex);
                 _output.Mensagem = "Ocorreu uma falha ao Excluir o Registro!";
                 _output.Resultado = false;
             }

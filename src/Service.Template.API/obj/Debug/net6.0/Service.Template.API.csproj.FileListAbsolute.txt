@@ -1,5 +1,4 @@
 D:\GitHub\clodoaldo-zeferini-enterprise\template-api-netcore\src\Service.Template.API\bin\Debug\net6.0\appsettings.des.json
-D:\GitHub\clodoaldo-zeferini-enterprise\template-api-netcore\src\Service.Template.API\bin\Debug\net6.0\appsettings.hom..json
 D:\GitHub\clodoaldo-zeferini-enterprise\template-api-netcore\src\Service.Template.API\bin\Debug\net6.0\appsettings.json
 D:\GitHub\clodoaldo-zeferini-enterprise\template-api-netcore\src\Service.Template.API\bin\Debug\net6.0\Service.Template.API.exe
 D:\GitHub\clodoaldo-zeferini-enterprise\template-api-netcore\src\Service.Template.API\bin\Debug\net6.0\Service.Template.API.deps.json
@@ -56,3 +55,4 @@ D:\GitHub\clodoaldo-zeferini-enterprise\template-api-netcore\src\Service.Templat
 D:\GitHub\clodoaldo-zeferini-enterprise\template-api-netcore\src\Service.Template.API\obj\Debug\net6.0\Service.Template.API.pdb
 D:\GitHub\clodoaldo-zeferini-enterprise\template-api-netcore\src\Service.Template.API\obj\Debug\net6.0\Service.Template.API.genruntimeconfig.cache
 D:\GitHub\clodoaldo-zeferini-enterprise\template-api-netcore\src\Service.Template.API\obj\Debug\net6.0\ref\Service.Template.API.dll
+D:\GitHub\clodoaldo-zeferini-enterprise\template-api-netcore\src\Service.Template.API\bin\Debug\net6.0\appsettings.hom.json

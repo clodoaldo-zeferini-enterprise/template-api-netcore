@@ -68,4 +68,3 @@ D:\GitHub\clodoaldo-zeferini-enterprise\template-api-netcore\src\Service.Templat
 D:\GitHub\clodoaldo-zeferini-enterprise\template-api-netcore\src\Service.Template.Console\bin\Debug\net6.0\appsettings.des.json
 D:\GitHub\clodoaldo-zeferini-enterprise\template-api-netcore\src\Service.Template.Console\bin\Debug\net6.0\appsettings.hom.json
 D:\GitHub\clodoaldo-zeferini-enterprise\template-api-netcore\src\Service.Template.Console\bin\Debug\net6.0\appsettings.json
-D:\GitHub\clodoaldo-zeferini-enterprise\template-api-netcore\src\Service.Template.Console\bin\Debug\net6.0\Serilog.dll
