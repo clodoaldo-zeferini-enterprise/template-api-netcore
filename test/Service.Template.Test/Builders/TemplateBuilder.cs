@@ -35,7 +35,6 @@ namespace Service.Template.Test.Builders
                 Status = faker.Generate(1)[0].Status,
                 DataInsert = DateTime.Parse(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")),
                 SysUsuSessionId = Guid.NewGuid()
-
             };
         }
 

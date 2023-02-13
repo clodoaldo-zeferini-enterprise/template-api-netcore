@@ -1,16 +1,16 @@
-﻿using Service.Template.Domain.Enum;
-using System;
-using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
-using ervice.Template.Domain.Base;
+﻿using ervice.Template.Domain.Base;
 using Service.Template.Domain.Base;
+using Service.Template.Domain.Enum;
+using System;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Service.Template.Domain.Entities
 {
     [Table("Template")]
     public class Template : Base.Base
     {
-        private Template() { }
+        public string Nome { get; set; }
+
         private void Validate()
         {
             var IsIdValido = Guid.TryParse(Id.ToString(), out Guid idValido);
@@ -23,7 +23,7 @@ namespace Service.Template.Domain.Entities
                 .DispararExcecaoSeExistir();
         }
 
-        public string Nome { get; set; }
+        private Template() { }
 
         public Template(Guid id, string nome, EStatus status, Guid sysUsuSessionId)
         {

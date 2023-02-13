@@ -15,6 +15,24 @@ namespace Service.Template.Application.UseCases.Template
 {
     public class GetTemplateUseCaseAsync : IUseCaseAsync<GetTemplateRequest, TemplateOutResponse>, IDisposable
     {
+        #region IDisposable Support
+        public void Dispose()
+        {
+            Dispose(true);
+            GC.SuppressFinalize(this);
+        }
+
+        protected virtual void Dispose(bool disposing)
+        {
+            _templateRepository = null;
+        }
+
+        ~GetTemplateUseCaseAsync()
+        {
+            Dispose(false);
+        }
+        #endregion
+
         private ITemplateRepository _templateRepository;
 
         private readonly TemplateOutResponse _output;
@@ -200,24 +218,5 @@ namespace Service.Template.Application.UseCases.Template
 
             return _output;
         }
-
-        #region IDisposable Support
-        public void Dispose()
-        {
-            Dispose(true);
-            GC.SuppressFinalize(this);
-        }
-
-        protected virtual void Dispose(bool disposing)
-        {
-            _templateRepository = null;
-        }
-
-        ~GetTemplateUseCaseAsync()
-        {
-            Dispose(false);
-        }
-        #endregion
-
     }
 }

@@ -10,7 +10,7 @@ namespace Service.Template.Application.Models.Response
              
         public string Mensagem { get; set; }
         public List<Mensagem> Mensagens { get; set; }
-        public List<Exception> Exceptions { get; set; }
+        public List<MyException> Exceptions { get; set; }
         public object Data { get; set; }
 
         public string Request { get; set; }
@@ -20,7 +20,7 @@ namespace Service.Template.Application.Models.Response
         public ResponseBase()
         {
             Mensagens = new List<Mensagem>();
-            Exceptions = new List<Exception>(); 
+            Exceptions = new List<MyException>(); 
             ErrorsResponse = new Errors.ErrorsResponse();
             Resultado = false;
         } 
@@ -32,7 +32,7 @@ namespace Service.Template.Application.Models.Response
 
         public void AddExceptions(Exception exception)
         {
-            Exceptions.Add(exception);
+            Exceptions.Add(new MyException(exception));
         }
 
         #region IDisposable Support

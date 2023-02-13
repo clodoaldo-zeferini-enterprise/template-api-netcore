@@ -11,6 +11,26 @@ namespace Service.Template.Application.UseCases.Template
 {
     public class DeleteTemplateUseCaseAsync : IUseCaseAsync<DeleteTemplateRequest, TemplateOutResponse>, IDisposable
     {
+        #region IDisposable Support
+        public void Dispose()
+        {
+            Dispose(true);
+            GC.SuppressFinalize(this);
+        }
+
+        protected virtual void Dispose(bool disposing)
+        {
+            _mapper = null;
+            _templateRepository = null;
+            _getTemplateUseCaseAsync = null;
+        }
+
+        ~DeleteTemplateUseCaseAsync()
+        {
+            Dispose(false);
+        }
+        #endregion
+
         private IMapper _mapper;
         private ITemplateRepository _templateRepository;
         private IUseCaseAsync<GetTemplateRequest, TemplateOutResponse> _getTemplateUseCaseAsync;
@@ -73,26 +93,5 @@ namespace Service.Template.Application.UseCases.Template
 
             return _output;
         }
-
-        #region IDisposable Support
-        public void Dispose()
-        {
-            Dispose(true);
-            GC.SuppressFinalize(this);
-        }
-
-        protected virtual void Dispose(bool disposing)
-        {
-            _mapper = null;
-            _templateRepository = null;
-            _getTemplateUseCaseAsync = null;
-        }
-
-        ~DeleteTemplateUseCaseAsync()
-        {
-            Dispose(false);
-        }
-        #endregion
-
     }
 }
