@@ -1,27 +1,32 @@
-﻿using System;
-using Service.Template.Application.Models.Request.Template;
+﻿using Service.Template.Application.Base;
+using System;
 
 
-namespace Service.Template.Application.Models.Request
+namespace Service.Template.Application.Models.Request.Template
 {
     public class InsertTemplateRequest : RequestBase
     {
-        private bool isValidTemplate;       
-        public bool IsValidTemplate
+        private void Validate()
         {
-            get 
-            {
-                bool isValidNome = Nome is { Length: > 1 };
-                isValidTemplate = (isValidNome);
-                return isValidTemplate;
-            }
+            var IsSysUsuSessionIdValido = Guid.TryParse(SysUsuSessionId.ToString(), out Guid sysUsuSessionIdValido);
+
+            ValidadorDeRegra.Novo()
+                .Quando(!IsSysUsuSessionIdValido, Resource.SysUsuSessionIdInvalido)
+                .Quando((Nome == null || Nome.Length < 5 || Nome.Length > 100), Resource.NomeInvalido)
+                .DispararExcecaoSeExistir();
         }
 
         public string Nome { get; set; }
 
+        private InsertTemplateRequest()
+        {
+        }
+
         public InsertTemplateRequest(string nome)
         {
             Nome = nome;
+
+            Validate();
         }
     }
 }

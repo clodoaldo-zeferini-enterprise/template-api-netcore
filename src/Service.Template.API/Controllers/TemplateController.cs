@@ -8,6 +8,7 @@ using System;
 using System.ComponentModel.DataAnnotations;
 using System.Threading.Tasks;
 using Service.Template.Application.Models.Request.Template;
+using Service.Template.Application.Models.Request.Template.Template;
 
 namespace Service.Template.API.Controllers
 {

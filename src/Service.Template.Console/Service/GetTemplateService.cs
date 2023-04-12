@@ -1,13 +1,7 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Hosting;
-using Service.Template.Application.Models.Request;
+using Service.Template.Application.Models.Request.Template;
 using Service.Template.Application.Models.Response;
 using Service.Template.Application.UseCases.Template;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Service.Template.Console.Service
 {

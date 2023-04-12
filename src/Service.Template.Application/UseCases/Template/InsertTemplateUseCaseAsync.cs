@@ -1,11 +1,9 @@
-﻿using AutoMapper;
-using ervice.Template.Domain.Base;
+﻿
 using Newtonsoft.Json;
 using Service.Template.Application.Interfaces;
-using Service.Template.Application.Models.Request;
+using Service.Template.Application.Models.Request.Template;
 using Service.Template.Application.Models.Response;
-using Service.Template.Domain.Base;
-using Service.Template.Domain.Interfaces.Repositories.DB;
+using Service.Template.Repository.Interfaces.Repositories.DB;
 using System;
 using System.Threading.Tasks;
 
@@ -22,7 +20,7 @@ namespace Service.Template.Application.UseCases.Template
 
         protected virtual void Dispose(bool disposing)
         {
-            _mapper = null;
+            
             _templateRepository = null;
         }
 
@@ -32,17 +30,16 @@ namespace Service.Template.Application.UseCases.Template
         }
         #endregion
 
-        private IMapper _mapper;
+        
         private ITemplateRepository _templateRepository;
 
         private readonly TemplateOutResponse _output;
 
         public InsertTemplateUseCaseAsync(
-                IMapper mapper
-              , ITemplateRepository templateRepository
+                ITemplateRepository templateRepository
         )
         {
-            _mapper = mapper;
+            
             _templateRepository = templateRepository;
 
             _output = new()
@@ -56,16 +53,8 @@ namespace Service.Template.Application.UseCases.Template
         {
             Domain.Entities.Template templateToInsert = new Domain.Entities.Template(Guid.NewGuid());
 
-            if (!request.IsValidTemplate)
-            {
-                _output.AddMensagem("Parâmetros recebidos estão inválidos!");
-                _output.AddMensagem(JsonConvert.SerializeObject(request, Formatting.Indented));
-                return _output;
-            }
-
             try
             {
-                templateToInsert = _mapper.Map<Domain.Entities.Template>(request);
                 templateToInsert.Status = Domain.Enum.EStatus.ATIVO;
                 templateToInsert.DataInsert = DateTime.Parse(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
 
@@ -85,7 +74,6 @@ namespace Service.Template.Application.UseCases.Template
 
                 _output.AddExceptions(ex);
                 _output.AddMensagem("Ocorreu uma falha ao Inserir o Registro!");
-                _output.Resultado = false;
             }
             finally
             {

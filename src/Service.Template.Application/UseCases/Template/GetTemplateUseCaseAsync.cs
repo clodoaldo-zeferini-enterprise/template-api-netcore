@@ -1,20 +1,26 @@
-﻿using Service.Template.Application.Interfaces;
-using Service.Template.Application.Models.Request;
-using Service.Template.Application.Models.Response;
-using Service.Template.Domain.Entities;
-using Newtonsoft.Json;
-using System;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Service.Template.Domain.Interfaces.Repositories.DB;
+﻿
 using Microsoft.Extensions.Configuration;
+using Newtonsoft.Json;
+using Service.Template.Application.Interfaces;
+using Service.Template.Application.Models.Request.Template;
+using Service.Template.Application.Models.Response;
 using Service.Template.Domain.Base;
+using Service.Template.Repository.Interfaces.Repositories.DB;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace Service.Template.Application.UseCases.Template
 {
     public class GetTemplateUseCaseAsync : IUseCaseAsync<GetTemplateRequest, TemplateOutResponse>, IDisposable
     {
+        private IConfiguration _configuration;
+        
+        private ITemplateRepository _templateRepository;
+        private TemplateOutResponse _output;
+
+
         #region IDisposable Support
         public void Dispose()
         {
@@ -24,7 +30,12 @@ namespace Service.Template.Application.UseCases.Template
 
         protected virtual void Dispose(bool disposing)
         {
+            _configuration = null;
+            
             _templateRepository = null;
+            _output = null;
+            _configuration = null;
+            
         }
 
         ~GetTemplateUseCaseAsync()
@@ -33,14 +44,14 @@ namespace Service.Template.Application.UseCases.Template
         }
         #endregion
 
-        private ITemplateRepository _templateRepository;
-
-        private readonly TemplateOutResponse _output;
 
         public GetTemplateUseCaseAsync(
             IConfiguration configuration ,
+            
             ITemplateRepository templateRepository)
         {
+            _configuration = configuration;
+            
             _templateRepository = templateRepository;
 
             _output = new()
@@ -175,17 +186,17 @@ namespace Service.Template.Application.UseCases.Template
 
                     TemplateResponse templateResponse = new();
 
+
+                    /*
                     foreach (Domain.Entities.Navigator navigator in navigators)
                     {
                         templateResponse.Navigators.Add(new Models.Response.Navigator(navigator.RecordCount, navigator.PageNumber, navigator.PageSize, navigator.PageCount));
                     }
+                    */
 
-                    foreach (Service.Template.Domain.Entities.Template template in templates)
-                    {
-                        templateResponse.Templates.Add(new Models.Template(
-                            template.Id, template.Nome, template.Status, template.DataInsert.Value, (template.DataUpdate != null) ? template.DataUpdate.Value : null));
-                    }
-
+                    templateResponse.Navigators = (List<Service.Template.Application.Models.Response.Navigator>)(navigators);
+                    templateResponse.Templates  = (List<Service.Template.Application.Models.Template>)(templates); 
+                    
                     if (navigators.Any() && templates.Any())
                     {
                         _output.Resultado = true;
@@ -200,7 +211,6 @@ namespace Service.Template.Application.UseCases.Template
 
                     return _output;
                 }
-
             }            
             catch (Exception ex)
             {

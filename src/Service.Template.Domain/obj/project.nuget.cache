@@ -1,11 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "/OZ3KCDlJpUtwqPGEqWMHj7LHsj7kWugoPgFt9nWdhxhQ3OVdL9Bf6ntIfsKPH42w34P7C4IaBKbSOexdxdIYw==",
+  "dgSpecHash": "2W3bC7Edg4a2EvSA1GzTqR2NB0F0sl8n6NT0IRSyqMxmi4CLmK9pI5nTFGWgBZohbVzHYekQmZScKkLD1Nye3Q==",
   "success": true,
   "projectFilePath": "D:\\GitHub\\clodoaldo-zeferini-enterprise\\template-api-netcore\\src\\Service.Template.Domain\\Service.Template.Domain.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\clodo\\.nuget\\packages\\dapper\\2.0.123\\dapper.2.0.123.nupkg.sha512",
-    "C:\\Users\\clodo\\.nuget\\packages\\newtonsoft.json\\13.0.2\\newtonsoft.json.13.0.2.nupkg.sha512"
+    "C:\\Users\\clodo\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512"
   ],
   "logs": []
 }

@@ -1,4 +1,4 @@
-﻿using ervice.Template.Domain.Base;
+﻿
 using Service.Template.Domain.Base;
 using Service.Template.Domain.Enum;
 using System;
@@ -23,7 +23,7 @@ namespace Service.Template.Domain.Entities
                 .DispararExcecaoSeExistir();
         }
 
-        private Template() { }
+        public Template() { }
 
         public Template(Guid id, string nome, EStatus status, Guid sysUsuSessionId)
         {

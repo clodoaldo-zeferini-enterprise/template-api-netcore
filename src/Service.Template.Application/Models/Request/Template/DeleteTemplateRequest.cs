@@ -1,8 +1,8 @@
-﻿using ervice.Template.Domain.Base;
-using Service.Template.Application.Models.Request.Template;
+﻿using Service.Template.Application.Base;
+using Service.Template.Domain.Base;
 using System;
 
-namespace Service.Template.Application.Models.Request
+namespace Service.Template.Application.Models.Request.Template
 {
     public class DeleteTemplateRequest : RequestBase
     {
@@ -17,16 +17,17 @@ namespace Service.Template.Application.Models.Request
             var IsIdValido = Guid.TryParse(Id.ToString(), out Guid idValido);
             var IsSysUsuSessionIdValido = Guid.TryParse(SysUsuSessionId.ToString(), out Guid sysUsuSessionIdValido);
 
-            ValidadorDeRegra.Novo()
-                .Quando(!IsIdValido, Resource.IdInvalido)
-                .Quando(!IsSysUsuSessionIdValido, Resource.SysUsuSessionIdInvalido)
+            Base.ValidadorDeRegra.Novo()
+                .Quando(!IsIdValido, Base.Resource.IdInvalido)
+                .Quando(!IsSysUsuSessionIdValido, Base.Resource.SysUsuSessionIdInvalido)
                 .DispararExcecaoSeExistir();
         }
 
-
-        public DeleteTemplateRequest(Guid id)
+        public DeleteTemplateRequest(Guid id, Guid sysUsuSessionId)
         {
             Id = id;
+            SysUsuSessionId = sysUsuSessionId;
+
             Validate();
         }
     }

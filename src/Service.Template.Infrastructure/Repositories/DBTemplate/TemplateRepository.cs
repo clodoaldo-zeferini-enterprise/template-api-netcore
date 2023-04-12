@@ -1,7 +1,6 @@
 ﻿using Microsoft.Extensions.Configuration;
-using Service.Template.Domain.Entities;
 using Service.Template.Domain.Enum;
-using Service.Template.Domain.Interfaces.Repositories.DB;
+using Service.Template.Repository.Interfaces.Repositories.DB;
 
 namespace Service.Template.Infrastructure.Repositories.DBTemplate
 {

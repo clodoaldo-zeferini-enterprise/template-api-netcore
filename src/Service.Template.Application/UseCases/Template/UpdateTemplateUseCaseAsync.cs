@@ -1,12 +1,12 @@
-﻿using AutoMapper;
+﻿
 using Newtonsoft.Json;
 using Service.Template.Application.Interfaces;
-using Service.Template.Application.Models.Request;
+using Service.Template.Application.Models.Request.Template;
+using Service.Template.Application.Models.Request.Template.Template;
 using Service.Template.Application.Models.Response;
-using Service.Template.Domain.Interfaces.Repositories.DB;
+using Service.Template.Repository.Interfaces.Repositories.DB;
 using System;
 using System.Threading.Tasks;
-using Service.Template.Application.Models.Request.Template;
 
 namespace Service.Template.Application.UseCases.Template
 {
@@ -21,7 +21,7 @@ namespace Service.Template.Application.UseCases.Template
 
         protected virtual void Dispose(bool disposing)
         {
-            _mapper = null;
+            
             _templateRepository = null;
             _getTemplateUseCaseAsync = null;
         }
@@ -32,19 +32,18 @@ namespace Service.Template.Application.UseCases.Template
         }
         #endregion
 
-        private IMapper _mapper;
+        
         private ITemplateRepository _templateRepository;
         private IUseCaseAsync<GetTemplateRequest, TemplateOutResponse> _getTemplateUseCaseAsync;
 
         private readonly TemplateOutResponse _output;
 
         public UpdateTemplateUseCaseAsync(
-              IMapper mapper
-            , IUseCaseAsync<GetTemplateRequest, TemplateOutResponse> getTemplateUseCaseAsync
+              IUseCaseAsync<GetTemplateRequest, TemplateOutResponse> getTemplateUseCaseAsync
             , ITemplateRepository templateRepository
         )
         {
-            _mapper = mapper;
+            
             _getTemplateUseCaseAsync = getTemplateUseCaseAsync;
             _templateRepository = templateRepository;
 
@@ -57,26 +56,11 @@ namespace Service.Template.Application.UseCases.Template
 
         public async Task<TemplateOutResponse> ExecuteAsync(UpdateTemplateRequest request)
         {
-            if (!request.IsValidTemplate)
-            {
-                _output.AddMensagem("Parâmetros recebidos estão inválidos!");
-                _output.AddMensagem(JsonConvert.SerializeObject(request, Formatting.Indented));
-                return _output;
-            }
-
-            Service.Template.Domain.Entities.Template template;
-
-
-            TemplateOutResponse templateOutResponse =
-                await _getTemplateUseCaseAsync.ExecuteAsync(new GetTemplateRequest(request.Id));
-
-            if (!templateOutResponse.Resultado) return _output;
-
-            template = _mapper.Map<Service.Template.Domain.Entities.Template>(templateOutResponse.Data);
-
             try
             {
-                template.Nome = request.Name;
+                Service.Template.Domain.Entities.Template template = new Service.Template.Domain.Entities.Template();
+
+                template.Nome = request.Nome;
                 template.Status = request.Status;
                 template.DataUpdate = DateTime.Parse(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
 
@@ -99,7 +83,6 @@ namespace Service.Template.Application.UseCases.Template
 
                 _output.AddExceptions(ex);
                 _output.AddMensagem("Ocorreu uma falha ao Atualizar o Registro!");
-                _output.Resultado = false;
             }
             finally
             {

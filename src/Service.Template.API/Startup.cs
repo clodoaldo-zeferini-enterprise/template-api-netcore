@@ -3,9 +3,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Service.Template.Application.Mappers;
 using Service.Template.Infrastructure.IoC;
-using Service.Template.Infrastructure.Mappers;
 using System.Linq;
 
 namespace Service.Template.API
@@ -33,7 +31,7 @@ namespace Service.Template.API
                                       builder.WithOrigins(
                                            "https://localhost:5001"
                                           , "https://Server-DES"
-                                          , "https://Server-DES"
+                                          , "https://Server-HOM"
                                           , "https://Server-PRO"
 
                                           ).AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader();
@@ -45,7 +43,6 @@ namespace Service.Template.API
             Registry.RegisterApplication(services);
             Registry.RegisterDatabase(services);
 
-            services.RegisterAutoMapper<AutoMapperProfile>();
  /*
             var key = System.Text.Encoding.ASCII.GetBytes(Configuration["Client:Secret"]);
 

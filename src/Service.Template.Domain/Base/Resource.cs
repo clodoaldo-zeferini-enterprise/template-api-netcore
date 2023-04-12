@@ -1,4 +1,4 @@
-﻿namespace ervice.Template.Domain.Base
+﻿namespace Service.Template.Domain.Base
 {
     public static class Resource
     {
@@ -12,6 +12,9 @@
         public static string FiltroNomeInvalido = "O Tamano de FiltroNome deverá estar entre 1 e 100";
         public static string IntervaloDeDataInvalido = "O Intervalo de Data é Inválido";
         public static string StatusInvalido = "O Status é Inválido";
+
+        public static string DataInicialInvalida = "A DataInicial é Inválida";
+        public static string DataFinalInvalida = "A DataFinal é Inválida";
 
     }
 }

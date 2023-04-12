@@ -1,32 +1,34 @@
-﻿using System;
+﻿using Service.Template.Application.Base;
 using Service.Template.Domain.Enum;
+using System;
 
-namespace Service.Template.Application.Models.Request.Template
+namespace Service.Template.Application.Models.Request.Template.Template
 {
     public class UpdateTemplateRequest : RequestBase
     {
-
-        private bool isValidTemplate;       
-        public bool IsValidTemplate
+        private void Validate()
         {
-            get 
-            {
-                bool isValidNome = (Name != null && Name.Length > 1);
-                isValidTemplate = (isValidNome);
-                return isValidTemplate;
-            }
+            var IsIdValido = Guid.TryParse(Id.ToString(), out Guid idValido);
+            var IsSysUsuSessionIdValido = Guid.TryParse(SysUsuSessionId.ToString(), out Guid sysUsuSessionIdValido);
+
+            ValidadorDeRegra.Novo()
+                .Quando(!IsSysUsuSessionIdValido, Resource.SysUsuSessionIdInvalido)
+                .Quando(!IsIdValido, Resource.IdInvalido)
+                .Quando((Nome == null || Nome.Length < 5 || Nome.Length > 100), Resource.NomeInvalido)
+                .DispararExcecaoSeExistir();
         }
 
         public Guid Id { get; set; }
         public EStatus Status { get; set; }
-        public string Name { get; set; }
+        public string Nome { get; set; }
 
-        public UpdateTemplateRequest(bool isValidTemplate, Guid id, EStatus status, string name)
+        public UpdateTemplateRequest(Guid id, EStatus status, string nome)
         {
-            this.isValidTemplate = isValidTemplate;
             Id = id;
             Status = status;
-            Name = name;
+            Nome = nome;
+
+            Validate();
         }
     }
 }

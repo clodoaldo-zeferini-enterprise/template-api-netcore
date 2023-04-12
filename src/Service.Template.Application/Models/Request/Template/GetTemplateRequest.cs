@@ -1,9 +1,8 @@
-﻿using ervice.Template.Domain.Base;
-using Service.Template.Application.Models.Request.Template;
+﻿using Service.Template.Application.Base;
+using Service.Template.Domain.Enum;
 using System;
-using System.ComponentModel.DataAnnotations;
 
-namespace Service.Template.Application.Models.Request
+namespace Service.Template.Application.Models.Request.Template
 {
     public class GetTemplateRequest : RequestBase
     {
@@ -16,7 +15,7 @@ namespace Service.Template.Application.Models.Request
         public DateTime? DataInicial { get; set; }
         public DateTime? DataFinal { get; set; }
         public bool FiltraStatus { get; set; }
-        public UInt16 Status { get; set; }
+        public EStatus Status { get; set; }
 
 
         private void Validate()
@@ -27,14 +26,24 @@ namespace Service.Template.Application.Models.Request
             ValidadorDeRegra.Novo()
                 .Quando(!IsIdValido, Resource.IdInvalido)
                 .Quando(!IsSysUsuSessionIdValido, Resource.SysUsuSessionIdInvalido)
-                .Quando(((FiltraNome && (FiltroNome == null || FiltroNome.Length == 0 || FiltroNome.Length > 100 ))), Resource.FiltroNomeInvalido)
+                .Quando((FiltraNome && (FiltroNome == null || FiltroNome.Length == 0 || FiltroNome.Length > 100)), Resource.FiltroNomeInvalido)
                 .Quando(((!FiltraNome && (FiltroNome != null && FiltroNome.Length != 0))), Resource.FiltroNomeInvalido)
-
+                .Quando((FiltraDataInsert && (DataInicial == null)), Resource.DataInicialInvalida)
+                .Quando((FiltraDataInsert && (DataFinal == null)), Resource.DataFinalInvalida)
                 .DispararExcecaoSeExistir();
+
+            DateTime dataAuxiliar;
+
+            if ((FiltraDataInsert) && (DataInicial > DataFinal))
+            {
+                dataAuxiliar = DataInicial.Value;
+                DataInicial = DataFinal.Value;
+                DataFinal = dataAuxiliar;
+            }
         }
 
 
-        private GetTemplateRequest()
+        public GetTemplateRequest()
         {
         }
 
@@ -48,7 +57,5 @@ namespace Service.Template.Application.Models.Request
             PageNumber = pageNumber;
             PageSize = pageSize;
         }
-
-
     }
 }

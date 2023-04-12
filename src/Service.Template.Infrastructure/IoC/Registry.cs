@@ -2,10 +2,11 @@
 using Service.Template.Application.Interfaces;
 using Service.Template.Application.Models.Request;
 using Service.Template.Application.Models.Request.Template;
+using Service.Template.Application.Models.Request.Template.Template;
 using Service.Template.Application.Models.Response;
 using Service.Template.Application.UseCases.Template;
-using Service.Template.Domain.Interfaces.Repositories.DB;
 using Service.Template.Infrastructure.Repositories.DBTemplate;
+using Service.Template.Repository.Interfaces.Repositories.DB;
 
 namespace Service.Template.Infrastructure.IoC
 {
