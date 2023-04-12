@@ -481,3 +481,4 @@ $RECYCLE.BIN/
 
 # Windows shortcuts
 *.lnk
+/src/Service.Template.API/appsettings.hom.json
