@@ -1,6 +1,7 @@
 ﻿using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
 using Service.Template.Application.Models.Request;
+using Service.Template.Application.Models.Request.Template;
 using Service.Template.Console.Service;
 
 internal class Program
