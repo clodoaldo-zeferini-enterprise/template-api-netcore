@@ -15,18 +15,30 @@ namespace Service.Template.Test.Builders.Model.Request.Template
             return new DeleteTemplateRequestBuilder();
         }
         
-        public DeleteTemplateRequestBuilder ComId(Guid id)
+        public DeleteTemplateRequestBuilder ComId(string id)
         {
             SysUsuSessionId = Guid.NewGuid();
-            Id = id;
-            return this;
+
+            if (Guid.TryParse(id, out var newGuid))
+            {
+                Id = newGuid;
+                return this;
+            }
+
+            return null;
         }
 
-        public DeleteTemplateRequestBuilder ComSysUsuSessionId(Guid sysUsuSessionId)
+        public DeleteTemplateRequestBuilder ComSysUsuSessionId(string sysUsuSessionId)
         {
             Id = Guid.NewGuid();
-            SysUsuSessionId = sysUsuSessionId;
-            return this;
+
+            if (Guid.TryParse(sysUsuSessionId, out var newGuid))
+            {
+                SysUsuSessionId = newGuid;
+                return this;
+            }
+
+            return null;
         }
 
         public Application.Models.Request.Template.DeleteTemplateRequest Build()

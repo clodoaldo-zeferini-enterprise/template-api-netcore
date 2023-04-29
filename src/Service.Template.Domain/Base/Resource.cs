@@ -2,9 +2,9 @@
 {
     public static class Resource
     {
-        public static string IdInvalido   = "Id inválido";
-        public static string SysUsuSessionIdInvalido = "SysUsuSessionId inválido";
-        public static string NomeInvalido = "Nome inválido";
+        public static string IdInvalido   = "Id Inválido";
+        public static string SysUsuSessionIdInvalido = "SysUsuSessionId Inválido";
+        public static string NomeInvalido = "Nome Inválido";
         public static string JaExixteUmTemplateComEsteNome = "Já existe um Template com este Nome";
 
         public static string PageNumberInvalido = "O Número da Página deverá estar entre 1 e 1000";
