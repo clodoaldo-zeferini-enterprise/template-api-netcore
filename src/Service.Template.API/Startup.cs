@@ -1,24 +1,29 @@
-using Microsoft.AspNetCore.Builder;
-using Microsoft.AspNetCore.Hosting;
-using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Hosting;
 using Service.Template.Infrastructure.IoC;
-using System.Linq;
+using Service.Template.Infrastructure.Repositories.Base;
 
 namespace Service.Template.API
 {
     public class Startup
     {
         readonly string MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
-        private static SwaggerConfig.Swagger swagger;
+        private Configuration _myConfiguration;
+
         public Startup(IConfiguration configuration)
         {
-            Configuration = configuration;
-            swagger = new SwaggerConfig.Swagger(configuration);
+            var env = Ambiente.GetAmbiente();
+                      
+            var configApp = new ConfigurationBuilder()
+                .AddJsonFile($@"appsettings.{env}.json")
+                .Build();           
+
+            _configuration = configApp;
+
+            _myConfiguration = new Configuration();
+            _configuration.Bind("Configuration", _myConfiguration);
+
         }
 
-        public IConfiguration Configuration { get; }
+        public IConfiguration _configuration { get; }
 
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
@@ -29,7 +34,7 @@ namespace Service.Template.API
                                   builder =>
                                   {
                                       builder.WithOrigins(
-                                           "https://localhost:5001"
+                                            "https://localhost:5001"
                                           , "https://Server-DES"
                                           , "https://Server-HOM"
                                           , "https://Server-PRO"
@@ -37,6 +42,10 @@ namespace Service.Template.API
                                           ).AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader();
                                   });
             });
+
+           
+            services.AddSingleton(_myConfiguration);
+            services.AddSingleton(_configuration);
 
             services.AddControllers();
 
@@ -71,22 +80,32 @@ namespace Service.Template.API
 
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc(swagger.SwaggerDoc.Name, new Microsoft.OpenApi.Models.OpenApiInfo {Title = swagger.SwaggerDoc.OpenApiInfo.Title, Version = swagger.SwaggerDoc.OpenApiInfo.Version });
+                c.SwaggerDoc(_myConfiguration.Swagger.SwaggerDoc.Name, new Microsoft.OpenApi.Models.OpenApiInfo { Title = _myConfiguration.Swagger.SwaggerDoc.OpenApiInfo.Title, Version = _myConfiguration.Swagger.SwaggerDoc.OpenApiInfo.Version });
                 c.ResolveConflictingActions(apiDescriptions => apiDescriptions.First());
             });
 
+
+            /*
+             
+            services.AddSwaggerGen(c =>
+            {
+                c.SwaggerDoc(_myConfiguration.Swagger.SwaggerDoc.Name, new Microsoft.OpenApi.Models.OpenApiInfo {Title = _myConfiguration.Swagger.SwaggerDoc.OpenApiInfo.Title, Version = _myConfiguration.Swagger.SwaggerDoc.OpenApiInfo.Version });
+                c.ResolveConflictingActions(apiDescriptions => apiDescriptions.First());
+            });
+             
+             */
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
-            if (env.IsDevelopment())
+            if (env.EnvironmentName == "dev")
             {
                 app.UseDeveloperExceptionPage();
             }
 
             app.UseSwagger();
-            app.UseSwaggerUI(c => c.SwaggerEndpoint(swagger.SwaggerEndpoint.Url,swagger.SwaggerEndpoint.Name));
+            app.UseSwaggerUI(c => c.SwaggerEndpoint(_myConfiguration.Swagger.SwaggerEndpoint.Url, _myConfiguration.Swagger.SwaggerEndpoint.Name));
 
             app.UseHttpsRedirection();
 

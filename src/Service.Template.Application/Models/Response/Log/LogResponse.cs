@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Service.Template.Application.Models.STS
+namespace Service.Template.Application.Models.Response.Log
 {
     public class LogResponse
     {
@@ -12,7 +12,8 @@ namespace Service.Template.Application.Models.STS
 
         private LogResponse() { }
 
-        public LogResponse(bool isValid) {
+        public LogResponse(bool isValid)
+        {
             IsValid = IsValid;
 
         }

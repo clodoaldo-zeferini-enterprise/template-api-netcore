@@ -2,8 +2,11 @@
 using Microsoft.Extensions.Configuration;
 using Newtonsoft.Json;
 using Service.Template.Application.Interfaces;
+using Service.Template.Application.Models.Request.Log;
+using Service.Template.Application.Models.Request.STS;
 using Service.Template.Application.Models.Request.Template;
 using Service.Template.Application.Models.Response;
+using Service.Template.Application.Models.STS;
 using Service.Template.Domain.Base;
 using Service.Template.Repository.Interfaces.Repositories.DB;
 using System;
@@ -13,14 +16,8 @@ using System.Threading.Tasks;
 
 namespace Service.Template.Application.UseCases.Template
 {
-    public class GetTemplateUseCaseAsync : IUseCaseAsync<GetTemplateRequest, TemplateOutResponse>, IDisposable
+    public class GetTemplateUseCaseAsync : IUseCaseAsync<GetTemplateRequest,  TemplateOutResponse>, IDisposable
     {
-        private IConfiguration _configuration;
-        
-        private ITemplateRepository _templateRepository;
-        private TemplateOutResponse _output;
-
-
         #region IDisposable Support
         public void Dispose()
         {
@@ -44,15 +41,28 @@ namespace Service.Template.Application.UseCases.Template
         }
         #endregion
 
+        private IConfiguration _configuration;
+        private ITemplateRepository _templateRepository;
+        private IUseCaseAsync<AuthorizationRequest, AuthorizationOutResponse> _getGetAuthorizationUseCaseAsync;
+        private IUseCaseAsync<LogRequest, LogOutResponse> _sendLogUseCaseAsync;
+        private TemplateOutResponse _output;
+
+        private TemplateResponse templateResponse;
+        private AuthorizationOutResponse authorizationOutResponse;
+        private AuthorizationResponse authorizationResponse;
+
 
         public GetTemplateUseCaseAsync(
-            IConfiguration configuration ,
-            
-            ITemplateRepository templateRepository)
+              IConfiguration configuration
+            , ITemplateRepository templateRepository
+            , IUseCaseAsync<AuthorizationRequest, AuthorizationOutResponse> getGetAuthorizationUseCaseAsync
+            , IUseCaseAsync<LogRequest, LogOutResponse> sendLogUseCaseAsync
+            )
         {
             _configuration = configuration;
-            
             _templateRepository = templateRepository;
+            _getGetAuthorizationUseCaseAsync = getGetAuthorizationUseCaseAsync;
+            _sendLogUseCaseAsync = sendLogUseCaseAsync;
 
             _output = new()
             {
@@ -61,10 +71,22 @@ namespace Service.Template.Application.UseCases.Template
             };
         }
 
-        public async Task<TemplateOutResponse> ExecuteAsync(GetTemplateRequest request)
+        public async Task< TemplateOutResponse> ExecuteAsync(GetTemplateRequest request)
         {
             try
             {
+                authorizationOutResponse = await _getGetAuthorizationUseCaseAsync.ExecuteAsync(new AuthorizationRequest(request.SysUsuSessionId));
+
+                if (!authorizationOutResponse.Resultado)
+                {
+                    _output.Resultado = false;
+                    _output.Mensagem = "Ocorreu uma falha na Autorização!";
+                    _output.Data = null;
+
+                    return _output;
+                }
+
+
                 if (request.Id != null)
                 {
                     Service.Template.Domain.Entities.Template template = await _templateRepository.GetById(request.Id.Value);
@@ -80,7 +102,7 @@ namespace Service.Template.Application.UseCases.Template
                     string _where = String.Empty;
 
                     string tabela = $@"Template";
-                    string select = $@" SELECT [Id],[Nome],[Status],[DataInsert],[DataUpdate] FROM [Exemplo].[dbo].[Template] ";
+                    string select = $@" SELECT [Id],[Nome],[Status],[DataInsert],[DataUpdate],[SysUsuSessionId] FROM [Exemplo].[dbo].[{tabela}] ";
 
                     if (request.PageNumber <= 0) { request.PageNumber = 1; }
                     if (request.PageSize   <= 0) { request.PageSize   = 1; }
@@ -187,18 +209,23 @@ namespace Service.Template.Application.UseCases.Template
                     TemplateResponse templateResponse = new();
 
 
-                    /*
+                    List<Models.Response.Navigator> responseNavigators =  new  List<Models.Response.Navigator>();
                     foreach (Domain.Entities.Navigator navigator in navigators)
                     {
-                        templateResponse.Navigators.Add(new Models.Response.Navigator(navigator.RecordCount, navigator.PageNumber, navigator.PageSize, navigator.PageCount));
+                        responseNavigators.Add(new Models.Response.Navigator(navigator.RecordCount, navigator.PageNumber, navigator.PageSize, navigator.PageCount));
                     }
-                    */
 
-                    templateResponse.Navigators = (List<Service.Template.Application.Models.Response.Navigator>)(navigators);
-                    templateResponse.Templates  = (List<Service.Template.Application.Models.Template>)(templates); 
-                    
-                    if (navigators.Any() && templates.Any())
+                    List<Service.Template.Application.Models.Template> responseTemplates = new List<Service.Template.Application.Models.Template>();
+                    foreach (Domain.Entities.Template template in templates)
                     {
+                        responseTemplates.Add(new Service.Template.Application.Models.Template(template.Id, template.Nome, template.Status, template.SysUsuSessionId, template.DataInsert, template.DataUpdate ));
+                    }
+
+                    if (responseNavigators.Any() && responseTemplates.Any())
+                    {
+                        templateResponse.Navigators = responseNavigators;
+                        templateResponse.Templates = responseTemplates;
+
                         _output.Resultado = true;
                         _output.Mensagem = "Dados retornados com sucesso!";
                         _output.Data = templateResponse;
@@ -224,6 +251,7 @@ namespace Service.Template.Application.UseCases.Template
             finally
             {
                 _output.Request = JsonConvert.SerializeObject(request, Formatting.Indented);
+                _sendLogUseCaseAsync.ExecuteAsync(new LogRequest(request.SysUsuSessionId));
             }
 
             return _output;

@@ -1,6 +1,6 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
-  <PropertyGroup>
+  <PropertyGroup><AccelerateBuildsInVisualStudio>true</AccelerateBuildsInVisualStudio>
     <TargetFramework>net7.0</TargetFramework>
   </PropertyGroup>
 

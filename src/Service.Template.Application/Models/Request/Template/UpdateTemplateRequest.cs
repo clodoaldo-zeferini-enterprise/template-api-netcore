@@ -22,13 +22,17 @@ namespace Service.Template.Application.Models.Request.Template.Template
         public EStatus Status { get; set; }
         public string Nome { get; set; }
 
-        public UpdateTemplateRequest(Guid id, EStatus status, string nome)
+        public GetTemplateRequest GetTemplateRequest { get; set; }    
+
+        public UpdateTemplateRequest(Guid id, EStatus status, string nome, GetTemplateRequest getTemplateRequest)
         {
             Id = id;
             Status = status;
             Nome = nome;
 
-            Validate();
+            GetTemplateRequest = getTemplateRequest;
+
+            Validate();            
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Service.Template.Application.Base;
+using System;
 
 namespace Service.Template.Application.Models.Request
 {

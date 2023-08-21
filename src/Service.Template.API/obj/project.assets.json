@@ -31,6 +31,25 @@
           }
         }
       },
+      "Microsoft.AspNetCore.OpenApi/7.0.10": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.OpenApi": "1.4.3"
+        },
+        "compile": {
+          "lib/net7.0/Microsoft.AspNetCore.OpenApi.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net7.0/Microsoft.AspNetCore.OpenApi.dll": {
+            "related": ".xml"
+          }
+        },
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ]
+      },
       "Microsoft.Data.Sqlite.Core/7.0.5": {
         "type": "package",
         "dependencies": {
@@ -90,6 +109,25 @@
         },
         "runtime": {
           "lib/net7.0/Microsoft.Extensions.Configuration.Abstractions.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "buildTransitive/net6.0/_._": {}
+        }
+      },
+      "Microsoft.Extensions.Configuration.Binder/7.0.4": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Extensions.Configuration.Abstractions": "7.0.0"
+        },
+        "compile": {
+          "lib/net7.0/Microsoft.Extensions.Configuration.Binder.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net7.0/Microsoft.Extensions.Configuration.Binder.dll": {
             "related": ".xml"
           }
         },
@@ -157,7 +195,7 @@
           "lib/netstandard1.0/_._": {}
         }
       },
-      "Microsoft.OpenApi/1.2.3": {
+      "Microsoft.OpenApi/1.4.3": {
         "type": "package",
         "compile": {
           "lib/netstandard2.0/Microsoft.OpenApi.dll": {
@@ -170,7 +208,7 @@
           }
         }
       },
-      "Microsoft.VisualStudio.Azure.Containers.Tools.Targets/1.18.1": {
+      "Microsoft.VisualStudio.Azure.Containers.Tools.Targets/1.19.4": {
         "type": "package",
         "build": {
           "build/Microsoft.VisualStudio.Azure.Containers.Tools.Targets.props": {},
@@ -512,6 +550,21 @@
         "lib/netstandard2.0/Dapper.Contrib.xml"
       ]
     },
+    "Microsoft.AspNetCore.OpenApi/7.0.10": {
+      "sha512": "p5LiYt1mFJdS70zyHoydahohko2pLIoXiXwANRZGYYyTXcYNQpNUOt+At+lUgGgRwta28sUKVhy2W/93j0qwhA==",
+      "type": "package",
+      "path": "microsoft.aspnetcore.openapi/7.0.10",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/net7.0/Microsoft.AspNetCore.OpenApi.dll",
+        "lib/net7.0/Microsoft.AspNetCore.OpenApi.xml",
+        "microsoft.aspnetcore.openapi.7.0.10.nupkg.sha512",
+        "microsoft.aspnetcore.openapi.nuspec"
+      ]
+    },
     "Microsoft.Data.Sqlite.Core/7.0.5": {
       "sha512": "FTerRmQPqHrCrnoUzhBu+E+1DNGwyrAMLqHkAqOOOu5pGfyMOj8qQUBxI/gDtWtG11p49UxSfWmBzRNlwZqfUg==",
       "type": "package",
@@ -813,6 +866,33 @@
         "useSharedDesignerContext.txt"
       ]
     },
+    "Microsoft.Extensions.Configuration.Binder/7.0.4": {
+      "sha512": "8+XPvJnHZsYgHOQlcMuQe7QNF5KdVKHH1F/wW3nd8/u81Gk/XFAYMDP0Lpz18h7/AM95M662vvqMorcYxCBB4w==",
+      "type": "package",
+      "path": "microsoft.extensions.configuration.binder/7.0.4",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "buildTransitive/net461/Microsoft.Extensions.Configuration.Binder.targets",
+        "buildTransitive/net462/_._",
+        "buildTransitive/net6.0/_._",
+        "buildTransitive/netcoreapp2.0/Microsoft.Extensions.Configuration.Binder.targets",
+        "lib/net462/Microsoft.Extensions.Configuration.Binder.dll",
+        "lib/net462/Microsoft.Extensions.Configuration.Binder.xml",
+        "lib/net6.0/Microsoft.Extensions.Configuration.Binder.dll",
+        "lib/net6.0/Microsoft.Extensions.Configuration.Binder.xml",
+        "lib/net7.0/Microsoft.Extensions.Configuration.Binder.dll",
+        "lib/net7.0/Microsoft.Extensions.Configuration.Binder.xml",
+        "lib/netstandard2.0/Microsoft.Extensions.Configuration.Binder.dll",
+        "lib/netstandard2.0/Microsoft.Extensions.Configuration.Binder.xml",
+        "microsoft.extensions.configuration.binder.7.0.4.nupkg.sha512",
+        "microsoft.extensions.configuration.binder.nuspec",
+        "useSharedDesignerContext.txt"
+      ]
+    },
     "Microsoft.Extensions.DependencyInjection/7.0.0": {
       "sha512": "elNeOmkeX3eDVG6pYVeV82p29hr+UKDaBhrZyWvWLw/EVZSYEkZlQdkp0V39k/Xehs2Qa0mvoCvkVj3eQxNQ1Q==",
       "type": "package",
@@ -915,27 +995,24 @@
         "version.txt"
       ]
     },
-    "Microsoft.OpenApi/1.2.3": {
-      "sha512": "Nug3rO+7Kl5/SBAadzSMAVgqDlfGjJZ0GenQrLywJ84XGKO0uRqkunz5Wyl0SDwcR71bAATXvSdbdzPrYRYKGw==",
+    "Microsoft.OpenApi/1.4.3": {
+      "sha512": "rURwggB+QZYcSVbDr7HSdhw/FELvMlriW10OeOzjPT7pstefMo7IThhtNtDudxbXhW+lj0NfX72Ka5EDsG8x6w==",
       "type": "package",
-      "path": "microsoft.openapi/1.2.3",
+      "path": "microsoft.openapi/1.4.3",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
-        "lib/net46/Microsoft.OpenApi.dll",
-        "lib/net46/Microsoft.OpenApi.pdb",
-        "lib/net46/Microsoft.OpenApi.xml",
         "lib/netstandard2.0/Microsoft.OpenApi.dll",
         "lib/netstandard2.0/Microsoft.OpenApi.pdb",
         "lib/netstandard2.0/Microsoft.OpenApi.xml",
-        "microsoft.openapi.1.2.3.nupkg.sha512",
+        "microsoft.openapi.1.4.3.nupkg.sha512",
         "microsoft.openapi.nuspec"
       ]
     },
-    "Microsoft.VisualStudio.Azure.Containers.Tools.Targets/1.18.1": {
-      "sha512": "RtNQEQQ/bgaxzrsZEkPB+/DFaUgNiq8GtZz/R4lt+mKXPcEvEuawlbl0PB1s7ND9kvkUVZtMphPxE9Ma1VGiFg==",
+    "Microsoft.VisualStudio.Azure.Containers.Tools.Targets/1.19.4": {
+      "sha512": "aKxpRAUIxDrnSnyr7xJWGixOBgsB7Z4oHpWRkpRzzq04kfze4mN7944gRc4X9H2U5KG3A/btF74kavkO8KXqCg==",
       "type": "package",
-      "path": "microsoft.visualstudio.azure.containers.tools.targets/1.18.1",
+      "path": "microsoft.visualstudio.azure.containers.tools.targets/1.19.4",
       "hasTools": true,
       "files": [
         ".nupkg.metadata",
@@ -964,7 +1041,7 @@
         "build/ToolsTarget.props",
         "build/ToolsTarget.targets",
         "icon.png",
-        "microsoft.visualstudio.azure.containers.tools.targets.1.18.1.nupkg.sha512",
+        "microsoft.visualstudio.azure.containers.tools.targets.1.19.4.nupkg.sha512",
         "microsoft.visualstudio.azure.containers.tools.targets.nuspec",
         "tools/Microsoft.VisualStudio.Containers.Tools.Common.dll",
         "tools/Microsoft.VisualStudio.Containers.Tools.Shared.dll",
@@ -1485,27 +1562,26 @@
   },
   "projectFileDependencyGroups": {
     "net7.0": [
-      "Microsoft.VisualStudio.Azure.Containers.Tools.Targets >= 1.18.1",
+      "Microsoft.AspNetCore.OpenApi >= 7.0.10",
+      "Microsoft.Extensions.Configuration >= 7.0.0",
+      "Microsoft.Extensions.Configuration.Binder >= 7.0.4",
+      "Microsoft.VisualStudio.Azure.Containers.Tools.Targets >= 1.19.4",
       "Service.Template.Infrastructure >= 1.0.0",
       "Swashbuckle.AspNetCore >= 6.5.0"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\clodo\\.nuget\\packages\\": {},
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
+    "C:\\Users\\clodo\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\GitHub\\clodoaldo-zeferini-enterprise\\template-api-netcore\\src\\Service.Template.API\\Service.Template.API.csproj",
+      "projectUniqueName": "D:\\GitHub\\clodoaldo-zeferini-enterprise\\clodoaldo-zeferini-enterprise\\template-api-netcore\\src\\Service.Template.API\\Service.Template.API.csproj",
       "projectName": "Service.Template.API",
-      "projectPath": "D:\\GitHub\\clodoaldo-zeferini-enterprise\\template-api-netcore\\src\\Service.Template.API\\Service.Template.API.csproj",
+      "projectPath": "D:\\GitHub\\clodoaldo-zeferini-enterprise\\clodoaldo-zeferini-enterprise\\template-api-netcore\\src\\Service.Template.API\\Service.Template.API.csproj",
       "packagesPath": "C:\\Users\\clodo\\.nuget\\packages\\",
-      "outputPath": "D:\\GitHub\\clodoaldo-zeferini-enterprise\\template-api-netcore\\src\\Service.Template.API\\obj\\",
+      "outputPath": "D:\\GitHub\\clodoaldo-zeferini-enterprise\\clodoaldo-zeferini-enterprise\\template-api-netcore\\src\\Service.Template.API\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-      ],
       "configFilePaths": [
         "C:\\Users\\clodo\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
@@ -1521,8 +1597,8 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
-            "D:\\GitHub\\clodoaldo-zeferini-enterprise\\template-api-netcore\\src\\Service.Template.Infrastructure\\Service.Template.Infrastructure.csproj": {
-              "projectPath": "D:\\GitHub\\clodoaldo-zeferini-enterprise\\template-api-netcore\\src\\Service.Template.Infrastructure\\Service.Template.Infrastructure.csproj"
+            "D:\\GitHub\\clodoaldo-zeferini-enterprise\\clodoaldo-zeferini-enterprise\\template-api-netcore\\src\\Service.Template.Infrastructure\\Service.Template.Infrastructure.csproj": {
+              "projectPath": "D:\\GitHub\\clodoaldo-zeferini-enterprise\\clodoaldo-zeferini-enterprise\\template-api-netcore\\src\\Service.Template.Infrastructure\\Service.Template.Infrastructure.csproj"
             }
           }
         }
@@ -1537,9 +1613,21 @@
       "net7.0": {
         "targetAlias": "net7.0",
         "dependencies": {
+          "Microsoft.AspNetCore.OpenApi": {
+            "target": "Package",
+            "version": "[7.0.10, )"
+          },
+          "Microsoft.Extensions.Configuration": {
+            "target": "Package",
+            "version": "[7.0.0, )"
+          },
+          "Microsoft.Extensions.Configuration.Binder": {
+            "target": "Package",
+            "version": "[7.0.4, )"
+          },
           "Microsoft.VisualStudio.Azure.Containers.Tools.Targets": {
             "target": "Package",
-            "version": "[1.18.1, )"
+            "version": "[1.19.4, )"
           },
           "Swashbuckle.AspNetCore": {
             "target": "Package",
@@ -1565,7 +1653,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
       }
     }
   }

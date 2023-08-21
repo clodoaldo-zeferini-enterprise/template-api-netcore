@@ -2,56 +2,22 @@
 
   <PropertyGroup>
     <TargetFramework>net7.0</TargetFramework>
-    <UserSecretsId>e5e14e74-dff2-4b46-b284-ca06b9228156</UserSecretsId>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UserSecretsId>00cef05a-f072-40a2-91c5-36fdd9c9eb44</UserSecretsId>
     <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
-    <DockerComposeProjectPath>..\docker-compose.dcproj</DockerComposeProjectPath>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.18.1" />
+    <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="7.0.10" />
+    <PackageReference Include="Microsoft.Extensions.Configuration" Version="7.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Binder" Version="7.0.4" />
+    <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.19.4" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\Service.Template.Infrastructure\Service.Template.Infrastructure.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Content Update="Config\appsettings_DES.Development.json">
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-    </Content>
-    <Content Update="Config\appsettings_DES.json">
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-    </Content>
-    <Content Update="Config\appsettings_HOM.Development.json">
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-    </Content>
-    <Content Update="Config\appsettings_HOM.json">
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-    </Content>
-    <Content Update="Config\appsettings_HOM_LOCAL.Development.json">
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-    </Content>
-    <Content Update="Config\appsettings_HOM_LOCAL.json">
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-    </Content>
-    <Content Update="Config\appsettings_PRO.Development.json">
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-    </Content>
-    <Content Update="Config\appsettings_PRO.json">
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-    </Content>
-    <Content Update="Config\appsettings_PRO_LOCAL.Development.json">
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-    </Content>
-    <Content Update="Config\appsettings_PRO_LOCAL.json">
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-    </Content>
-    <Content Update="appsettings.des.json">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-    </Content>
   </ItemGroup>
 
 </Project>

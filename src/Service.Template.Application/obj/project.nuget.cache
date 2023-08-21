@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "yTB9uga2dcgbhSVlcDWs9zns4DyYp1fXowR3Qx1Brr2vS9G7M06WDBMeWfkoSYFs2wmUplOAXl/kZINtqDYfMg==",
+  "dgSpecHash": "PBjQDjwMzn1oqJEOviN60Uc/zICaFeck9AGgVHw08xLeLbQ90kgWSNt07FhjZzOOOgLZ9/FGGiob1mY4QW7Lrw==",
   "success": true,
-  "projectFilePath": "D:\\GitHub\\clodoaldo-zeferini-enterprise\\template-api-netcore\\src\\Service.Template.Application\\Service.Template.Application.csproj",
+  "projectFilePath": "D:\\GitHub\\clodoaldo-zeferini-enterprise\\clodoaldo-zeferini-enterprise\\template-api-netcore\\src\\Service.Template.Application\\Service.Template.Application.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\clodo\\.nuget\\packages\\dapper\\2.0.123\\dapper.2.0.123.nupkg.sha512",
     "C:\\Users\\clodo\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\7.0.0\\microsoft.extensions.configuration.abstractions.7.0.0.nupkg.sha512",

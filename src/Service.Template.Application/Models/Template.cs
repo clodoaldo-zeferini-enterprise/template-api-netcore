@@ -17,7 +17,7 @@ namespace Service.Template.Application.Models
                 .Quando((string.IsNullOrEmpty(Nome) || Nome.Length > 100), Resource.NomeInvalido)
                 .DispararExcecaoSeExistir();
         }
-        public Template()
+        private Template()
         {
         }
 
@@ -33,17 +33,21 @@ namespace Service.Template.Application.Models
 
         }
 
-        public Template(string nome, EStatus status, DateTime? dataInsert, DateTime? dataUpdate)
+        public Template(Guid id, string nome, EStatus status, Guid sysUsuSessionId,  DateTime? dataInsert, DateTime? dataUpdate)
         {
+            Id = id;
             Nome = nome;
             Status = status;
             DataInsert = dataInsert;
             DataUpdate = dataUpdate;
+            SysUsuSessionId = sysUsuSessionId;
 
             var IsIdValido = Guid.TryParse(Id.ToString(), out Guid idValido);
+            var IsSysUsuSessionIdValido = Guid.TryParse(sysUsuSessionId.ToString(), out Guid sysUsuSessionIdValido);
 
             ValidadorDeRegra.Novo()
                 .Quando(!IsIdValido, Resource.IdInvalido)
+                .Quando(!IsSysUsuSessionIdValido, Resource.SysUsuSessionIdInvalido)
                 .Quando((string.IsNullOrEmpty(Nome) || Nome.Length > 100), Resource.NomeInvalido)
                 .DispararExcecaoSeExistir();
 

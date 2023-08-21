@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "KFKo6xy53UBMkrfjXrp7Nl5uQ3DKDXaUe1kR5/fk4aPxCl6z3CBe6Q83Kf4mu2MX0Xsh1iZ9Q0DheoPZLpeKIw==",
+  "dgSpecHash": "l7ccTNHmbtX2uPlCZmcHDKCa3rAWOdIcDh27fKMXLMHYHsEyIfhYiMWQxkh6oC1aCHuu/6e0gsUcXm56AcGHyQ==",
   "success": true,
-  "projectFilePath": "D:\\GitHub\\clodoaldo-zeferini-enterprise\\template-api-netcore\\src\\Service.Template.Console\\Service.Template.Console.csproj",
+  "projectFilePath": "D:\\GitHub\\clodoaldo-zeferini-enterprise\\clodoaldo-zeferini-enterprise\\template-api-netcore\\src\\Service.Template.Console\\Service.Template.Console.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\clodo\\.nuget\\packages\\dapper\\2.0.123\\dapper.2.0.123.nupkg.sha512",
     "C:\\Users\\clodo\\.nuget\\packages\\dapper.contrib\\2.0.78\\dapper.contrib.2.0.78.nupkg.sha512",

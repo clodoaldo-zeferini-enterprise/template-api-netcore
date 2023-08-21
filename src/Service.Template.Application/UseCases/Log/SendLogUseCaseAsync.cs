@@ -12,7 +12,7 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 
 
-namespace Service.GetAuthorization.Application.UseCases.GetAuthorization
+namespace Service.Template.Application.UseCases.Log
 {
     public class SendLogUseCaseAsync : IUseCaseAsync<LogRequest, LogOutResponse>, IDisposable
     {
@@ -25,7 +25,7 @@ namespace Service.GetAuthorization.Application.UseCases.GetAuthorization
 
         protected virtual void Dispose(bool disposing)
         {
-            _configuration = null;            
+            _configuration = null;
             _output = null;
 
         }
@@ -41,9 +41,9 @@ namespace Service.GetAuthorization.Application.UseCases.GetAuthorization
         private LogResponse _logResponse;
 
         public SendLogUseCaseAsync(
-            IConfiguration configuration )
+            IConfiguration configuration)
         {
-            _configuration = configuration;           
+            _configuration = configuration;
 
             _output = new()
             {
@@ -62,15 +62,15 @@ namespace Service.GetAuthorization.Application.UseCases.GetAuthorization
                 _output.Data = _logResponse;
 
                 return _output;
-            }            
+            }
             catch (Exception ex)
             {
                 _output.Mensagem = "Ocorreram Exceções durante a execução";
                 _output.AddExceptions(ex);
-                Template.Application.Models.Response.Errors.ErrorResponse errorResponse = new Template.Application.Models.Response.Errors.ErrorResponse("id", "parameter", JsonConvert.SerializeObject(ex, Formatting.Indented));
-                System.Collections.Generic.List<Template.Application.Models.Response.Errors.ErrorResponse> errorResponses = new List<Template.Application.Models.Response.Errors.ErrorResponse>();
+                Models.Response.Errors.ErrorResponse errorResponse = new Models.Response.Errors.ErrorResponse("id", "parameter", JsonConvert.SerializeObject(ex, Formatting.Indented));
+                List<Models.Response.Errors.ErrorResponse> errorResponses = new List<Models.Response.Errors.ErrorResponse>();
                 errorResponses.Add(errorResponse);
-                _output.ErrorsResponse = new Template.Application.Models.Response.Errors.ErrorsResponse(errorResponses);
+                _output.ErrorsResponse = new Models.Response.Errors.ErrorsResponse(errorResponses);
             }
             finally
             {

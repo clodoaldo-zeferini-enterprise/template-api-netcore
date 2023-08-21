@@ -107,21 +107,17 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\clodo\\.nuget\\packages\\": {},
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
+    "C:\\Users\\clodo\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\GitHub\\clodoaldo-zeferini-enterprise\\template-api-netcore\\src\\Service.Template.Repository\\Service.Template.Repository.csproj",
+      "projectUniqueName": "D:\\GitHub\\clodoaldo-zeferini-enterprise\\clodoaldo-zeferini-enterprise\\template-api-netcore\\src\\Service.Template.Repository\\Service.Template.Repository.csproj",
       "projectName": "ServiceService.Template.Repository",
-      "projectPath": "D:\\GitHub\\clodoaldo-zeferini-enterprise\\template-api-netcore\\src\\Service.Template.Repository\\Service.Template.Repository.csproj",
+      "projectPath": "D:\\GitHub\\clodoaldo-zeferini-enterprise\\clodoaldo-zeferini-enterprise\\template-api-netcore\\src\\Service.Template.Repository\\Service.Template.Repository.csproj",
       "packagesPath": "C:\\Users\\clodo\\.nuget\\packages\\",
-      "outputPath": "D:\\GitHub\\clodoaldo-zeferini-enterprise\\template-api-netcore\\src\\Service.Template.Repository\\obj\\",
+      "outputPath": "D:\\GitHub\\clodoaldo-zeferini-enterprise\\clodoaldo-zeferini-enterprise\\template-api-netcore\\src\\Service.Template.Repository\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-      ],
       "configFilePaths": [
         "C:\\Users\\clodo\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
@@ -137,8 +133,8 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
-            "D:\\GitHub\\clodoaldo-zeferini-enterprise\\template-api-netcore\\src\\Service.Template.Domain\\Service.Template.Domain.csproj": {
-              "projectPath": "D:\\GitHub\\clodoaldo-zeferini-enterprise\\template-api-netcore\\src\\Service.Template.Domain\\Service.Template.Domain.csproj"
+            "D:\\GitHub\\clodoaldo-zeferini-enterprise\\clodoaldo-zeferini-enterprise\\template-api-netcore\\src\\Service.Template.Domain\\Service.Template.Domain.csproj": {
+              "projectPath": "D:\\GitHub\\clodoaldo-zeferini-enterprise\\clodoaldo-zeferini-enterprise\\template-api-netcore\\src\\Service.Template.Domain\\Service.Template.Domain.csproj"
             }
           }
         }
@@ -178,7 +174,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
       }
     }
   }

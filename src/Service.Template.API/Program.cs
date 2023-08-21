@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
 using System;
 
@@ -11,13 +12,18 @@ namespace Service.Template.API
             CreateHostBuilder(args).Build().Run();
 
             Console.ReadKey();
+
         }
 
         public static IHostBuilder CreateHostBuilder(string[] args) =>
             Host.CreateDefaultBuilder(args)
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
-                    webBuilder.UseStartup<Startup>();
+                    var env = Ambiente.GetAmbiente();
+
+                    webBuilder
+                    .UseStartup<Startup>()
+                    .UseEnvironment(env);
                 });
     }
 }

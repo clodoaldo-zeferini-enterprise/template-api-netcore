@@ -51,7 +51,7 @@ namespace Service.Template.Test.Builders.Model
 
         public Application.Models.Template Build()
         {
-            var template = new Application.Models.Template(Nome, Status, DataInsert, DataUpdate);
+            var template = new Application.Models.Template(Nome, Status, SysUsuSessionId, DataInsert, DataUpdate);
             return template;
         }
     }

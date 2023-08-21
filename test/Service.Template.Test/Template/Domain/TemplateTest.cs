@@ -1,7 +1,5 @@
 ﻿using Bogus;
-
 using Service.Template.Domain.Base;
-using Service.Template.Domain.Enum;
 using Service.Template.Test.Builders.Domain;
 using Service.Template.Test.Util;
 

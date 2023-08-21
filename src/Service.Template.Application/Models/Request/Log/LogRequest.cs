@@ -1,15 +1,15 @@
 ﻿using System;
 
-namespace Service.Template.Application.Models.Request.STS
+namespace Service.Template.Application.Models.Request.Log
 {
-    public class AuthorizationRequest
+    public class LogRequest
     {
         public Guid SysUsuSessionId { get; set; }
 
-        private AuthorizationRequest()
+        private LogRequest()
         {
         }
-        public AuthorizationRequest(Guid sysUsuSessionId)
+        public LogRequest(Guid sysUsuSessionId)
         {
             SysUsuSessionId = sysUsuSessionId;
         }

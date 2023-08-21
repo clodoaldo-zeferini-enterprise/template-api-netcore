@@ -43,7 +43,7 @@ namespace Service.Template.Test.Builders.Model.Request.Template
 
         public Application.Models.Request.Template.DeleteTemplateRequest Build()
         {
-            var template = new Application.Models.Request.Template.DeleteTemplateRequest(Id, SysUsuSessionId);
+            var template = new Application.Models.Request.Template.DeleteTemplateRequest(Id, SysUsuSessionId, new Application.Models.Request.Template.GetTemplateRequest(1,20));
             return template;
         }
     }

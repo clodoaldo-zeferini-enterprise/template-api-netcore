@@ -7,6 +7,7 @@ namespace Service.Template.Application.Models.Request.Template
     public class DeleteTemplateRequest : RequestBase
     {
         public Guid Id { get; set; }
+        public GetTemplateRequest GetTemplateRequest { get; set; }
 
         private DeleteTemplateRequest()
         {
@@ -23,12 +24,14 @@ namespace Service.Template.Application.Models.Request.Template
                 .DispararExcecaoSeExistir();
         }
 
-        public DeleteTemplateRequest(Guid id, Guid sysUsuSessionId)
+
+        public DeleteTemplateRequest(Guid id, Guid sysUsuSessionId, GetTemplateRequest getTemplateRequest)
         {
             Id = id;
             SysUsuSessionId = sysUsuSessionId;
 
             Validate();
+            GetTemplateRequest = getTemplateRequest;
         }
     }
 }

@@ -1,5 +1,0 @@
-﻿D:\GitHub\clodoaldozeferini\TestesGit\ASPNet\.NetCore\src\Exemplo\ServerSide\Exemplo.Infrastructure\IoC\Registry.cs
-D:\GitHub\clodoaldozeferini\TestesGit\ASPNet\.NetCore\src\Exemplo\ServerSide\Exemplo.Infrastructure\Mappers\AutoMapperBootstrapper.cs
-D:\GitHub\clodoaldozeferini\TestesGit\ASPNet\.NetCore\src\Exemplo\ServerSide\Exemplo.Infrastructure\Repositories\Base\DapperUtils.cs
-D:\GitHub\clodoaldozeferini\TestesGit\ASPNet\.NetCore\src\Exemplo\ServerSide\Exemplo.Infrastructure\Repositories\Base\Repository.cs
-D:\GitHub\clodoaldozeferini\TestesGit\ASPNet\.NetCore\src\Exemplo\ServerSide\Exemplo.Infrastructure\Repositories\DBExemplo\TemplateRepository.cs

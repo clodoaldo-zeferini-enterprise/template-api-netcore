@@ -24,8 +24,8 @@ namespace Service.Template.Console.Service
         }
         #endregion
 
-        private IServiceProvider _serviceProvider;
-        private GetTemplateRequest _getTemplateRequest;
+        private readonly IServiceProvider _serviceProvider;
+        private readonly GetTemplateRequest _getTemplateRequest;
 
         private GetTemplateService() { }
 
@@ -35,12 +35,21 @@ namespace Service.Template.Console.Service
             _getTemplateRequest = getTemplateRequest;
         }
 
-        public async Task ExecuteAsync()
+        public async Task<TemplateResponse?> ExecuteAsync()
         {
             var service = ActivatorUtilities.CreateInstance<GetTemplateUseCaseAsync>(_serviceProvider);
 
             var templateOutResponse = await service.ExecuteAsync(_getTemplateRequest);
-            var templateResponse = (TemplateResponse)templateOutResponse.Data;
+
+            if (templateOutResponse.Data != null)
+            {
+                var templateResponse = (TemplateResponse)templateOutResponse.Data;
+                return templateResponse;
+            }
+            else
+            {
+                return null;
+            }
         }
     }
 }

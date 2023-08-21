@@ -16,17 +16,20 @@ namespace Service.Template.Application.Models.Request.Template
                 .DispararExcecaoSeExistir();
         }
 
+        public GetTemplateRequest GetTemplateRequest { get; set; }   
         public string Nome { get; set; }
 
         private InsertTemplateRequest()
         {
         }
 
-        public InsertTemplateRequest(string nome)
+        public InsertTemplateRequest(string nome, GetTemplateRequest getTemplateRequest)
         {
             Nome = nome;
+            GetTemplateRequest = getTemplateRequest;
 
             Validate();
+            
         }
     }
 }

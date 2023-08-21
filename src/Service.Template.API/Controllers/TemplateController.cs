@@ -1,14 +1,9 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Service.Template.Application.Interfaces;
-using Service.Template.Application.Models.Request;
-using Service.Template.Application.Models.Response;
-using Service.Template.Application.Models.Response.Errors;
-using System;
-using System.ComponentModel.DataAnnotations;
-using System.Threading.Tasks;
 using Service.Template.Application.Models.Request.Template;
 using Service.Template.Application.Models.Request.Template.Template;
+using Service.Template.Application.Models.Response;
+using Service.Template.Application.Models.Response.Errors;
 
 namespace Service.Template.API.Controllers
 {
@@ -20,16 +15,17 @@ namespace Service.Template.API.Controllers
         private readonly IUseCaseAsync<GetTemplateRequest, TemplateOutResponse>    _getTemplateUseCaseAsync;
         private readonly IUseCaseAsync<InsertTemplateRequest, TemplateOutResponse> _insertTemplateUseCaseAsync;
         private readonly IUseCaseAsync<UpdateTemplateRequest, TemplateOutResponse> _updateTemplateUseCaseAsync;
+        private readonly IConfiguration _configuration;
 
         public TemplateController(
+            IConfiguration configuration,
             IUseCaseAsync<DeleteTemplateRequest, TemplateOutResponse> deleteTemplateUseCaseAsync,
             IUseCaseAsync<GetTemplateRequest, TemplateOutResponse> getTemplateUseCaseAsync,
             IUseCaseAsync<InsertTemplateRequest, TemplateOutResponse> insertTemplateUseCaseAsync,
             IUseCaseAsync<UpdateTemplateRequest, TemplateOutResponse> updateTemplateUseCaseAsync
-
-
             )
         {
+            _configuration = configuration;
             _deleteTemplateUseCaseAsync = deleteTemplateUseCaseAsync;
             _getTemplateUseCaseAsync = getTemplateUseCaseAsync;
             _insertTemplateUseCaseAsync = insertTemplateUseCaseAsync;
@@ -37,10 +33,6 @@ namespace Service.Template.API.Controllers
         }
 
         [HttpGet("Get")]
-        [ProducesResponseType(typeof(TemplateOutResponse), StatusCodes.Status200OK)]
-        [ProducesResponseType(typeof(ErrorsResponse), StatusCodes.Status400BadRequest)]
-        [ProducesResponseType(typeof(ErrorsResponse), StatusCodes.Status404NotFound)]
-        [ProducesResponseType(typeof(ErrorsResponse), StatusCodes.Status500InternalServerError)]
         public async Task<IActionResult> Get([FromQuery] GetTemplateRequest request)
         {
             try
@@ -56,10 +48,6 @@ namespace Service.Template.API.Controllers
         }
 
         [HttpPost("Post")]
-        [ProducesResponseType(typeof(TemplateOutResponse), StatusCodes.Status200OK)]
-        [ProducesResponseType(typeof(ErrorsResponse), StatusCodes.Status400BadRequest)]
-        [ProducesResponseType(typeof(ErrorsResponse), StatusCodes.Status404NotFound)]
-        [ProducesResponseType(typeof(ErrorsResponse), StatusCodes.Status500InternalServerError)]
         public async Task<IActionResult> Post([FromBody] InsertTemplateRequest request)
         {
             try
@@ -78,11 +66,7 @@ namespace Service.Template.API.Controllers
         }
 
         [HttpPut("Put")]
-        [ProducesResponseType(typeof(TemplateOutResponse), StatusCodes.Status200OK)]
-        [ProducesResponseType(typeof(ErrorsResponse), StatusCodes.Status400BadRequest)]
-        [ProducesResponseType(typeof(ErrorsResponse), StatusCodes.Status404NotFound)]
-        [ProducesResponseType(typeof(ErrorsResponse), StatusCodes.Status500InternalServerError)]
-        public async Task<IActionResult> Put(long id, [FromBody] UpdateTemplateRequest request)
+        public async Task<IActionResult> Put(Guid id, [FromBody] UpdateTemplateRequest request)
         {
             try
             {
@@ -100,11 +84,7 @@ namespace Service.Template.API.Controllers
         }
 
         [HttpDelete("Delete")]
-        [ProducesResponseType(typeof(TemplateOutResponse), StatusCodes.Status200OK)]
-        [ProducesResponseType(typeof(ErrorsResponse), StatusCodes.Status400BadRequest)]
-        [ProducesResponseType(typeof(ErrorsResponse), StatusCodes.Status404NotFound)]
-        [ProducesResponseType(typeof(ErrorsResponse), StatusCodes.Status500InternalServerError)]
-        public async Task<IActionResult> Delete(long id, [FromBody] DeleteTemplateRequest request)
+        public async Task<IActionResult> Delete(Guid id, [FromBody] DeleteTemplateRequest request)
         {
             try
             {
