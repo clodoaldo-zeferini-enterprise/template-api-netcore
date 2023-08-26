@@ -187,7 +187,7 @@
           "dependencies": {
             "Dapper": {
               "target": "Package",
-              "version": "[2.0.123, )"
+              "version": "[2.0.151, )"
             },
             "Newtonsoft.Json": {
               "target": "Package",
@@ -259,7 +259,7 @@
           "dependencies": {
             "Dapper": {
               "target": "Package",
-              "version": "[2.0.123, )"
+              "version": "[2.0.151, )"
             },
             "Dapper.Contrib": {
               "target": "Package",
@@ -267,7 +267,7 @@
             },
             "Microsoft.Data.Sqlite.Core": {
               "target": "Package",
-              "version": "[7.0.5, )"
+              "version": "[7.0.10, )"
             },
             "Microsoft.Extensions.Configuration": {
               "target": "Package",
@@ -344,7 +344,7 @@
           "dependencies": {
             "Dapper": {
               "target": "Package",
-              "version": "[2.0.123, )"
+              "version": "[2.0.151, )"
             },
             "Newtonsoft.Json": {
               "target": "Package",

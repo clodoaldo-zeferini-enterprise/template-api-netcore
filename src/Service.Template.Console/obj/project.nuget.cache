@@ -1,12 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "l7ccTNHmbtX2uPlCZmcHDKCa3rAWOdIcDh27fKMXLMHYHsEyIfhYiMWQxkh6oC1aCHuu/6e0gsUcXm56AcGHyQ==",
+  "dgSpecHash": "y4ccNmPVYz9yfoWSqt6ZBGYPpDdf6ZNjgSJ66qv/Ao3rARlPrs8TIEjor1UyhElQETZHRWqAwiWqRoeyh3Cl5Q==",
   "success": true,
   "projectFilePath": "D:\\GitHub\\clodoaldo-zeferini-enterprise\\clodoaldo-zeferini-enterprise\\template-api-netcore\\src\\Service.Template.Console\\Service.Template.Console.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\clodo\\.nuget\\packages\\dapper\\2.0.123\\dapper.2.0.123.nupkg.sha512",
+    "C:\\Users\\clodo\\.nuget\\packages\\dapper\\2.0.151\\dapper.2.0.151.nupkg.sha512",
     "C:\\Users\\clodo\\.nuget\\packages\\dapper.contrib\\2.0.78\\dapper.contrib.2.0.78.nupkg.sha512",
-    "C:\\Users\\clodo\\.nuget\\packages\\microsoft.data.sqlite.core\\7.0.5\\microsoft.data.sqlite.core.7.0.5.nupkg.sha512",
+    "C:\\Users\\clodo\\.nuget\\packages\\microsoft.data.sqlite.core\\7.0.10\\microsoft.data.sqlite.core.7.0.10.nupkg.sha512",
     "C:\\Users\\clodo\\.nuget\\packages\\microsoft.extensions.configuration\\7.0.0\\microsoft.extensions.configuration.7.0.0.nupkg.sha512",
     "C:\\Users\\clodo\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\7.0.0\\microsoft.extensions.configuration.abstractions.7.0.0.nupkg.sha512",
     "C:\\Users\\clodo\\.nuget\\packages\\microsoft.extensions.configuration.binder\\7.0.3\\microsoft.extensions.configuration.binder.7.0.3.nupkg.sha512",
