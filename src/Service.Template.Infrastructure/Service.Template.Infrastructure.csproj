@@ -16,6 +16,7 @@
   <ItemGroup>
     <ProjectReference Include="..\Service.Template.Application\Service.Template.Application.csproj" />
     <ProjectReference Include="..\Service.Template.Domain\Service.Template.Domain.csproj" />
+    <ProjectReference Include="..\Service.Template.Repository\Service.Template.Repository.csproj" />
   </ItemGroup>
 
 </Project>

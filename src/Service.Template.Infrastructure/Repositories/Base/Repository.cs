@@ -2,6 +2,7 @@
 using Dapper;
 using Dapper.Contrib.Extensions;
 using Microsoft.Extensions.Configuration;
+using Service.Template.Domain.Base;
 using Service.Template.Domain.Enum;
 using Service.Template.Domain.Interfaces.Repositories.Base;
 using System;
@@ -10,7 +11,6 @@ using System.Data.SqlClient;
 using System.Threading.Tasks;
 using static Dapper.SqlMapper;
 using static Service.Template.Infrastructure.Repositories.Base.DapperUtils;
-using Service.Template.Domain.Base;
 
 namespace Service.Template.Infrastructure.Repositories.Base
 {

@@ -453,7 +453,6 @@
         "framework": ".NETCoreApp,Version=v7.0",
         "dependencies": {
           "Microsoft.Extensions.Configuration.Abstractions": "7.0.0",
-          "ServiceService.Template.Domain": "1.0.0",
           "ServiceService.Template.Repository": "1.0.0"
         },
         "compile": {
@@ -474,6 +473,7 @@
           "Microsoft.Extensions.DependencyInjection": "7.0.0",
           "Service.Template.Application": "1.0.0",
           "ServiceService.Template.Domain": "1.0.0",
+          "ServiceService.Template.Repository": "1.0.0",
           "System.Data.SqlClient": "4.8.5"
         },
         "compile": {

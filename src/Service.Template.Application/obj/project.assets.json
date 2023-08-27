@@ -211,7 +211,6 @@
   "projectFileDependencyGroups": {
     "net7.0": [
       "Microsoft.Extensions.Configuration.Abstractions >= 7.0.0",
-      "ServiceService.Template.Domain >= 1.0.0",
       "ServiceService.Template.Repository >= 1.0.0"
     ]
   },
@@ -242,9 +241,6 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
-            "D:\\GitHub\\clodoaldo-zeferini-enterprise\\clodoaldo-zeferini-enterprise\\template-api-netcore\\src\\Service.Template.Domain\\Service.Template.Domain.csproj": {
-              "projectPath": "D:\\GitHub\\clodoaldo-zeferini-enterprise\\clodoaldo-zeferini-enterprise\\template-api-netcore\\src\\Service.Template.Domain\\Service.Template.Domain.csproj"
-            },
             "D:\\GitHub\\clodoaldo-zeferini-enterprise\\clodoaldo-zeferini-enterprise\\template-api-netcore\\src\\Service.Template.Repository\\Service.Template.Repository.csproj": {
               "projectPath": "D:\\GitHub\\clodoaldo-zeferini-enterprise\\clodoaldo-zeferini-enterprise\\template-api-netcore\\src\\Service.Template.Repository\\Service.Template.Repository.csproj"
             }
