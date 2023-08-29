@@ -7,7 +7,7 @@ using Service.Grupo.Application.Models.Request.STS;
 using Service.Grupo.Application.Models.Response;
 using Service.Grupo.Application.Models.STS;
 using Service.Grupo.Repository.Interfaces.Repositories.DB;
-using Service.Template.Application.Models.Request.Log;
+using Service.Grupo.Application.Models.Request.Log;
 using System;
 using System.Threading.Tasks;
 

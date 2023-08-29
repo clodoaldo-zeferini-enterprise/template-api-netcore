@@ -3,13 +3,14 @@ using Service.GetAuthorization.Application.UseCases.GetAuthorization;
 using Service.Grupo.Application.Interfaces;
 using Service.Grupo.Application.Models.Request.Grupo;
 using Service.Grupo.Application.Models.Request.Grupo.Grupo;
+using Service.Grupo.Application.Models.Request.Log;
 using Service.Grupo.Application.Models.Request.STS;
 using Service.Grupo.Application.Models.Response;
 using Service.Grupo.Application.UseCases.Grupo;
 using Service.Grupo.Infrastructure.Repositories.DB;
 using Service.Grupo.Repository.Interfaces.Repositories.DB;
-using Service.Template.Application.Models.Request.Log;
-using Service.Template.Application.UseCases.Log;
+using Service.Grupo.Application.UseCases.Log;
+
 
 namespace Service.Grupo.Infrastructure.IoC
 {
