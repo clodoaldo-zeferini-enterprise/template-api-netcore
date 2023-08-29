@@ -1,4 +1,4 @@
-﻿namespace Service.Template.Infrastructure.Repositories.Base.SwaggerConfig
+﻿namespace Service.Template.Infrastructure.Config.SwaggerConfig
 {
     public class SwaggerDoc
     {

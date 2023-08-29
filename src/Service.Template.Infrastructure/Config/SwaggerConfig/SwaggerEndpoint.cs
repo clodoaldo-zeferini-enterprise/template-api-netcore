@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
-namespace Service.Template.API.SwaggerConfig
+﻿namespace Service.Template.Infrastructure.Config.SwaggerConfig
 {
     public class SwaggerEndpoint
     {

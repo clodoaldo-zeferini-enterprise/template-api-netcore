@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace Service.Template.Infrastructure.Repositories.Base
+namespace Service.Template.Infrastructure.Config
 {
     public class ConnectionString
     {
@@ -10,8 +10,8 @@ namespace Service.Template.Infrastructure.Repositories.Base
 
         public ConnectionString(List<Connection> connections)
         {
-            if (connections != null) this.Connections = connections;
-            else this.Connections = new List<Connection>();
+            if (connections != null) Connections = connections;
+            else Connections = new List<Connection>();
         }
     }
     public class Connection

@@ -1,5 +1,5 @@
+using Service.Template.Infrastructure.Config;
 using Service.Template.Infrastructure.IoC;
-using Service.Template.Infrastructure.Repositories.Base;
 
 namespace Service.Template.API
 {
@@ -43,7 +43,7 @@ namespace Service.Template.API
                                   });
             });
 
-           
+
             services.AddSingleton(_myConfiguration);
             services.AddSingleton(_configuration);
 

@@ -8,7 +8,7 @@ using Service.Template.Application.Models.Request.Template.Template;
 using Service.Template.Application.Models.Response;
 using Service.Template.Application.UseCases.Log;
 using Service.Template.Application.UseCases.Template;
-using Service.Template.Infrastructure.Repositories.DBTemplate;
+using Service.Template.Infrastructure.Repositories.DB;
 using Service.Template.Repository.Interfaces.Repositories.DB;
 
 namespace Service.Template.Infrastructure.IoC
