@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "Service.Template.Worker": {
+      "commandName": "Project"
+    },
+    "Docker": {
+      "commandName": "Docker"
+    }
+  }
+}
