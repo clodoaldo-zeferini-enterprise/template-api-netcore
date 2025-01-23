@@ -1,0 +1,34 @@
+DECLARE @ObjectType CHAR(2)
+
+-- Defina o tipo de objeto a ser filtrado (por exemplo: 'U' para tabelas, 'P' para procedimentos armazenados, 'V' para views)
+SET @ObjectType = 'U' -- Altere conforme necessário
+
+SELECT 
+    o.name AS ObjectName,
+    o.type AS ObjectType,
+    o.type_desc AS ObjectDescription,
+    s.name AS SchemaName,
+    o.create_date AS CreateDate,
+    o.modify_date AS ModifyDate
+FROM 
+    sys.objects o
+INNER JOIN 
+    sys.schemas s ON o.schema_id = s.schema_id
+WHERE 
+    o.type = @ObjectType
+ORDER BY 
+    o.name;
+
+
+/*
+Tipos de objetos comuns para filtro:
+U – Tabelas do usuário
+P – Procedimentos armazenados
+V – Views
+FN – Funções escalares definidas pelo usuário
+IF – Funções com valor de tabela embutidas
+TF – Funções com valor de tabela
+TR – Triggers
+X – Procedimentos estendidos
+
+*/
